@@ -1,0 +1,80 @@
+{
+  "version": "v1.0.0-rc1",
+  "repository": "https://github.com/jiarundongjack/breastdm-reproduction",
+  "status": "LOCAL_CANDIDATE_NOT_PUBLISHED",
+  "assets": [
+    {
+      "name": "breastdm-v1.0.0-rc1-pretrained-01.zip",
+      "bytes": 425442086,
+      "sha256": "1d1c76abce76d56787f4e9c8d5c43e13b7440126ea27fcbab496df77d5976b76",
+      "files": 2
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-classification-exp1-01.zip",
+      "bytes": 12718978,
+      "sha256": "a237b16f1a6ea4f205f18726aecf2c7fc1010a0795060160638fcb363a977860",
+      "files": 1722
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-classification-exp2-01.zip",
+      "bytes": 23582536,
+      "sha256": "3b462eea35a1ac7699a78358b09508157e4138dc4c7bb877243574a7781d70d8",
+      "files": 1722
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-2d-01.zip",
+      "bytes": 875273209,
+      "sha256": "dcd25ab21910bcd631b5286d0407cd547c1616b9793e0589dcb1d4af96e989d6",
+      "files": 58548
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-01.zip",
+      "bytes": 96998540,
+      "sha256": "6acabbc87ca18bf995da8821438fb6af7d290b333e284f11b2e7a691848c29a1",
+      "files": 334
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-02.zip",
+      "bytes": 118988492,
+      "sha256": "865e164a351586553c48e563e74a7774bd7e77b6d60fa853c4aee4aa282dc8cb",
+      "files": 224
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-03.zip",
+      "bytes": 124225866,
+      "sha256": "a6c023128cc28c3179555f0caa10b53e3aa258884d7420e9c7bfe423ebb56009",
+      "files": 287
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-04.zip",
+      "bytes": 1727315,
+      "sha256": "ef41153377ca3f7b067569384a43a0052c6f9fe253cccd80bd040c20a1de6021",
+      "files": 229
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-05.zip",
+      "bytes": 31125229,
+      "sha256": "f3c9eacfe2c70cf63b93032c0388119623159e14f3bcf737e0f6c7edd00f4265",
+      "files": 281
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-data-segmentation-3d-06.zip",
+      "bytes": 231373,
+      "sha256": "2d388060ca001b1c7e8f667c732ca09d14451163d50681224070c42330398230",
+      "files": 37
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-trained-models-01.zip",
+      "bytes": 1450099103,
+      "sha256": "1052e272a546a7aeed855f981dbd5958ed83b800d0cd72f1d06be5ad178bf240",
+      "files": 8
+    },
+    {
+      "name": "breastdm-v1.0.0-rc1-trained-models-02.zip",
+      "bytes": 99654820,
+      "sha256": "39b2c79d34c26adc00c00cb5a07cd6c05d51b5e2808cbad69b809ab7a015e1a5",
+      "files": 2
+    }
+  ],
+  "extraction": "Extract all archives into the repository root; paths already include data/code/result."
+}
