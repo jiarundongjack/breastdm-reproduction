@@ -1,0 +1,108 @@
+{
+  "seed": 27182,
+  "output_directory": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\results\\fusion_exp1_100ep_seed27182_final_multiseed",
+  "timestamp": "2026-09-14T14:52:26.131465+00:00",
+  "argv": [
+    ".\\train.py",
+    "--model",
+    "fusion",
+    "--gpu",
+    "0",
+    "--num_class",
+    "2",
+    "--batch-size",
+    "32",
+    "--random_seed",
+    "27182",
+    "--auto_split",
+    "0",
+    "--path",
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\processed_dataset",
+    "--output-dir",
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\results\\fusion_exp1_100ep_seed27182_final_multiseed"
+  ],
+  "invariants": {
+    "protocol": {
+      "model": "fusion",
+      "num_classes": 2,
+      "dataset_root": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\processed_dataset",
+      "counts": {
+        "train": {
+          "samples": 1202,
+          "patients": 166
+        },
+        "val": {
+          "samples": 117,
+          "patients": 19
+        },
+        "test": {
+          "samples": 403,
+          "patients": 47
+        }
+      },
+      "auto_split": 0,
+      "batch_size": 32,
+      "epochs": 100,
+      "optimizer": "SGD",
+      "initial_lr": 0.01,
+      "momentum": 0.9,
+      "weight_decay": 0.01,
+      "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+      "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+      "input_channels": 9,
+      "input_size": [
+        96,
+        96
+      ],
+      "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+      "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+      "train_shuffle": true,
+      "eval_shuffle": false,
+      "num_workers": 0,
+      "drop_last": false,
+      "freeze": false,
+      "pretrained_weights": {
+        "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\jx_vit_base_patch16_224_in21k-e5005f0a.pth": "e5005f0a7a836470c1dbd39d848eabf0a5b1d8f9a066aa46e6ff00261db44cb5",
+        "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\se_resnet50-ce0d4300.pth": "ce0d430017d3f4aa6b5658c72209f3bfffb060207fd26a2ef0b203ce592eba01"
+      },
+      "pretrained_adaptation": "CNN and ViT 3->9 repeat /3; ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+      "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+      "validation_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+      "test_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+      "hard_decision": "torch.argmax(logits, dim=1)",
+      "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+      "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)",
+      "gpu_argument": "0",
+      "environment": {
+        "python_executable": "D:\\Program Files\\Python311\\python.exe",
+        "python_version": "3.11.5",
+        "pytorch_version": "2.10.0+cu130",
+        "cuda_version": "13.0",
+        "gpu_name": "NVIDIA RTX PRO 3000 Blackwell Generation Laptop GPU",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "packages": {
+          "torchvision": "0.25.0+cu130",
+          "numpy": "2.4.3",
+          "scikit-learn": "1.9.0",
+          "pretrainedmodels": "0.7.4",
+          "pandas": "3.0.3"
+        },
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": false,
+        "deterministic_algorithms": false
+      }
+    },
+    "code_sha256": {
+      "train.py": "41e73bb64820955677459cc452fe688fb5da16c7c165b7bf875e5927315ce7d6",
+      "classification_auc.py": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "data_loader.py": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "fusionModels.py": "b8a794de1c7c3dc18e38c6588aaf4b814032a10d75d4514d0ad8dea0e36caa78",
+      "VIT_model.py": "3bfe8c077f11646bf700daf540e0e9d8b0b98ea6f27466ce0652be0de022e674",
+      "Models.py": "631364c171456ae5473e7e4ed99a581dbab5636372c51178879d00ab62600b3a",
+      "tools.py": "579b7b22a921c7177db09c324745603e874b9a504613436b6747261846a75a47",
+      "exp1_provenance.py": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "summarize_exp1_final_multiseed.py": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746"
+    },
+    "dataset_manifest_sha256": "f6f05e5a5be85a8a621cdce2c924ff81309d60dca9d4ed3a5bc9b8731d9ec575"
+  }
+}

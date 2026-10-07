@@ -1,0 +1,312 @@
+{
+  "model": "fusion",
+  "num_classes": 2,
+  "dataset_root": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\processed_dataset",
+  "counts": {
+    "train": {
+      "samples": 1202,
+      "patients": 166
+    },
+    "val": {
+      "samples": 117,
+      "patients": 19
+    },
+    "test": {
+      "samples": 403,
+      "patients": 47
+    }
+  },
+  "auto_split": 0,
+  "batch_size": 32,
+  "epochs": 100,
+  "optimizer": "SGD",
+  "initial_lr": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.01,
+  "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+  "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+  "input_channels": 9,
+  "input_size": [
+    96,
+    96
+  ],
+  "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+  "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+  "train_shuffle": true,
+  "eval_shuffle": false,
+  "num_workers": 0,
+  "drop_last": false,
+  "freeze": false,
+  "pretrained_weights": {
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\jx_vit_base_patch16_224_in21k-e5005f0a.pth": "e5005f0a7a836470c1dbd39d848eabf0a5b1d8f9a066aa46e6ff00261db44cb5",
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\se_resnet50-ce0d4300.pth": "ce0d430017d3f4aa6b5658c72209f3bfffb060207fd26a2ef0b203ce592eba01"
+  },
+  "pretrained_adaptation": "CNN and ViT 3->9 repeat /3; ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+  "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+  "validation_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+  "test_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+  "hard_decision": "torch.argmax(logits, dim=1)",
+  "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+  "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)",
+  "gpu_argument": "0",
+  "environment": {
+    "python_executable": "D:\\Program Files\\Python311\\python.exe",
+    "python_version": "3.11.5",
+    "pytorch_version": "2.10.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_name": "NVIDIA RTX PRO 3000 Blackwell Generation Laptop GPU",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "torchvision": "0.25.0+cu130",
+      "numpy": "2.4.3",
+      "scikit-learn": "1.9.0",
+      "pretrainedmodels": "0.7.4",
+      "pandas": "3.0.3"
+    },
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false
+  }
+}
+SE-ResNet50 conv1 adapted: 3 channels -> 9 channels
+======================================
+SE-ResNet50 pretrained weight check
+Weight file: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\model\se_resnet50-ce0d4300.pth
+Matched parameters: 331 / 384
+Missing parameters: 0
+SE-ResNet50 pretrained weights loaded once.
+======================================
+ViT patch embedding adapted: 3 channels -> 9 channels
+ViT position embedding adapted: 197 tokens -> 37 tokens
+======================================
+ViT pretrained weight check
+Weight file: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\model\jx_vit_base_patch16_224_in21k-e5005f0a.pth
+Matched parameters: 90 / 92
+Missing parameters: 2
+ViT pretrained weights loaded once.
+======================================
+Epoch 1: Train Loss=0.5030, Train Accuracy=76.54%, LR=0.01
+Epoch Validation: Val Loss=0.2101, Val Accuracy=88.89%, Val AUC=0.9776
+Best model updated at Epoch 1, Val AUC=0.9776
+Epoch 2: Train Loss=0.2696, Train Accuracy=89.10%, LR=0.01
+Epoch Validation: Val Loss=0.2316, Val Accuracy=90.60%, Val AUC=0.9688
+Epoch 3: Train Loss=0.2162, Train Accuracy=92.43%, LR=0.01
+Epoch Validation: Val Loss=0.2372, Val Accuracy=89.74%, Val AUC=0.9722
+Epoch 4: Train Loss=0.1436, Train Accuracy=94.01%, LR=0.01
+Epoch Validation: Val Loss=0.1842, Val Accuracy=91.45%, Val AUC=0.9839
+Best model updated at Epoch 4, Val AUC=0.9839
+Epoch 5: Train Loss=0.1843, Train Accuracy=93.18%, LR=0.01
+Epoch Validation: Val Loss=0.2940, Val Accuracy=89.74%, Val AUC=0.9655
+Epoch 6: Train Loss=0.1101, Train Accuracy=95.76%, LR=0.01
+Epoch Validation: Val Loss=0.0949, Val Accuracy=96.58%, Val AUC=0.9952
+Best model updated at Epoch 6, Val AUC=0.9952
+Epoch 7: Train Loss=0.1289, Train Accuracy=95.01%, LR=0.01
+Epoch Validation: Val Loss=0.2299, Val Accuracy=91.45%, Val AUC=0.9699
+Epoch 8: Train Loss=0.1089, Train Accuracy=95.67%, LR=0.01
+Epoch Validation: Val Loss=0.3728, Val Accuracy=88.03%, Val AUC=0.9525
+Epoch 9: Train Loss=0.1438, Train Accuracy=94.76%, LR=0.01
+Epoch Validation: Val Loss=0.4478, Val Accuracy=84.62%, Val AUC=0.9405
+Epoch 10: Train Loss=0.0676, Train Accuracy=97.67%, LR=0.001
+Epoch Validation: Val Loss=0.3053, Val Accuracy=88.89%, Val AUC=0.9627
+Epoch 11: Train Loss=0.0385, Train Accuracy=98.67%, LR=0.001
+Epoch Validation: Val Loss=0.2537, Val Accuracy=91.45%, Val AUC=0.9699
+Epoch 12: Train Loss=0.0278, Train Accuracy=99.33%, LR=0.001
+Epoch Validation: Val Loss=0.2349, Val Accuracy=92.31%, Val AUC=0.9733
+Epoch 13: Train Loss=0.0288, Train Accuracy=99.33%, LR=0.001
+Epoch Validation: Val Loss=0.2326, Val Accuracy=91.45%, Val AUC=0.9759
+Epoch 14: Train Loss=0.0177, Train Accuracy=99.83%, LR=0.001
+Epoch Validation: Val Loss=0.2457, Val Accuracy=91.45%, Val AUC=0.9738
+Epoch 15: Train Loss=0.0261, Train Accuracy=99.33%, LR=0.001
+Epoch Validation: Val Loss=0.2324, Val Accuracy=91.45%, Val AUC=0.9757
+Epoch 16: Train Loss=0.0187, Train Accuracy=99.75%, LR=0.001
+Epoch Validation: Val Loss=0.2258, Val Accuracy=94.02%, Val AUC=0.9786
+Epoch 17: Train Loss=0.0180, Train Accuracy=99.75%, LR=0.001
+Epoch Validation: Val Loss=0.2177, Val Accuracy=92.31%, Val AUC=0.9786
+Epoch 18: Train Loss=0.0171, Train Accuracy=99.92%, LR=0.001
+Epoch Validation: Val Loss=0.2179, Val Accuracy=92.31%, Val AUC=0.9790
+Epoch 19: Train Loss=0.0151, Train Accuracy=99.75%, LR=0.001
+Epoch Validation: Val Loss=0.2325, Val Accuracy=91.45%, Val AUC=0.9762
+Epoch 20: Train Loss=0.0213, Train Accuracy=99.58%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2325, Val Accuracy=91.45%, Val AUC=0.9771
+Epoch 21: Train Loss=0.0153, Train Accuracy=99.83%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2424, Val Accuracy=91.45%, Val AUC=0.9759
+Epoch 22: Train Loss=0.0167, Train Accuracy=99.58%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2417, Val Accuracy=92.31%, Val AUC=0.9761
+Epoch 23: Train Loss=0.0108, Train Accuracy=100.00%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2479, Val Accuracy=91.45%, Val AUC=0.9749
+Epoch 24: Train Loss=0.0149, Train Accuracy=99.75%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2319, Val Accuracy=91.45%, Val AUC=0.9781
+Epoch 25: Train Loss=0.0134, Train Accuracy=99.75%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2454, Val Accuracy=91.45%, Val AUC=0.9750
+Epoch 26: Train Loss=0.0214, Train Accuracy=99.50%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2322, Val Accuracy=91.45%, Val AUC=0.9772
+Epoch 27: Train Loss=0.0124, Train Accuracy=100.00%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2366, Val Accuracy=91.45%, Val AUC=0.9768
+Epoch 28: Train Loss=0.0175, Train Accuracy=99.67%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2369, Val Accuracy=91.45%, Val AUC=0.9768
+Epoch 29: Train Loss=0.0109, Train Accuracy=99.92%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2523, Val Accuracy=91.45%, Val AUC=0.9741
+Epoch 30: Train Loss=0.0119, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2479, Val Accuracy=92.31%, Val AUC=0.9736
+Epoch 31: Train Loss=0.0149, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2352, Val Accuracy=92.31%, Val AUC=0.9777
+Epoch 32: Train Loss=0.0125, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2376, Val Accuracy=91.45%, Val AUC=0.9766
+Epoch 33: Train Loss=0.0123, Train Accuracy=99.83%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2231, Val Accuracy=92.31%, Val AUC=0.9789
+Epoch 34: Train Loss=0.0160, Train Accuracy=99.67%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2285, Val Accuracy=92.31%, Val AUC=0.9783
+Epoch 35: Train Loss=0.0123, Train Accuracy=100.00%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2360, Val Accuracy=92.31%, Val AUC=0.9771
+Epoch 36: Train Loss=0.0158, Train Accuracy=99.75%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2243, Val Accuracy=92.31%, Val AUC=0.9786
+Epoch 37: Train Loss=0.0171, Train Accuracy=99.67%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2283, Val Accuracy=92.31%, Val AUC=0.9790
+Epoch 38: Train Loss=0.0175, Train Accuracy=99.58%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2390, Val Accuracy=92.31%, Val AUC=0.9771
+Epoch 39: Train Loss=0.0134, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2267, Val Accuracy=92.31%, Val AUC=0.9784
+Epoch 40: Train Loss=0.0132, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2329, Val Accuracy=92.31%, Val AUC=0.9774
+Epoch 41: Train Loss=0.0153, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2386, Val Accuracy=92.31%, Val AUC=0.9768
+Epoch 42: Train Loss=0.0122, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2450, Val Accuracy=92.31%, Val AUC=0.9748
+Epoch 43: Train Loss=0.0149, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2383, Val Accuracy=91.45%, Val AUC=0.9769
+Epoch 44: Train Loss=0.0170, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2448, Val Accuracy=92.31%, Val AUC=0.9748
+Epoch 45: Train Loss=0.0159, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2405, Val Accuracy=91.45%, Val AUC=0.9759
+Epoch 46: Train Loss=0.0152, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2327, Val Accuracy=92.31%, Val AUC=0.9784
+Epoch 47: Train Loss=0.0143, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2438, Val Accuracy=91.45%, Val AUC=0.9759
+Epoch 48: Train Loss=0.0245, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2483, Val Accuracy=91.45%, Val AUC=0.9752
+Epoch 49: Train Loss=0.0211, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2480, Val Accuracy=91.45%, Val AUC=0.9746
+Epoch 50: Train Loss=0.0145, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2326, Val Accuracy=92.31%, Val AUC=0.9771
+Epoch 51: Train Loss=0.0176, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2366, Val Accuracy=91.45%, Val AUC=0.9768
+Epoch 52: Train Loss=0.0159, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2439, Val Accuracy=92.31%, Val AUC=0.9758
+Epoch 53: Train Loss=0.0171, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2424, Val Accuracy=92.31%, Val AUC=0.9766
+Epoch 54: Train Loss=0.0155, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2297, Val Accuracy=92.31%, Val AUC=0.9784
+Epoch 55: Train Loss=0.0135, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2404, Val Accuracy=92.31%, Val AUC=0.9764
+Epoch 56: Train Loss=0.0183, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2450, Val Accuracy=92.31%, Val AUC=0.9757
+Epoch 57: Train Loss=0.0145, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2441, Val Accuracy=92.31%, Val AUC=0.9764
+Epoch 58: Train Loss=0.0196, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2482, Val Accuracy=92.31%, Val AUC=0.9749
+Epoch 59: Train Loss=0.0131, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2513, Val Accuracy=92.31%, Val AUC=0.9739
+Epoch 60: Train Loss=0.0118, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2464, Val Accuracy=92.31%, Val AUC=0.9754
+Epoch 61: Train Loss=0.0113, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2432, Val Accuracy=91.45%, Val AUC=0.9756
+Epoch 62: Train Loss=0.0152, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2309, Val Accuracy=92.31%, Val AUC=0.9780
+Epoch 63: Train Loss=0.0161, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2396, Val Accuracy=92.31%, Val AUC=0.9758
+Epoch 64: Train Loss=0.0144, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2400, Val Accuracy=91.45%, Val AUC=0.9760
+Epoch 65: Train Loss=0.0122, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2357, Val Accuracy=92.31%, Val AUC=0.9773
+Epoch 66: Train Loss=0.0151, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2351, Val Accuracy=92.31%, Val AUC=0.9768
+Epoch 67: Train Loss=0.0144, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2451, Val Accuracy=92.31%, Val AUC=0.9749
+Epoch 68: Train Loss=0.0120, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2318, Val Accuracy=92.31%, Val AUC=0.9782
+Epoch 69: Train Loss=0.0150, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2503, Val Accuracy=92.31%, Val AUC=0.9745
+Epoch 70: Train Loss=0.0110, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2388, Val Accuracy=92.31%, Val AUC=0.9768
+Epoch 71: Train Loss=0.0131, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2395, Val Accuracy=92.31%, Val AUC=0.9767
+Epoch 72: Train Loss=0.0138, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2330, Val Accuracy=92.31%, Val AUC=0.9771
+Epoch 73: Train Loss=0.0171, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2472, Val Accuracy=91.45%, Val AUC=0.9749
+Epoch 74: Train Loss=0.0156, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2541, Val Accuracy=91.45%, Val AUC=0.9741
+Epoch 75: Train Loss=0.0135, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2480, Val Accuracy=92.31%, Val AUC=0.9745
+Epoch 76: Train Loss=0.0172, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2443, Val Accuracy=92.31%, Val AUC=0.9754
+Epoch 77: Train Loss=0.0133, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2390, Val Accuracy=92.31%, Val AUC=0.9764
+Epoch 78: Train Loss=0.0114, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2390, Val Accuracy=92.31%, Val AUC=0.9764
+Epoch 79: Train Loss=0.0139, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2414, Val Accuracy=92.31%, Val AUC=0.9766
+Epoch 80: Train Loss=0.0152, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2392, Val Accuracy=92.31%, Val AUC=0.9767
+Epoch 81: Train Loss=0.0142, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2432, Val Accuracy=92.31%, Val AUC=0.9751
+Epoch 82: Train Loss=0.0168, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2386, Val Accuracy=92.31%, Val AUC=0.9770
+Epoch 83: Train Loss=0.0140, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2470, Val Accuracy=91.45%, Val AUC=0.9744
+Epoch 84: Train Loss=0.0114, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2373, Val Accuracy=92.31%, Val AUC=0.9773
+Epoch 85: Train Loss=0.0118, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2452, Val Accuracy=92.31%, Val AUC=0.9764
+Epoch 86: Train Loss=0.0263, Train Accuracy=99.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2458, Val Accuracy=91.45%, Val AUC=0.9747
+Epoch 87: Train Loss=0.0127, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2518, Val Accuracy=91.45%, Val AUC=0.9749
+Epoch 88: Train Loss=0.0139, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2477, Val Accuracy=91.45%, Val AUC=0.9750
+Epoch 89: Train Loss=0.0110, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2465, Val Accuracy=91.45%, Val AUC=0.9753
+Epoch 90: Train Loss=0.0161, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2448, Val Accuracy=92.31%, Val AUC=0.9760
+Epoch 91: Train Loss=0.0150, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2463, Val Accuracy=91.45%, Val AUC=0.9753
+Epoch 92: Train Loss=0.0115, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2481, Val Accuracy=92.31%, Val AUC=0.9748
+Epoch 93: Train Loss=0.0116, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2374, Val Accuracy=92.31%, Val AUC=0.9767
+Epoch 94: Train Loss=0.0106, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2355, Val Accuracy=92.31%, Val AUC=0.9776
+Epoch 95: Train Loss=0.0170, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2488, Val Accuracy=92.31%, Val AUC=0.9747
+Epoch 96: Train Loss=0.0100, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2414, Val Accuracy=91.45%, Val AUC=0.9755
+Epoch 97: Train Loss=0.0140, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2461, Val Accuracy=92.31%, Val AUC=0.9755
+Epoch 98: Train Loss=0.0136, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2315, Val Accuracy=91.45%, Val AUC=0.9784
+Epoch 99: Train Loss=0.0134, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2451, Val Accuracy=91.45%, Val AUC=0.9747
+Epoch 100: Train Loss=0.0221, Train Accuracy=99.50%, LR=1e-05
+Epoch Validation: Val Loss=0.2415, Val Accuracy=92.31%, Val AUC=0.9760
+
+Using best model from Epoch 6, Best Val AUC=0.9952
+
+========== Final Test Results ==========
+Test Loss: 0.6011
+Accuracy: 0.779156
+Sensitivity: 0.889273
+Specificity: 0.500000
+Precision: 0.818471
+AUC: 0.882282
+Precision_Malignant: 0.818471
+Precision_Weighted: 0.768113
+TP: 257.000000
+TN: 57.000000
+FP: 57.000000
+FN: 32.000000
+N: 403.000000
+========================================
+
+All results saved to:
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\results\fusion_exp1_100ep_seed27182_final_multiseed
+COMPLETED: 100 epochs, best checkpoint reloaded, full Test and integrity checks passed.
