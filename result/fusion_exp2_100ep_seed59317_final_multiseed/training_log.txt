@@ -1,0 +1,548 @@
+{
+  "model": "fusion",
+  "num_classes": 2,
+  "dataset_root": "D:\\OneDrive\\Desktop\\BreaDM\\cls\\img17Se",
+  "counts": {
+    "train": {
+      "samples": 1202,
+      "patients": 166
+    },
+    "val": {
+      "samples": 117,
+      "patients": 19
+    },
+    "test": {
+      "samples": 403,
+      "patients": 47
+    }
+  },
+  "class_counts": {
+    "train": {
+      "Benign": 327,
+      "Malignant": 875
+    },
+    "val": {
+      "Benign": 24,
+      "Malignant": 93
+    },
+    "test": {
+      "Benign": 114,
+      "Malignant": 289
+    }
+  },
+  "auto_split": 0,
+  "batch_size": 32,
+  "epochs": 100,
+  "optimizer": "SGD",
+  "initial_lr": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.01,
+  "sgd_foreach": false,
+  "mixed_precision_train": true,
+  "train_autocast": "torch.cuda.amp.autocast(); default dtype=float16",
+  "grad_scaler": "torch.cuda.amp.GradScaler(); scale/backward/step/update",
+  "grad_scaler_settings": {
+    "init_scale": 65536.0,
+    "growth_factor": 2.0,
+    "backoff_factor": 0.5,
+    "growth_interval": 2000,
+    "enabled": true
+  },
+  "validation_autocast": false,
+  "test_autocast": false,
+  "class_weights_used": false,
+  "input_dtype": "uint8",
+  "channel_semantics": "cannot be independently verified",
+  "patient_overlap": 0,
+  "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+  "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+  "input_channels": 17,
+  "input_size": [
+    96,
+    96
+  ],
+  "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+  "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+  "train_shuffle": true,
+  "eval_shuffle": false,
+  "num_workers": 0,
+  "drop_last": false,
+  "freeze": false,
+  "pretrained_weights": {
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\jx_vit_base_patch16_224_in21k-e5005f0a.pth": "e5005f0a7a836470c1dbd39d848eabf0a5b1d8f9a066aa46e6ff00261db44cb5",
+    "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Classification task\\model\\se_resnet50-ce0d4300.pth": "ce0d430017d3f4aa6b5658c72209f3bfffb060207fd26a2ef0b203ce592eba01"
+  },
+  "pretrained_adaptation": "CNN and ViT w.repeat(1,6,1,1)[:, :17] * (3.0/17.0); ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+  "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+  "validation_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+  "test_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+  "hard_decision": "torch.argmax(logits, dim=1)",
+  "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+  "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)",
+  "gpu_argument": "0",
+  "environment": {
+    "python_executable": "D:\\Program Files\\Python311\\python.exe",
+    "python_version": "3.11.5",
+    "pytorch_version": "2.10.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_name": "NVIDIA RTX PRO 3000 Blackwell Generation Laptop GPU",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "torchvision": "0.25.0+cu130",
+      "numpy": "2.4.3",
+      "scikit-learn": "1.9.0",
+      "pretrainedmodels": "0.7.4",
+      "pandas": "3.0.3"
+    },
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false
+  }
+}
+Seed=59317; output=D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\results\fusion_exp2_100ep_seed59317_final_multiseed; samples train/val/test=1202/117/403
+SE-ResNet50 conv1 adapted: 3 channels -> 17 channels
+======================================
+SE-ResNet50 pretrained weight check
+Weight file: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\model\se_resnet50-ce0d4300.pth
+Matched parameters: 331 / 384
+Missing parameters: 0
+SE-ResNet50 pretrained weights loaded once.
+======================================
+ViT patch embedding adapted: 3 channels -> 17 channels
+ViT position embedding adapted: 197 tokens -> 37 tokens
+======================================
+ViT pretrained weight check
+Weight file: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\model\jx_vit_base_patch16_224_in21k-e5005f0a.pth
+Matched parameters: 90 / 92
+Missing parameters: 2
+ViT pretrained weights loaded once.
+======================================
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:844: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 1: Train Loss=0.6230, Train Accuracy=71.46%, LR=0.01
+Epoch Validation: Val Loss=0.4551, Val Accuracy=80.34%, Val AUC=0.8763
+Best model updated at Epoch 1, Val AUC=0.8763
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 2: Train Loss=0.2775, Train Accuracy=87.35%, LR=0.01
+Epoch Validation: Val Loss=0.3269, Val Accuracy=83.76%, Val AUC=0.9339
+Best model updated at Epoch 2, Val AUC=0.9339
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 3: Train Loss=0.1460, Train Accuracy=94.01%, LR=0.01
+Epoch Validation: Val Loss=0.2570, Val Accuracy=89.74%, Val AUC=0.9695
+Best model updated at Epoch 3, Val AUC=0.9695
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 4: Train Loss=0.1201, Train Accuracy=94.59%, LR=0.01
+Epoch Validation: Val Loss=0.3225, Val Accuracy=86.32%, Val AUC=0.9629
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 5: Train Loss=0.1392, Train Accuracy=93.84%, LR=0.01
+Epoch Validation: Val Loss=0.2952, Val Accuracy=87.18%, Val AUC=0.9586
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 6: Train Loss=0.0854, Train Accuracy=96.34%, LR=0.01
+Epoch Validation: Val Loss=0.4421, Val Accuracy=83.76%, Val AUC=0.9513
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 7: Train Loss=0.1829, Train Accuracy=93.59%, LR=0.01
+Epoch Validation: Val Loss=0.3969, Val Accuracy=86.32%, Val AUC=0.9632
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 8: Train Loss=0.1327, Train Accuracy=95.01%, LR=0.01
+Epoch Validation: Val Loss=0.2804, Val Accuracy=87.18%, Val AUC=0.9517
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 9: Train Loss=0.0772, Train Accuracy=96.76%, LR=0.01
+Epoch Validation: Val Loss=0.1655, Val Accuracy=92.31%, Val AUC=0.9841
+Best model updated at Epoch 9, Val AUC=0.9841
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 10: Train Loss=0.0362, Train Accuracy=98.42%, LR=0.001
+Epoch Validation: Val Loss=0.1634, Val Accuracy=94.02%, Val AUC=0.9865
+Best model updated at Epoch 10, Val AUC=0.9865
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 11: Train Loss=0.0316, Train Accuracy=98.84%, LR=0.001
+Epoch Validation: Val Loss=0.1992, Val Accuracy=91.45%, Val AUC=0.9813
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 12: Train Loss=0.0247, Train Accuracy=99.33%, LR=0.001
+Epoch Validation: Val Loss=0.2134, Val Accuracy=91.45%, Val AUC=0.9779
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 13: Train Loss=0.0266, Train Accuracy=99.17%, LR=0.001
+Epoch Validation: Val Loss=0.2618, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 14: Train Loss=0.0201, Train Accuracy=99.50%, LR=0.001
+Epoch Validation: Val Loss=0.2493, Val Accuracy=91.45%, Val AUC=0.9741
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 15: Train Loss=0.0164, Train Accuracy=99.67%, LR=0.001
+Epoch Validation: Val Loss=0.2419, Val Accuracy=92.31%, Val AUC=0.9736
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 16: Train Loss=0.0175, Train Accuracy=99.50%, LR=0.001
+Epoch Validation: Val Loss=0.2578, Val Accuracy=92.31%, Val AUC=0.9722
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 17: Train Loss=0.0137, Train Accuracy=99.83%, LR=0.001
+Epoch Validation: Val Loss=0.3000, Val Accuracy=89.74%, Val AUC=0.9636
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 18: Train Loss=0.0128, Train Accuracy=99.75%, LR=0.001
+Epoch Validation: Val Loss=0.2840, Val Accuracy=90.60%, Val AUC=0.9676
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 19: Train Loss=0.0115, Train Accuracy=99.67%, LR=0.001
+Epoch Validation: Val Loss=0.2494, Val Accuracy=91.45%, Val AUC=0.9746
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 20: Train Loss=0.0141, Train Accuracy=99.58%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2715, Val Accuracy=93.16%, Val AUC=0.9719
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 21: Train Loss=0.0178, Train Accuracy=99.75%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2875, Val Accuracy=90.60%, Val AUC=0.9688
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 22: Train Loss=0.0091, Train Accuracy=99.92%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2698, Val Accuracy=92.31%, Val AUC=0.9711
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 23: Train Loss=0.0134, Train Accuracy=99.75%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2771, Val Accuracy=91.45%, Val AUC=0.9690
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 24: Train Loss=0.0111, Train Accuracy=99.83%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2553, Val Accuracy=92.31%, Val AUC=0.9726
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 25: Train Loss=0.0110, Train Accuracy=99.83%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2669, Val Accuracy=92.31%, Val AUC=0.9709
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 26: Train Loss=0.0108, Train Accuracy=100.00%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2613, Val Accuracy=93.16%, Val AUC=0.9722
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 27: Train Loss=0.0124, Train Accuracy=99.67%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2708, Val Accuracy=91.45%, Val AUC=0.9703
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 28: Train Loss=0.0069, Train Accuracy=100.00%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2509, Val Accuracy=93.16%, Val AUC=0.9733
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 29: Train Loss=0.0125, Train Accuracy=99.83%, LR=0.00010000000000000002
+Epoch Validation: Val Loss=0.2737, Val Accuracy=90.60%, Val AUC=0.9698
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 30: Train Loss=0.0084, Train Accuracy=100.00%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2575, Val Accuracy=93.16%, Val AUC=0.9724
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 31: Train Loss=0.0087, Train Accuracy=100.00%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2660, Val Accuracy=91.45%, Val AUC=0.9715
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 32: Train Loss=0.0105, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2681, Val Accuracy=91.45%, Val AUC=0.9715
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 33: Train Loss=0.0108, Train Accuracy=99.75%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2693, Val Accuracy=92.31%, Val AUC=0.9704
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 34: Train Loss=0.0138, Train Accuracy=99.50%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2687, Val Accuracy=92.31%, Val AUC=0.9714
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 35: Train Loss=0.0109, Train Accuracy=99.75%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2626, Val Accuracy=92.31%, Val AUC=0.9730
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 36: Train Loss=0.0098, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2564, Val Accuracy=92.31%, Val AUC=0.9730
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 37: Train Loss=0.0161, Train Accuracy=99.50%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.3057, Val Accuracy=89.74%, Val AUC=0.9635
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 38: Train Loss=0.0110, Train Accuracy=99.92%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2904, Val Accuracy=91.45%, Val AUC=0.9679
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 39: Train Loss=0.0077, Train Accuracy=100.00%, LR=1.0000000000000003e-05
+Epoch Validation: Val Loss=0.2627, Val Accuracy=93.16%, Val AUC=0.9711
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 40: Train Loss=0.0114, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2686, Val Accuracy=92.31%, Val AUC=0.9725
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 41: Train Loss=0.0096, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2610, Val Accuracy=92.31%, Val AUC=0.9722
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 42: Train Loss=0.0087, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2509, Val Accuracy=93.16%, Val AUC=0.9744
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 43: Train Loss=0.0106, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2587, Val Accuracy=92.31%, Val AUC=0.9720
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 44: Train Loss=0.0119, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2753, Val Accuracy=91.45%, Val AUC=0.9692
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 45: Train Loss=0.0099, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2752, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 46: Train Loss=0.0110, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2812, Val Accuracy=91.45%, Val AUC=0.9695
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 47: Train Loss=0.0115, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2958, Val Accuracy=89.74%, Val AUC=0.9658
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 48: Train Loss=0.0081, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2683, Val Accuracy=91.45%, Val AUC=0.9700
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 49: Train Loss=0.0195, Train Accuracy=99.33%, LR=1e-05
+Epoch Validation: Val Loss=0.2753, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 50: Train Loss=0.0156, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2647, Val Accuracy=92.31%, Val AUC=0.9719
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 51: Train Loss=0.0094, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2759, Val Accuracy=91.45%, Val AUC=0.9684
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 52: Train Loss=0.0104, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2925, Val Accuracy=89.74%, Val AUC=0.9655
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 53: Train Loss=0.0071, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2941, Val Accuracy=90.60%, Val AUC=0.9654
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 54: Train Loss=0.0106, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2863, Val Accuracy=91.45%, Val AUC=0.9684
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 55: Train Loss=0.0105, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2688, Val Accuracy=91.45%, Val AUC=0.9712
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 56: Train Loss=0.0109, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2559, Val Accuracy=93.16%, Val AUC=0.9731
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 57: Train Loss=0.0116, Train Accuracy=99.67%, LR=1e-05
+Epoch Validation: Val Loss=0.2795, Val Accuracy=91.45%, Val AUC=0.9689
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 58: Train Loss=0.0123, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2636, Val Accuracy=91.45%, Val AUC=0.9722
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 59: Train Loss=0.0111, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2725, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 60: Train Loss=0.0131, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2779, Val Accuracy=91.45%, Val AUC=0.9700
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 61: Train Loss=0.0096, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2937, Val Accuracy=90.60%, Val AUC=0.9663
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 62: Train Loss=0.0100, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2760, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 63: Train Loss=0.0107, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2900, Val Accuracy=91.45%, Val AUC=0.9676
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 64: Train Loss=0.0115, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2716, Val Accuracy=91.45%, Val AUC=0.9712
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 65: Train Loss=0.0097, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2706, Val Accuracy=91.45%, Val AUC=0.9714
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 66: Train Loss=0.0103, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2658, Val Accuracy=91.45%, Val AUC=0.9717
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 67: Train Loss=0.0095, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2560, Val Accuracy=93.16%, Val AUC=0.9727
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 68: Train Loss=0.0084, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2664, Val Accuracy=93.16%, Val AUC=0.9708
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 69: Train Loss=0.0135, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2531, Val Accuracy=93.16%, Val AUC=0.9734
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 70: Train Loss=0.0095, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2702, Val Accuracy=91.45%, Val AUC=0.9706
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 71: Train Loss=0.0090, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2660, Val Accuracy=91.45%, Val AUC=0.9714
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 72: Train Loss=0.0172, Train Accuracy=99.33%, LR=1e-05
+Epoch Validation: Val Loss=0.2774, Val Accuracy=90.60%, Val AUC=0.9697
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 73: Train Loss=0.0068, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2588, Val Accuracy=92.31%, Val AUC=0.9726
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 74: Train Loss=0.0098, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2636, Val Accuracy=92.31%, Val AUC=0.9720
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 75: Train Loss=0.0101, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2619, Val Accuracy=91.45%, Val AUC=0.9721
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 76: Train Loss=0.0094, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2746, Val Accuracy=91.45%, Val AUC=0.9702
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 77: Train Loss=0.0170, Train Accuracy=99.50%, LR=1e-05
+Epoch Validation: Val Loss=0.2582, Val Accuracy=93.16%, Val AUC=0.9728
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 78: Train Loss=0.0119, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2541, Val Accuracy=91.45%, Val AUC=0.9737
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 79: Train Loss=0.0095, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2744, Val Accuracy=91.45%, Val AUC=0.9699
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 80: Train Loss=0.0081, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2977, Val Accuracy=89.74%, Val AUC=0.9646
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 81: Train Loss=0.0163, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2908, Val Accuracy=91.45%, Val AUC=0.9671
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 82: Train Loss=0.0142, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2696, Val Accuracy=91.45%, Val AUC=0.9708
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 83: Train Loss=0.0094, Train Accuracy=100.00%, LR=1e-05
+Epoch Validation: Val Loss=0.2931, Val Accuracy=90.60%, Val AUC=0.9659
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 84: Train Loss=0.0102, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2600, Val Accuracy=91.45%, Val AUC=0.9719
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 85: Train Loss=0.0118, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2696, Val Accuracy=91.45%, Val AUC=0.9703
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 86: Train Loss=0.0083, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2622, Val Accuracy=92.31%, Val AUC=0.9720
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 87: Train Loss=0.0145, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2605, Val Accuracy=92.31%, Val AUC=0.9713
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 88: Train Loss=0.0117, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2558, Val Accuracy=91.45%, Val AUC=0.9727
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 89: Train Loss=0.0117, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2827, Val Accuracy=91.45%, Val AUC=0.9687
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 90: Train Loss=0.0129, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2683, Val Accuracy=91.45%, Val AUC=0.9709
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 91: Train Loss=0.0093, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2633, Val Accuracy=91.45%, Val AUC=0.9718
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 92: Train Loss=0.0107, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2785, Val Accuracy=91.45%, Val AUC=0.9693
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 93: Train Loss=0.0143, Train Accuracy=99.58%, LR=1e-05
+Epoch Validation: Val Loss=0.2777, Val Accuracy=91.45%, Val AUC=0.9699
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 94: Train Loss=0.0109, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2932, Val Accuracy=90.60%, Val AUC=0.9656
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 95: Train Loss=0.0112, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2650, Val Accuracy=91.45%, Val AUC=0.9717
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 96: Train Loss=0.0093, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2750, Val Accuracy=91.45%, Val AUC=0.9703
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 97: Train Loss=0.0100, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2629, Val Accuracy=91.45%, Val AUC=0.9718
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 98: Train Loss=0.0110, Train Accuracy=99.83%, LR=1e-05
+Epoch Validation: Val Loss=0.2619, Val Accuracy=92.31%, Val AUC=0.9714
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 99: Train Loss=0.0129, Train Accuracy=99.75%, LR=1e-05
+Epoch Validation: Val Loss=0.2708, Val Accuracy=91.45%, Val AUC=0.9706
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\train_exp2.py:343: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+Epoch 100: Train Loss=0.0112, Train Accuracy=99.92%, LR=1e-05
+Epoch Validation: Val Loss=0.2690, Val Accuracy=91.45%, Val AUC=0.9708
+
+Using best model from Epoch 10, Best Val AUC=0.9865
+
+========== Final Test Results ==========
+Test Loss: 0.8587
+Accuracy: 0.786600
+Sensitivity: 0.941176
+Specificity: 0.394737
+Precision: 0.797654
+AUC: 0.877839
+Precision_Malignant: 0.797654
+Precision_Weighted: 0.777330
+TP: 272.000000
+TN: 45.000000
+FP: 69.000000
+FN: 17.000000
+N: 403.000000
+========================================
+
+All results saved to:
+D:\OneDrive\Desktop\Breast-cancer-dataset-master\Classification task\results\fusion_exp2_100ep_seed59317_final_multiseed
+COMPLETED: 100 epochs, best checkpoint reloaded, full Test and integrity checks passed.
