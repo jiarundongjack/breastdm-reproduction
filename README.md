@@ -1,10 +1,10 @@
 # BreastDM reproduction / BreastDM复现
 
-**Local candidate `v1.0.0-rc1`; not yet published.** Download and restore the matching
-Release assets before running any experiment: see [DOWNLOADS.md](DOWNLOADS.md).
-Redistribution permissions are still being checked; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-**本地候选版，尚未发布。** 数据和模型保存在配套附件中，先按下载说明恢复目录，再运行实验。
-公开再分发许可仍在核实，详见第三方来源说明。
+**Source/documentation candidate: `v1.0.0-rc2`.** This documentation revision includes the updated third-party notice and file inventory. Code, datasets, model weights and experimental results are unchanged from rc1.
+**源码与文档候选版：`v1.0.0-rc2`。** 本次修订更新许可说明及文件清单，代码、数据、模型权重和实验结果保持不变。
+
+Download the 12 unchanged data/model ZIPs from the [rc1 Release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1), then follow [DOWNLOADS.md](DOWNLOADS.md). The repository is private; access requires authorization. Public redistribution permissions for BreastDM data and adapted code remain unconfirmed; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+数据和模型继续使用rc1的12个附件，无需更名或重复上传。仓库保持私有，访问需获得仓库权限；BreastDM数据及改编代码的公开再分发授权仍待确认。
 
 Prepared datasets, training and analysis code, and experimental results for
 **Reproducibility and Discrepancy Analysis of Classification and Segmentation Benchmarks in BreastDM**.

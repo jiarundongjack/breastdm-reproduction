@@ -1,9 +1,10 @@
 # Release assets / 发布附件
 
-The complete package uses one GitHub repository with two storage locations:
-source, documentation and small results in the repository; data and model weights
-in assets attached to the matching Release. This local candidate has not been published.
-整套材料使用同一个GitHub仓库：源码、说明和小型结果放主页；数据及模型放对应Release的附件。当前候选版尚未发布。
+Source and documentation version: `v1.0.0-rc2`. Data/model asset version: `v1.0.0-rc1`.
+源码与文档版本为rc2，数据及模型附件版本仍为rc1。
+
+The 12 unchanged ZIP assets are hosted in the [rc1 Release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). They are shared by rc1 and rc2; do not rename them. The repository is private, so sign in with an authorized GitHub account to download them.
+12个ZIP附件保存在上述rc1发布页，两个版本共用，无需重复上传或改名。私有仓库须登录有访问权限的GitHub账号后下载。
 
 GitHub's ordinary file limit is 100 MiB (browser uploads: 25 MiB). Release assets must
 each be smaller than 2 GiB. These limits were checked on 2026-10-07:
@@ -14,8 +15,8 @@ each be smaller than 2 GiB. These limits were checked on 2026-10-07:
 ## Restore / 恢复完整目录
 
 1. Download the repository at the chosen version / 下载指定版本的仓库。
-2. Download every ZIP listed in `ASSETS.json` from that same Release into one local folder.
-   下载同一Release中清单列出的全部ZIP附件，放在一个本地文件夹。
+2. Download all 12 ZIPs listed in `ASSETS.json` from the rc1 Release linked above into one local folder.
+   下载上述rc1发布页中清单列出的全部12个ZIP附件，放在一个本地文件夹；同时下载SHA256SUMS.txt供核对。
 3. Run from the repository root / 在仓库根目录执行：
 
 ```powershell

@@ -1,7 +1,7 @@
 {
-  "version": "v1.0.0-rc1",
+  "version": "v1.0.0-rc2",
   "repository": "https://github.com/jiarundongjack/breastdm-reproduction",
-  "status": "LOCAL_CANDIDATE_NOT_PUBLISHED",
+  "status": "SOURCE_CANDIDATE_RC2_ASSETS_IN_PRIVATE_RC1_RELEASE",
   "assets": [
     {
       "name": "breastdm-v1.0.0-rc1-pretrained-01.zip",
@@ -76,5 +76,7 @@
       "files": 2
     }
   ],
-  "extraction": "Extract all archives into the repository root; paths already include data/code/result."
+  "extraction": "Extract all archives into the repository root; paths already include data/code/result.",
+  "asset_version": "v1.0.0-rc1",
+  "asset_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1"
 }

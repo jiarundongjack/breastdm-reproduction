@@ -1,4 +1,6 @@
-v1.0.0-rc1
-Local candidate / 本地候选版本
+v1.0.0-rc2
+Source/documentation candidate / 源码与文档候选版
 Prepared: 2026-10-07
-Not a published GitHub tag or commit / 不表示已发布GitHub标签或提交
+Data/model assets: v1.0.0-rc1 (unchanged)
+Exact source revision is identified by the GitHub tag once created.
+创建对应GitHub标签后，以该标签确定源码版本。
