@@ -1,0 +1,5 @@
+# Optional dependencies for segmentation_2d/ppv_reference only.
+# Verified in an isolated dependency directory; formal environments were not modified.
+opencv-python-headless==5.0.0.93
+progressbar2==4.6.0
+python-utils==4.1.0

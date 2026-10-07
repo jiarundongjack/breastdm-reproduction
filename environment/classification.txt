@@ -1,0 +1,15 @@
+# Versions observed in the local reproduction environment; not a historical lock for every dependency.
+--extra-index-url https://download.pytorch.org/whl/cu130
+einops==0.8.2
+lambda-networks==0.4.0
+matplotlib==3.11.0
+munch==4.0.0
+numpy==2.4.3
+pandas==3.0.3
+pillow==12.1.1
+pretrainedmodels==0.7.4
+scikit-learn==1.9.0
+scipy==1.17.1
+torch==2.10.0+cu130
+torchvision==0.25.0+cu130
+tqdm==4.68.4

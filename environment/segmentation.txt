@@ -1,0 +1,13 @@
+# Versions observed in the local reproduction environment; not a historical lock for every dependency.
+--extra-index-url https://download.pytorch.org/whl/cu128
+matplotlib==3.11.1
+munch==4.0.0
+numpy==2.4.6
+pandas==3.0.6
+pillow==12.3.0
+pretrainedmodels==0.7.4
+scikit-learn==1.9.1
+scipy==1.17.1
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+tqdm==4.70.1
