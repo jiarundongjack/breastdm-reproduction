@@ -1,5 +1,9 @@
 # BreastDM reproduction / BreastDM复现
 
+> **Dataset download:** Prepared samples are available in the [Release assets](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). The `data/` folder contains download and restoration instructions only.
+>
+> **样本下载:** 预处理样本已上传至 [Release 附件](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)，`data/` 文件夹仅提供下载与恢复说明。
+
 **Source/documentation candidate: `v1.0.0-rc2`.** This documentation revision includes the updated third-party notice and file inventory. Code, datasets, model weights and experimental results are unchanged from rc1.
 **源码与文档候选版：`v1.0.0-rc2`。** 本次修订更新许可说明及文件清单，代码、数据、模型权重和实验结果保持不变。
 
@@ -95,10 +99,10 @@ python code/run.py classification/fig10_11_case_source
 python code/run.py classification/fig10_11_gradcam
 ```
 
-Exp-2 ROC uses both probability columns and flattened one-hot labels, matching Table 5:
+Exp-2 ROC uses both probability columns and flattened one-hot labels, matching the original paper:
 **0.8735928017 ± 0.0218863413**, sample SD (`ddof=1`). The obsolete single-column ROC is not included
 as the final Exp-2 figure in `paper_outputs`.
-实验二ROC使用双列概率与展开的独热标签，和表5一致；标准差采用样本标准差，旧单列ROC不作为最终图片收录。
+实验二ROC使用双列概率与展开的独热标签，和论文一致；标准差采用样本标准差，旧单列ROC不作为最终图片收录。
 
 Segmentation environment / 分割环境：
 
