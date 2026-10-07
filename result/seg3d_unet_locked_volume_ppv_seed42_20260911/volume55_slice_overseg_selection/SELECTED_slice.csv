@@ -1,0 +1,2 @@
+SliceRank,slice,GTArea,PredArea,TP,FP,FN,GT_Coverage,PPV,Pred_GT,ExtraArea,Eligible
+1,2,87,413,87,326,0,1.0,0.2106537530266344,4.747126436781609,326,True

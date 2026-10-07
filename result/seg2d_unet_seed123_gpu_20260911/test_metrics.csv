@@ -1,0 +1,2 @@
+best_epoch,test_dice,test_miou,test_ppv,PPV_global,PPV_author_separate_evaluator,author_ppv_included_images,author_ppv_excluded_images,author_ppv_tp_zero_images,author_ppv_tn_zero_images
+72,0.79978346824646,0.8456250429153442,0.8221015334129333,0.8221015334129333,0.8524412702333823,6517,334,334,0

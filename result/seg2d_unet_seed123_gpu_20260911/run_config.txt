@@ -1,0 +1,27 @@
+PowerShell invocation (reconstructed): & 'D:\OneDrive\Desktop\Breast-cancer-dataset-master\breastdm_gpu_env\Scripts\python.exe' 'D:\OneDrive\Desktop\Breast-cancer-dataset-master\Segmentation task\unet\train.py' '--data-root' 'D:\OneDrive\Desktop\BreaDM\seg2D_clean_v2' '--output-dir' 'D:\OneDrive\Desktop\Breast-cancer-dataset-master\Segmentation task\unet\results\seg2d_unet_seed123_gpu_20260911' '--seed' '123' '--epochs' '100' '--batch-size' '16' '--lr' '0.01' '--device' 'cuda' '--num-workers' '8' '--input-size' '224' '--lr-patience' '10' '--lr-factor' '0.1'
+CLI argv: [".\\train.py", "--data-root", "D:\\OneDrive\\Desktop\\BreaDM\\seg2D_clean_v2", "--output-dir", "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Segmentation task\\unet\\results\\seg2d_unet_seed123_gpu_20260911", "--seed", "123", "--epochs", "100", "--batch-size", "16", "--lr", "0.01", "--device", "cuda", "--num-workers", "8", "--input-size", "224", "--lr-patience", "10", "--lr-factor", "0.1"]
+Working directory: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Segmentation task\unet
+Parsed arguments: {"data_path": "D:\\OneDrive\\Desktop\\BreaDM\\seg2D_clean_v2", "output_dir": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\Segmentation task\\unet\\results\\seg2d_unet_seed123_gpu_20260911", "seed": 123, "num_workers": 8, "input_size": 224, "lr_patience": 10, "lr_factor": 0.1, "num_classes": 1, "aux": true, "device": "cuda", "batch_size": 16, "epochs": 100, "lr": 0.01, "momentum": 0.9, "weight_decay": 0.0001, "print_freq": 1, "resume": "", "start_epoch": 0, "save_best": true, "amp": false}
+Data root: D:\OneDrive\Desktop\BreaDM\seg2D_clean_v2
+Train split: D:\OneDrive\Desktop\BreaDM\seg2D_clean_v2\train
+Validation split: D:\OneDrive\Desktop\BreaDM\seg2D_clean_v2\val
+Test split: D:\OneDrive\Desktop\BreaDM\seg2D_clean_v2\test
+Output directory: D:\OneDrive\Desktop\Breast-cancer-dataset-master\Segmentation task\unet\results\seg2d_unet_seed123_gpu_20260911
+Seed: 123
+Epochs: 100
+Batch size: 16
+Initial LR: 0.01
+Optimizer: Adam
+LR patience: 10
+LR factor: 0.1
+Input size: 1x224x224
+Num workers: 8
+Requested device: cuda
+CUDA available: True
+Actual device: cuda
+GPU name: NVIDIA RTX PRO 3000 Blackwell Generation Laptop GPU
+Best checkpoint criterion: Validation DSC strictly increases; ties keep best; no secondary metric; Test excluded
+Scheduler: ReduceLROnPlateau(training mean loss)
+PyTorch scheduler patience: 9
+LR threshold: 0.0
+Preprocessing: 0.1%-99.9% clipping + z-score

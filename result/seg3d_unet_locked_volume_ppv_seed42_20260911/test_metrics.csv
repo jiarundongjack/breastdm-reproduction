@@ -1,0 +1,2 @@
+best_epoch,test_dice,test_miou,test_ppv,PPV,PPV_volume_mean,PPV_global_aux,ppv_num_volumes,ppv_zero_prediction_volumes
+87,0.6303889788999929,0.7350900173187256,0.604198665930658,0.604198665930658,0.604198665930658,0.5324483513832092,141,5
