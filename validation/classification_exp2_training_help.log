@@ -1,0 +1,28 @@
+usage: train_exp2.py [-h] [--batch-size BATCH_SIZE] [--model MODEL]
+                     [--gpu GPU] [--num_class NUM_CLASS]
+                     [--random_seed RANDOM_SEED]
+                     [--split_train_ratio SPLIT_TRAIN_RATIO]
+                     [--task_name TASK_NAME] [--path PATH]
+                     [--auto_split AUTO_SPLIT] --output-dir OUTPUT_DIR
+                     [--preflight-only]
+
+options:
+  -h, --help            show this help message and exit
+  --batch-size BATCH_SIZE
+                        batch size
+  --model MODEL         coco.data file path
+  --gpu GPU             coco.data file path
+  --num_class NUM_CLASS
+                        coco.data file path
+  --random_seed RANDOM_SEED
+                        random seed
+  --split_train_ratio SPLIT_TRAIN_RATIO
+                        coco.data file path
+  --task_name TASK_NAME
+                        coco.data file path
+  --path PATH           BreastDM Exp-2 17-channel dataset path
+  --auto_split AUTO_SPLIT
+                        coco.data file path
+  --output-dir OUTPUT_DIR
+                        Isolated final multi-seed output directory
+  --preflight-only      Non-training checks; temporary evidence only

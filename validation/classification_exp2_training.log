@@ -1,0 +1,126 @@
+Training device: cuda
+train dataset loaded: 1202 npy files, augment=True
+val dataset loaded: 117 npy files, augment=False
+test dataset loaded: 403 npy files, augment=False
+Dataset root: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\restored_release_test\data\classification_exp2\img17Se
+Class mapping: {'Benign': 0, 'Malignant': 1}
+Train: 1202 B/M: [327, 875]
+Val: 117 B/M: [24, 93]
+Test: 403 B/M: [114, 289]
+Class weights: [1.8379205465316772, 0.6868571639060974]
+Sequence check: eligible
+{
+  "protocol": {
+    "model": "fusion",
+    "num_classes": 2,
+    "dataset_root": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\training_code_audit\\restored_release_test\\data\\classification_exp2\\img17Se",
+    "counts": {
+      "train": {
+        "samples": 1202,
+        "patients": 166
+      },
+      "val": {
+        "samples": 117,
+        "patients": 19
+      },
+      "test": {
+        "samples": 403,
+        "patients": 47
+      }
+    },
+    "class_counts": {
+      "train": {
+        "Benign": 327,
+        "Malignant": 875
+      },
+      "val": {
+        "Benign": 24,
+        "Malignant": 93
+      },
+      "test": {
+        "Benign": 114,
+        "Malignant": 289
+      }
+    },
+    "auto_split": 0,
+    "batch_size": 32,
+    "epochs": 100,
+    "optimizer": "SGD",
+    "initial_lr": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.01,
+    "sgd_foreach": false,
+    "mixed_precision_train": true,
+    "train_autocast": "torch.cuda.amp.autocast(); default dtype=float16",
+    "grad_scaler": "torch.cuda.amp.GradScaler(); scale/backward/step/update",
+    "grad_scaler_settings": {
+      "init_scale": 65536.0,
+      "growth_factor": 2.0,
+      "backoff_factor": 0.5,
+      "growth_interval": 2000,
+      "enabled": true
+    },
+    "validation_autocast": false,
+    "test_autocast": false,
+    "class_weights_used": false,
+    "input_dtype": "uint8",
+    "channel_semantics": "cannot be independently verified",
+    "patient_overlap": 0,
+    "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+    "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+    "input_channels": 17,
+    "input_size": [
+      96,
+      96
+    ],
+    "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+    "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+    "train_shuffle": true,
+    "eval_shuffle": false,
+    "num_workers": 0,
+    "drop_last": false,
+    "freeze": false,
+    "pretrained_weights": {
+      "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\training_code_audit\\restored_release_test\\code\\pretrained\\jx_vit_base_patch16_224_in21k-e5005f0a.pth": "e5005f0a7a836470c1dbd39d848eabf0a5b1d8f9a066aa46e6ff00261db44cb5",
+      "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\training_code_audit\\restored_release_test\\code\\pretrained\\se_resnet50-ce0d4300.pth": "ce0d430017d3f4aa6b5658c72209f3bfffb060207fd26a2ef0b203ce592eba01"
+    },
+    "pretrained_adaptation": "CNN and ViT w.repeat(1,6,1,1)[:, :17] * (3.0/17.0); ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+    "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+    "validation_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+    "test_auc": "author-released-code-compatible AUC: full-set two-class softmax and one-hot labels flattened -> roc_curve -> auc",
+    "hard_decision": "torch.argmax(logits, dim=1)",
+    "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+    "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)",
+    "gpu_argument": "0",
+    "environment": {
+      "python_executable": "D:\\OneDrive\\Desktop\\Breast-cancer-dataset-master\\training_code_audit\\clean_classification_env\\Scripts\\python.exe",
+      "python_version": "3.11.5",
+      "pytorch_version": "2.10.0+cu130",
+      "cuda_version": "13.0",
+      "gpu_name": "NVIDIA RTX PRO 3000 Blackwell Generation Laptop GPU",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "packages": {
+        "torchvision": "0.25.0+cu130",
+        "numpy": "2.4.3",
+        "scikit-learn": "1.9.0",
+        "pretrainedmodels": "0.7.4",
+        "pandas": "3.0.3"
+      },
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": false,
+      "deterministic_algorithms": false
+    }
+  },
+  "code_sha256": {
+    "release_paths.py": "a4d13390e966bfb82980d21b7fb8a85bc7197f0fd0e841c4d4d9a8cb5cdb1067",
+    "train_exp2.py": "a7aa63f56116a3e1d9e962b389d9310c867e4615bb1adbb8dd9d4a23259461f6",
+    "classification_auc.py": "2395b836ce642033c2c33532c69871204ec03ce9272d523d5bdc590429f62539",
+    "data_loader_exp2.py": "abb6d55d856b993039432d8f4551dbd2a561a2ffa5a848f09e61fe3c1d2fc457",
+    "fusionModels_exp2.py": "f6194d8a4f97467a6d14f4b7578feef5dd00036994554831e41c66c7df278d37",
+    "VIT_model.py": "054cf67be6bf296e233d42d9729c9e7c703e9a1b66da44b0fb81ffdd8bd55d08",
+    "exp2_provenance.py": "9679634d62c5371060439c7da919cf66c90f65f2e35b0355ea2992069d668e53",
+    "summarize_exp2_final_multiseed.py": "6dcfce0d824e43ddb7267bef26cecaa48aec0712cbe7829d607e0c0985862368"
+  },
+  "dataset_manifest_sha256": "e1d61c54469073f5024e2ad2ce857de0a287e4279c5af9a0d81fa532ca10d960"
+}
+PREFLIGHT PASSED: temporary evidence only; no model, training, inference or formal run directory created.

@@ -1,0 +1,86 @@
+{
+  "epochs_complete": true,
+  "best_epoch": 87,
+  "best_checkpoint_raw_epoch": 86,
+  "last_checkpoint_raw_epoch": 99,
+  "best_validation_DSC": 0.5764879565276356,
+  "tied_max_epochs": [
+    87
+  ],
+  "formal_test": {
+    "best_epoch": "87",
+    "test_dice": "0.6303889788999929",
+    "test_miou": "0.7350900173187256",
+    "test_ppv": "0.604198665930658",
+    "PPV": "0.604198665930658",
+    "PPV_volume_mean": "0.604198665930658",
+    "ppv_num_volumes": "141",
+    "ppv_zero_prediction_volumes": "5"
+  },
+  "recomputations": [
+    {
+      "Metric": "CSV DSC mean (no epsilon)",
+      "Recomputed": 0.6303889769400477,
+      "Official": 0.6303889788999929,
+      "Absolute_difference": 1.9599452061314082e-09
+    },
+    {
+      "Metric": "Reconstructed DSC (epsilon/float32)",
+      "Recomputed": 0.6303889788999929,
+      "Official": 0.6303889788999929,
+      "Absolute_difference": 0.0
+    },
+    {
+      "Metric": "PPV_volume_mean",
+      "Recomputed": 0.604198665930658,
+      "Official": 0.604198665930658,
+      "Absolute_difference": 0.0
+    },
+    {
+      "Metric": "mIoU float32",
+      "Recomputed": 0.7350900173187256,
+      "Official": 0.7350900173187256,
+      "Absolute_difference": 0.0
+    }
+  ],
+  "confusion_matrix": [
+    [
+      56403168,
+      80972
+    ],
+    [
+      22177,
+      92211
+    ]
+  ],
+  "class_IoUs": [
+    0.9981744885444641,
+    0.4720055162906647
+  ],
+  "lr_reduction_epochs": [],
+  "final_lr": 0.001,
+  "nan_inf_in_saved_metrics": false,
+  "paper_comparison": [
+    {
+      "Metric": "DSC",
+      "Paper_percent": 66.5,
+      "Reproduction_percent": 63.03889788999929,
+      "Difference_pp": -3.4611021100007093
+    },
+    {
+      "Metric": "mIoU",
+      "Paper_percent": 75.1,
+      "Reproduction_percent": 73.50900173187256,
+      "Difference_pp": -1.5909982681274357
+    },
+    {
+      "Metric": "PPV",
+      "Paper_percent": 83.3,
+      "Reproduction_percent": 60.4198665930658,
+      "Difference_pp": -22.8801334069342
+    }
+  ],
+  "checkpoint_optimizer_weight_decay": 0,
+  "formal_files": 50,
+  "evidence_chain": "一致"
+}

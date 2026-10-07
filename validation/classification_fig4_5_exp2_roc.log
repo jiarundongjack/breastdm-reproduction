@@ -1,0 +1,14 @@
+Done.
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_mean_roc.png
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_auc_summary.csv
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_confusion_per_seed.csv
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_mean_confusion_matrix.csv
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_mean_confusion_matrix.png
+Saved: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\clean_release_outputs\exp2_roc\exp2_mean_outputs_report.txt
+
+Mean AUC = 0.873593 ± 0.021886
+
+Mean confusion matrix:
+                Predicted Benign  Predicted Malignant
+True Benign            46.666667            67.333333
+True Malignant         17.666667           271.333333

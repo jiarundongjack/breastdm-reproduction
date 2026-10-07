@@ -1,0 +1,38 @@
+usage: train3d.py [-h] --data-root DATA_PATH --output-dir OUTPUT_DIR --seed
+                  SEED --num-workers NUM_WORKERS --input-size INPUT_SIZE
+                  --depth DEPTH --lr-patience LR_PATIENCE --lr-factor
+                  LR_FACTOR [--num-classes NUM_CLASSES] [--aux AUX] --device
+                  {cuda,cpu} -b BATCH_SIZE --epochs N --lr LR [--momentum M]
+                  [--wd W] [--print-freq PRINT_FREQ] [--resume RESUME]
+                  [--start-epoch N] [--save-best SAVE_BEST] [--amp AMP]
+
+pytorch unet training
+
+options:
+  -h, --help            show this help message and exit
+  --data-root DATA_PATH, --data-path DATA_PATH
+  --output-dir OUTPUT_DIR
+  --seed SEED
+  --num-workers NUM_WORKERS
+  --input-size INPUT_SIZE
+  --depth DEPTH
+  --lr-patience LR_PATIENCE
+                        consecutive non-improving training-loss epochs before
+                        reducing LR
+  --lr-factor LR_FACTOR
+  --num-classes NUM_CLASSES
+  --aux AUX             auxilier loss
+  --device {cuda,cpu}
+  -b BATCH_SIZE, --batch-size BATCH_SIZE
+  --epochs N            number of total epochs to train
+  --lr LR               initial learning rate
+  --momentum M          momentum
+  --wd W, --weight-decay W
+                        weight decay (default: 1e-4)
+  --print-freq PRINT_FREQ
+                        print frequency
+  --resume RESUME       resume from checkpoint
+  --start-epoch N       start epoch
+  --save-best SAVE_BEST
+                        only save best dice weights
+  --amp AMP             Use torch.cuda.amp for mixed precision training

@@ -1,0 +1,82 @@
+[
+  {
+    "check": "classification_pip_check",
+    "returncode": 0,
+    "seconds": 1.8
+  },
+  {
+    "check": "classification_imports",
+    "returncode": 0,
+    "seconds": 24.62
+  },
+  {
+    "check": "segmentation_pip_check",
+    "returncode": 0,
+    "seconds": 1.23
+  },
+  {
+    "check": "segmentation_imports",
+    "returncode": 0,
+    "seconds": 17.78
+  },
+  {
+    "check": "classification_exp1_training_help",
+    "returncode": 0,
+    "seconds": 17.31
+  },
+  {
+    "check": "classification_exp2_training_help",
+    "returncode": 0,
+    "seconds": 16.89
+  },
+  {
+    "check": "segmentation_2d_table6_fig6_7_training_help",
+    "returncode": 0,
+    "seconds": 20.88
+  },
+  {
+    "check": "segmentation_3d_table7_fig8_9_12_training_help",
+    "returncode": 0,
+    "seconds": 5.67
+  },
+  {
+    "check": "classification_exp1_training",
+    "returncode": 0,
+    "seconds": 18.66
+  },
+  {
+    "check": "classification_exp2_training",
+    "returncode": 0,
+    "seconds": 12.22
+  },
+  {
+    "check": "classification_table4_exp1_summary",
+    "returncode": 0,
+    "seconds": 7.38
+  },
+  {
+    "check": "classification_table5_exp2_summary",
+    "returncode": 0,
+    "seconds": 7.81
+  },
+  {
+    "check": "classification_fig2_3_exp1_roc",
+    "returncode": 0,
+    "seconds": 3.66
+  },
+  {
+    "check": "classification_fig4_5_exp2_roc",
+    "returncode": 0,
+    "seconds": 3.89
+  },
+  {
+    "check": "segmentation_3d_protocol_checks",
+    "returncode": 0,
+    "seconds": 7.56
+  },
+  {
+    "check": "segmentation_3d_table7_result_audit",
+    "returncode": 0,
+    "seconds": 5.45
+  }
+]

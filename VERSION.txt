@@ -1,0 +1,4 @@
+v1.0.0-rc1
+Local candidate / 本地候选版本
+Prepared: 2026-10-07
+Not a published GitHub tag or commit / 不表示已发布GitHub标签或提交

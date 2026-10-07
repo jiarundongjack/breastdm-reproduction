@@ -1,0 +1,11 @@
+Training device: cuda
+train dataset loaded: 1202 npy files, augment=True
+val dataset loaded: 117 npy files, augment=False
+test dataset loaded: 403 npy files, augment=False
+Dataset root: D:\OneDrive\Desktop\Breast-cancer-dataset-master\training_code_audit\restored_release_test\data\classification_exp1\processed_dataset
+Class mapping: {'Benign': 0, 'Malignant': 1}
+Train: 1202 B/M: [327, 875]
+Val: 117 B/M: [24, 93]
+Test: 403 B/M: [114, 289]
+Class weights: [1.8379205465316772, 0.6868571639060974]
+PREFLIGHT PASSED: temporary evidence only; no model, training, inference or formal run directory created.
