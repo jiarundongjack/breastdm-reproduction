@@ -1,0 +1,16 @@
+Experiment: Exp-2
+Seed: 59317
+Index: 96
+True label: 0 (Benign)
+Predicted label: 1 (Malignant)
+Benign probability: 0.0000022230
+Malignant probability: 0.9999977350
+CSV malignant probability: 0.9999977350
+Display channel: 8
+Input shape: (1, 17, 96, 96)
+Fused feature shape: (1024, 12, 12)
+Grad-CAM target: malignant logit
+Grad-CAM feature: fused spatial feature map immediately before adaptive global average pooling.
+Checkpoint: D:\OneDrive\Desktop\BreaDM\result\fusion_exp2_100ep_seed59317_final_multiseed\best_fusion_model.pth
+Model source: D:\OneDrive\Desktop\BreaDM\result\fusion_exp2_100ep_seed59317_final_multiseed\code_snapshot\fusionModels_exp2.py
+Dataset source: D:\OneDrive\Desktop\BreaDM\result\fusion_exp2_100ep_seed59317_final_multiseed\code_snapshot\data_loader_exp2.py

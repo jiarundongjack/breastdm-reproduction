@@ -1,0 +1,7 @@
+Mean AUC = 0.873593 ± 0.021886
+
+Mean confusion matrix:
+TN = 46.6667
+FP = 67.3333
+FN = 17.6667
+TP = 271.3333

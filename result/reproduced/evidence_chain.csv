@@ -1,0 +1,6 @@
+﻿Evidence_source,Best_Epoch,Best_Val_DSC,Test_DSC,Test_mIoU,Test_PPV,Status
+history,87,0.5764879565276356,N/A,N/A,N/A,一致
+training log,87,0.5765,N/A,N/A,N/A,一致（DSC日志四位小数）
+best checkpoint,87,0.5764879565276356,N/A,N/A,N/A,一致
+test_metrics.csv,87,N/A,0.6303889788999929,0.7350900173187256,0.604198665930658,一致
+test_predictions.csv (derived),N/A,N/A,0.6303889769400477,0.7350900173187256,0.604198665930658,一致（DSC epsilon/浮点差异；mIoU结合保存配置推导）

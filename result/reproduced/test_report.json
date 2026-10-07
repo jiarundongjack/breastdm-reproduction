@@ -1,0 +1,32 @@
+{
+  "synthetic_batch_invariance": true,
+  "all_volume_PPVs_included": true,
+  "missing_class_NaN_retained": true,
+  "depth_cases_5_8_11_pass": true,
+  "scheduler_reduces_on_bad_epoch_10": true,
+  "formal_CSV_writer_pass": true,
+  "synthetic_DSC": 0.589285996216546,
+  "synthetic_PPV": {
+    "PPV": 0.3125,
+    "PPV_volume_mean": 0.3125,
+    "ppv_num_volumes": 4,
+    "ppv_zero_prediction_volumes": 2
+  },
+  "dataset": {
+    "train": {
+      "volumes": 498,
+      "patients": 166
+    },
+    "val": {
+      "volumes": 57,
+      "patients": 19
+    },
+    "test": {
+      "volumes": 141,
+      "patients": 47
+    }
+  },
+  "patient_overlap": false,
+  "training": false,
+  "full_inference": false
+}

@@ -1,0 +1,20 @@
+Exp-1 Mean ROC and Mean Confusion Matrix Summary
+============================================================
+
+AUC per seed:
+Seed 16180: AUC = 0.900634
+Seed 27182: AUC = 0.882282
+Seed 31415: AUC = 0.887266
+
+Mean AUC = 0.890060
+SD AUC   = 0.009490
+
+Confusion matrix per seed (rows=True, cols=Pred):
+Seed 16180: TN=65, FP=49, FN=29, TP=260
+Seed 27182: TN=57, FP=57, FN=32, TP=257
+Seed 31415: TN=82, FP=32, FN=53, TP=236
+
+Mean confusion matrix:
+                Predicted Benign  Predicted Malignant
+True Benign                 68.0                 46.0
+True Malignant              38.0                251.0

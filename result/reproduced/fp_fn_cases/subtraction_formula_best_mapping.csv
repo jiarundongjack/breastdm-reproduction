@@ -1,0 +1,9 @@
+Exp2 New Channel,Formula,Pre Channel,Post Channel,Exact Files,Total Files,File Match Rate,Pixel Match Rate,Max Abs Difference
+0,post-pre_clipped,0,6,0,403,0.0,0.03503811163019425,255
+1,post-pre_clipped,0,8,0,403,0.0,0.019072969619341153,255
+2,post-pre_clipped,1,7,0,403,0.0,0.012648601048713124,255
+3,post-pre_clipped,0,8,0,403,0.0,0.014063849131695267,255
+4,post-pre_clipped,0,8,0,403,0.0,0.010610071991811574,255
+5,post-pre_clipped,1,6,0,403,0.0,0.010152618065999165,255
+6,post-pre_clipped,2,7,0,403,0.0,0.009206260256974743,255
+7,post-pre_clipped,2,8,0,403,0.0,0.006916131540876367,255

@@ -1,0 +1,11 @@
+Displayed confusion-matrix entries are rounded to the nearest integers from the element-wise arithmetic mean across the three independent runs.
+
+Exact mean confusion matrix:
+                Predicted Benign  Predicted Malignant
+True Benign            46.666667            67.333333
+True Malignant         17.666667           271.333333
+
+Displayed integer confusion matrix:
+                Predicted Benign  Predicted Malignant
+True Benign                   47                   67
+True Malignant                18                  271
