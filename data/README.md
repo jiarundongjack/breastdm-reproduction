@@ -1,28 +1,13 @@
-# Dataset download / 样本下载
+# Dataset access / 数据获取
 
-The prepared datasets have already been uploaded to this repository's Release assets. This folder contains instructions only.
+Please obtain the BreastDM data through the download links provided in the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset), following the original providers' access and use requirements.
 
-预处理样本已经上传至本仓库的 Release 附件，此文件夹目前仅存放说明。
+请通过[原作者仓库](https://github.com/smallboy-code/Breast-cancer-dataset)提供的下载链接获取 BreastDM 数据，并遵守原提供方的访问和使用要求。
 
-[Download datasets from Release v1.0.0-rc1 / 点击下载样本](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)
+This folder contains instructions only. The experiments use task-specific prepared inputs; files downloaded from the original resources require preparation to match the local directory structure described in the main README.
 
-Download the 9 ZIP files whose names contain `data-classification` or `data-segmentation`.
+本文件夹仅存放说明。实验使用按任务整理的输入数据；从原始资源下载的文件需要经过整理，以符合首页 README 中描述的本地目录结构。
 
-请下载文件名包含 data-classification 或 data-segmentation 的 9 个 ZIP 压缩包。
+See [DOWNLOADS.md](../DOWNLOADS.md) for resource access instructions and [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for sources and redistribution notes.
 
-Follow [DOWNLOADS.md](../DOWNLOADS.md) to restore the samples into the local `data/` directory.
-
-按照 [DOWNLOADS.md](../DOWNLOADS.md) 的说明，将样本恢复到本地 data/ 目录。
-
-
-
-
-# Downloaded release assets / 发布附件
-
-The actual files are packaged in release assets listed in ASSETS.json.
-
-实际文件存放在 ASSETS.json 列出的发布附件中，下载后运行根目录的 restore_assets.py 。
-
-The assets have been uploaded to the private repository. Permission for public redistribution of BreastDM data and adapted code is still pending.
-
-附件已上传至私有仓库，BreastDM数据及改编代码的公开再分发授权仍待确认。
+资源获取说明见 [DOWNLOADS.md](../DOWNLOADS.md)，来源与再分发说明见 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)。
