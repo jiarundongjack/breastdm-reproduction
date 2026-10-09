@@ -1,41 +1,35 @@
-# Release assets / 发布附件
+# Resource access / 资源获取
 
-Source and documentation version: `v1.0.0-rc2`. Data/model asset version: `v1.0.0-rc1`.
-源码与文档版本为rc2，数据及模型附件版本仍为rc1。
+## Original code and data / 原始代码与数据
 
-The 12 unchanged ZIP assets are hosted in the [rc1 Release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). They are shared by rc1 and rc2; do not rename them. The repository is private, so sign in with an authorized GitHub account to download them.
-12个ZIP附件保存在上述rc1发布页，两个版本共用，无需重复上传或改名。私有仓库须登录有访问权限的GitHub账号后下载。
+The original BreastDM code and data access information are provided in the authors' repository:
 
-GitHub's ordinary file limit is 100 MiB (browser uploads: 25 MiB). Release assets must
-each be smaller than 2 GiB. These limits were checked on 2026-10-07:
-[file limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github),
-[Release limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
-普通Git文件和Release附件的限制不同；本包采用Release附件承载大文件。
+[Original BreastDM repository](https://github.com/smallboy-code/Breast-cancer-dataset)
 
-## Restore / 恢复完整目录
+BreastDM 原始代码及数据获取信息由原作者仓库提供，请访问上述链接。
 
-1. Download the repository at the chosen version / 下载指定版本的仓库。
-2. Download all 12 ZIPs listed in `ASSETS.json` from the rc1 Release linked above into one local folder.
-   下载上述rc1发布页中清单列出的全部12个ZIP附件，放在一个本地文件夹；同时下载SHA256SUMS.txt供核对。
-3. Run from the repository root / 在仓库根目录执行：
+Please obtain the data through the Google Drive links in the original repository's README. Follow the original providers' access and use requirements. If a link is unavailable or access is restricted, contact the original providers.
 
-```powershell
-python restore_assets.py --asset-dir "D:/downloaded_breastdm_assets"
-```
+请通过原作者仓库 README 中提供的 Google Drive 链接获取数据，并遵守原提供方的访问和使用要求。如链接失效或访问受限，请联系原提供方。
 
-On macOS/Linux, replace the example path with your downloaded-assets directory.
-其他系统使用对应下载目录路径。
-The script checks SHA-256 and each extracted file, and refuses to overwrite differing files.
-脚本检查压缩包及解压文件的SHA-256，拒绝覆盖内容不同的已有文件。
-All archive paths already include `data/`, `code/pretrained/`, or `result/`.
-Do not create an extra dataset-directory layer when extracting manually.
-压缩包内部已包含上述目录，手动解压时不要再套一层文件夹。
+## Reproduction environment and instructions / 复现环境与说明
 
-To verify without extracting / 只校验不解压：
+Environment specifications are provided in [environment/](environment/). Reproduction commands and task descriptions are provided in [README.md](README.md).
 
-```powershell
-python restore_assets.py --asset-dir "D:/downloaded_breastdm_assets" --verify-only
-```
+环境配置见 [environment/](environment/)，复现命令与任务说明见 [README.md](README.md)。
 
-See `README.md` for environment and execution instructions after restoration.
-恢复完成后，按`README.md`安装环境并运行。
+The experiments use task-specific prepared inputs. Files downloaded from the original source should not be assumed to match the prepared directory structure automatically.
+
+本研究的实验使用按任务整理的输入数据。从原始入口下载的文件不一定直接对应本研究使用的预处理目录结构。
+
+## Archive restoration / 归档恢复
+
+`restore_assets.py` is a restoration utility for the reproduction-specific ZIP archives listed in `ASSETS.json`. It does not download or prepare the original BreastDM data and should not be run on the original authors' downloaded archives.
+
+`restore_assets.py` 用于恢复 `ASSETS.json` 中列出的本复现专用 ZIP 归档。它不负责下载或预处理原始 BreastDM 数据，不应直接用于原作者提供的下载包。
+
+## Sources and redistribution / 来源与再分发
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for original sources and redistribution notes.
+
+原始来源及再分发说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
