@@ -1,23 +1,32 @@
 # BreastDM reproduction / BreastDM复现
 
-> **Dataset download:** Prepared samples are available in the [Release assets](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). The `data/` folder contains download and restoration instructions only.
->
-> **样本下载:** 预处理样本已上传至 [Release 附件](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)，`data/` 文件夹仅提供下载与恢复说明。
+Reproduction and analysis materials for **Reproducibility and Discrepancy Analysis of Classification and Segmentation Benchmarks in BreastDM**.
 
-**Source/documentation candidate: `v1.0.0-rc2`.** This documentation revision includes the updated third-party notice and file inventory. Code, datasets, model weights and experimental results are unchanged from rc1.
-**源码与文档候选版：`v1.0.0-rc2`。** 本次修订更新许可说明及文件清单，代码、数据、模型权重和实验结果保持不变。
+本仓库用于整理上述论文的复现与分析材料。
 
-Download the 12 unchanged data/model ZIPs from the [rc1 Release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1), then follow [DOWNLOADS.md](DOWNLOADS.md). The repository is private; access requires authorization. Public redistribution permissions for BreastDM data and adapted code remain unconfirmed; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-数据和模型继续使用rc1的12个附件，无需更名或重复上传。仓库保持私有，访问需获得仓库权限；BreastDM数据及改编代码的公开再分发授权仍待确认。
+## Original resources / 原始资源
 
-Prepared datasets, training and analysis code, and experimental results for
-**Reproducibility and Discrepancy Analysis of Classification and Segmentation Benchmarks in BreastDM**.
+The original BreastDM code and data access information are available from the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset). Please obtain the data through the download links provided there and follow the original providers' access and use requirements.
 
-本目录提供该论文的预处理数据、训练与分析代码，以及八次正式实验结果。
-The reproduction starts from the supplied prepared datasets, not raw DICOM conversion.
-复现起点是已提供的预处理数据，不包含从原始DICOM重新构建样本的流程。
+BreastDM 原始代码与数据获取信息见[原作者仓库](https://github.com/smallboy-code/Breast-cancer-dataset)。请通过其中提供的下载链接获取数据，并遵守原提供方的访问和使用要求。
+
+Redistribution terms for the BreastDM data and adapted code have not been clearly established. Our distribution approach is to direct users to the original resources and provide our own preparation and analysis scripts, environment specifications, and execution instructions.
+
+BreastDM 数据与改编代码的再分发条款尚未明确。本项目采用提供原始资源入口，以及我们自己的准备与分析脚本、环境配置和运行说明的发布方式。
+
+See [DOWNLOADS.md](DOWNLOADS.md) for resource access instructions and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for sources and redistribution notes.
+
+资源获取说明见 [DOWNLOADS.md](DOWNLOADS.md)，来源与再分发说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+The reported experiments used task-specific prepared datasets. Files obtained from the original resources require preparation before they can be used with the experiment commands below.
+
+论文中的实验使用按任务整理的预处理数据。从原始资源获取的文件需要经过整理，才能用于下述实验命令。
 
 ## Contents / 目录
+
+The paths below describe the local directory structure used by the experiments. A listed path does not imply that its data or model files are included in this repository.
+
+下表列出实验使用的本地目录结构。列出某一路径不代表本仓库包含该路径下的数据或模型文件。
 
 | Path / 路径 | Purpose / 用途 |
 |---|---|
