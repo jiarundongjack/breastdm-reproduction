@@ -1,19 +1,30 @@
-# Third-party sources and licensing / 第三方来源与许可说明
+# Original resources and redistribution notes / 原始资源与再分发说明
 
-Evidence reviewed on 2026-10-07. This document records source information; it does not grant rights on behalf of third parties.
-本说明记录2026-10-07核查到的来源信息，不替第三方授予许可。
+This document identifies the original sources of third-party materials and explains the distribution approach used for this reproduction.
+本说明列明第三方材料的原始来源，并说明本复现项目采用的发布方式。
 
 ## BreastDM data and adapted code / 数据与改编代码
 
-Source: [Original BreastDM repository](https://github.com/smallboy-code/Breast-cancer-dataset).
+Redistribution terms for the BreastDM data and adapted code have not been clearly established. The public version of this reproduction will therefore direct users to the original resources rather than redistribute third-party materials with unclear permissions.
 
-The reviewed repository README, file tree and public issue discussions did not establish explicit permission to redistribute the BreastDM datasets or a repository-wide license covering all adapted code. Licenses found in individual subprojects apply only within their respective scope. Public download availability alone does not establish redistribution permission. Separate written permission may exist; the original data archive's internal terms and the full paper were not completely verified.
+BreastDM 数据及改编代码的再分发条款尚未明确。因此，本复现的公开版本将引导使用者从原始资源获取相关材料，不重新分发许可不明确的第三方材料。
 
-已检查的README、文件树及公开问题回复未能确认BreastDM数据的再分发许可，也未找到覆盖全部改编代码的全仓库许可。个别子项目的许可证仅在各自范围内适用。未找到许可不等于作者禁止；可公开下载也不等于已经获得重新上传的授权。原始数据压缩包内部条款及论文全文尚未完整核验。
+### Original resources / 原始资源入口
 
-The reproduction repository is currently private pending clarification of public redistribution permissions for the data and adapted code. Historical source snapshots in `result/*/code_snapshot` retain the same upstream provenance considerations.
+Original code and data access information:
 
-当前复现仓库保持私有，数据及改编代码的公开再分发范围待确认；历史代码快照也涉及相同的上游来源。
+[Original BreastDM repository](https://github.com/smallboy-code/Breast-cancer-dataset)
+
+Please obtain the data through the download links provided in the original repository's README and follow the original providers' access and use requirements.
+
+原始代码及数据获取信息见上述原作者仓库。请通过该仓库 README 中提供的下载链接获取数据，并遵守原提供方的访问和使用要求。
+
+### Reproduction materials / 复现材料
+
+The public version will provide our own preparation and analysis scripts, environment specifications, and execution instructions. Any dependencies on original code or data will be identified, with instructions for obtaining them from their original sources.
+
+公开版本将提供我们自己的准备与分析脚本、环境配置及运行说明。对于原始代码或数据的依赖，将明确列出，并说明如何从原始来源获取。
+
 
 ## ViT pretrained weights / ViT预训练权重
 
