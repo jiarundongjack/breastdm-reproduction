@@ -41,9 +41,9 @@ python "pretrained and trained weights/restore_assets.py" --asset-dir "D:/downlo
 python "pretrained and trained weights/restore_assets.py" --asset-dir "D:/downloaded_model_assets"
 ```
 
-Replace the example path with your download directory. The first command verifies the archives and member checksums; the second restores the model files. Saved-prediction statistics do not require these model archives; see [ANALYSIS.md](../ANALYSIS.md).
+Replace the example path with your download directory. The first command verifies the archives and member checksums; the second restores the model files. Saved-prediction statistics do not require these model archives; see [analysis guide / 分析指南](../README.md#analysis).
 
-将示例路径替换为实际下载目录。第一条命令校验压缩包及内部文件，第二条恢复模型文件。仅凭预测记录重算统计不需要这些模型压缩包，见 [ANALYSIS.md](../ANALYSIS.md)。
+将示例路径替换为实际下载目录。第一条命令校验压缩包及内部文件，第二条恢复模型文件。仅凭预测记录重算统计不需要这些模型压缩包，见 [analysis guide / 分析指南](../README.md#analysis)。
 
 ## Sources and redistribution / 来源与再分发
 

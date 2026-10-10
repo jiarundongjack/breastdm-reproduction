@@ -48,6 +48,6 @@ AUC uses both probability columns and flattened one-hot labels, following this p
 
 AUC 沿用本项目现有分类指标实现，将两列概率与独热标签分别展平后计算，不等同于仅使用恶性概率的 AUC。加权精确率按类别样本数加权，单类精确率无定义时按零处理。其他无定义比值记为 `NaN`；若某次运行的指标无定义，其汇总均值和标准差也记为 `NaN`。
 
-This checks the saved prediction values and recomputes statistics; it does not verify training, checkpoint selection, data splitting, or the original authors' evaluation procedure. Use the full-audit tasks listed in [ANALYSIS.md](../../ANALYSIS.md) when the required experimental records are available.
+This checks the saved prediction values and recomputes statistics; it does not verify training, checkpoint selection, data splitting, or the original authors' evaluation procedure. Use the full-audit tasks listed in [full-record audits / 完整记录审计](../../README.md#full-audits) when the required experimental records are available.
 
-本脚本检查已有预测数值并重算统计，不验证训练过程、检查点选择、数据划分或原作者的评估流程。具备完整实验记录时，可使用 [ANALYSIS.md](../../ANALYSIS.md) 中列出的完整审计任务。
+本脚本检查已有预测数值并重算统计，不验证训练过程、检查点选择、数据划分或原作者的评估流程。具备完整实验记录时，可使用 [full-record audits / 完整记录审计](../../README.md#full-audits) 中列出的完整审计任务。
