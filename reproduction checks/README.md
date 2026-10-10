@@ -67,9 +67,9 @@ verification. Exp-2 AUC remained 0.873593 ± 0.021886, and 3D volume-mean PPV re
 Python 3.11.5虚拟环境中安装依赖，并将12个附件恢复到独立目录；上述16项检查全部通过，所有附件文件
 的SHA-256核对通过。实验二AUC和3D逐体积PPV保持一致。
 
-Machine-readable results and logs are in `validation/`; complete fresh-install package versions
-are in `environment/*.lock.txt`. These describe release validation, not historical training.
-检查记录见`validation/`，本次新安装环境完整版本见`environment/*.lock.txt`，均不冒充历史训练记录。
+Machine-readable results and logs are in [logs/](logs/); complete fresh-install package versions
+are in `../environment/*.lock.txt`. These describe release validation, not historical training.
+检查记录见[logs/](logs/)，本次新安装环境完整版本见`../environment/*.lock.txt`，均不冒充历史训练记录。
 The optional reference evaluator was tested separately as noted above; it was not part of the
 two new base-environment installations.
 独立参考评估器按上表单独验证，不属于这两套新基础环境安装范围。

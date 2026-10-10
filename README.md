@@ -228,4 +228,4 @@ The source-slice audit searches only the published `code` and `data` directories
 The temporary runtime is an execution aid, not an additional experiment. Numerical definitions,
 training losses, architecture, augmentation and checkpoint-selection criteria are retained.
 临时运行结构仅负责导入和路径衔接，不构成新增实验；保留已有指标、损失、架构、增强和选模规则。
-See `VALIDATION.md` for exactly what was executed and its limitations / 实际验证范围见`VALIDATION.md`。
+See [reproduction checks](reproduction%20checks/README.md) for exactly what was executed and its limitations / 实际验证范围见[复现检查说明](reproduction%20checks/README.md)。

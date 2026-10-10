@@ -171,6 +171,6 @@ python -m pip install -r environment/reference_evaluator.txt
 python code/run.py segmentation_2d/ppv_reference -- --test_images "D:/exported_masks/predictions" --ground_truth_images "D:/exported_masks/ground_truth"
 ```
 
-For upstream model-branch licensing information, see [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md). This functional index does not assign a new license or independent authorship to upstream model, training or evaluation code. For previously executed validation and its limitations, see [VALIDATION.md](VALIDATION.md).
+For upstream model-branch licensing information, see [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md). This functional index does not assign a new license or independent authorship to upstream model, training or evaluation code. For previously executed validation and its limitations, see [reproduction checks](reproduction%20checks/README.md).
 
-模型分支上游许可见 [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md)。本功能索引不为原作者模型、训练或评估代码赋予新许可或独立原创身份。已有运行验证及其范围见 [VALIDATION.md](VALIDATION.md)。
+模型分支上游许可见 [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md)。本功能索引不为原作者模型、训练或评估代码赋予新许可或独立原创身份。已有运行验证及其范围见 [reproduction checks](reproduction%20checks/README.md)。
