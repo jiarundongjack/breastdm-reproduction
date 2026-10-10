@@ -42,9 +42,9 @@ python code/run.py TASK --output-root result/reproduced/my_analysis
 | D2D | `data/segmentation_2d/seg2D_clean_v2/` |
 | D3D | `data/segmentation_3d/seg3D_clean/` |
 
-Resource access is described in [DOWNLOADS.md](DOWNLOADS.md). The [segmentation preparation scripts](code/preparation/README.md) organize existing split segmentation inputs; they do not create classification inputs or perform a complete original-download-to-training conversion.
+Resource access is described in [DOWNLOADS.md](DOWNLOADS.md). The [classification preparation script](code/preparation/classification/README.md) organizes existing 9-channel and 17-channel arrays using the study-specific file selection. The [segmentation preparation scripts](code/preparation/README.md) organize existing split segmentation inputs. These scripts require the documented prepared input structures; they do not perform a complete raw-image-to-training conversion.
 
-资源获取见 [DOWNLOADS.md](DOWNLOADS.md)。[分割准备脚本](code/preparation/README.md)整理已有划分的分割数据，不生成分类输入，也不完成从原始下载物到训练输入的全部转换。
+资源获取见 [DOWNLOADS.md](DOWNLOADS.md)。[分类准备脚本](code/preparation/classification/README.md)按本研究的文件选择规则整理已有九通道、十七通道数组；[分割准备脚本](code/preparation/README.md)整理已有划分的分割数据。这些脚本要求输入符合说明中的既有预处理结构，不完成从原始图像到训练输入的全部转换。
 
 ## 3. Analyses using saved records / 使用已有结果记录的分析
 

@@ -22,6 +22,16 @@ The reported experiments used task-specific prepared datasets. Files obtained fr
 
 论文中的实验使用按任务整理的预处理数据。从原始资源获取的文件需要经过整理，才能用于下述实验命令。
 
+## Classification data preparation / 分类数据整理
+
+See [classification preparation instructions](code/preparation/classification/README.md) for the existing 9-channel and 17-channel input layout, the study-specific file selection, validation checks, and copy commands.
+
+已有九通道、十七通道输入的目录结构、本研究的文件选择规则、检查项目和复制命令，见[分类数据整理说明](code/preparation/classification/README.md)。
+
+The script organizes existing split `.npy` arrays and preserves their contents. It does not generate channels from raw images or create new data splits. The inspected local inputs reproduce the formal input files exactly; the current upstream download layout has not been verified.
+
+脚本整理已有划分的 `.npy` 数组并保留文件内容，不从原始图像生成通道，也不重新划分数据。已核对的本地输入可整理出与正式输入完全一致的文件；尚未核实上游当前下载包结构。
+
 ## Segmentation data preparation / 分割数据整理
 
 See [segmentation preparation instructions](code/preparation/README.md) for the required input structure, patient-selection rules, and commands for the 2D and 3D preparation scripts.
@@ -55,7 +65,7 @@ The paths below describe the local directory structure used by the experiments. 
 | `data/segmentation_2d/seg2D_clean_v2` | 2D images and masks / 2D图像及标签 |
 | `data/segmentation_3d/seg3D_clean` | 3D volumes and masks / 3D体积及标签 |
 | `code/classification`, `code/segmentation_2d`, `code/segmentation_3d` | 46 curated source files in paper-task folders / 按论文任务保留的46个程序 |
-| `code/preparation` | Existing split segmentation data preparation / 已有划分的分割数据整理 |
+| `code/preparation` | Existing split classification and segmentation input preparation / 已有划分的分类与分割输入整理 |
 | `code/analysis` | Classification statistics from saved prediction CSVs / 基于已有预测 CSV 的分类统计 |
 | `code/pretrained` | Two classification initialization checkpoints / 分类训练使用的两份预训练权重 |
 | `result/fusion_*`, `result/seg*` | Eight unchanged formal runs / 八次未经改写的正式运行记录 |
