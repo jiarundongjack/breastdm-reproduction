@@ -1,6 +1,7 @@
 # Release validation / 发布版验证
 
 Date / 日期: 2026-10-07. This report concerns the portable local release, not a new training experiment.
+
 本报告针对本地发布版运行整理，不代表重新完成了八次100轮训练。
 
 ## Changes / 修改范围
