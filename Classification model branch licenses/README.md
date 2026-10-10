@@ -24,8 +24,8 @@ timm中对应模型的配置直接引用该权重文件，并标注Apache-2.0；
 
 ## License texts and attribution / 许可文本与署名
 
-- [Apache-2.0 text](third_party/licenses/timm_APACHE_2.0.txt)
-- [Cadene BSD-3-Clause text](third_party/licenses/cadene_BSD_3_clause.txt)
+- [Apache-2.0 text](timm_APACHE_2.0.txt)
+- [Cadene BSD-3-Clause text](cadene_BSD_3_clause.txt)
 
 Retain applicable copyright, attribution and NOTICE information and identify modifications as required by the respective licenses. See [Apache-2.0 section 4](https://www.apache.org/licenses/LICENSE-2.0) and the [timm licensing notes](https://github.com/huggingface/pytorch-image-models#licenses). A model license does not grant redistribution rights to its training dataset.
 
