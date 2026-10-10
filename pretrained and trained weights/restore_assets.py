@@ -1,8 +1,8 @@
 """Verify and restore downloaded ZIP assets beside code/data/result.
-Usage: python restore_assets.py --asset-dir path/to/downloaded/assets [--verify-only]
+Usage: python "pretrained and trained weights/restore_assets.py" --asset-dir path/to/downloaded/assets [--verify-only]
 """
 from pathlib import Path,PurePosixPath
-import argparse,hashlib,json,zipfile,shutil,gzip
+import argparse,hashlib,json,zipfile,shutil
 
 def digest(path):
     h=hashlib.sha256()
@@ -15,9 +15,10 @@ def main():
     parser.add_argument('--asset-dir',type=Path,required=True)
     parser.add_argument('--verify-only',action='store_true')
     args=parser.parse_args()
-    root=Path(__file__).resolve().parent
-    manifest=json.loads((root/'ASSETS.json').read_text(encoding='utf-8'))
-    with gzip.open(root/'FILES.json.gz','rt',encoding='utf-8') as f:records=json.load(f)
+    manifest_dir=Path(__file__).resolve().parent
+    root=manifest_dir.parent
+    manifest=json.loads((manifest_dir/'ASSETS.json').read_text(encoding='utf-8'))
+    with (manifest_dir/'FILES.json').open('r',encoding='utf-8') as f:records=json.load(f)
     for asset in manifest['assets']:
         archive=args.asset_dir/asset['name']
         if not archive.is_file():raise FileNotFoundError(f'Missing release asset: {archive}')

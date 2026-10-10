@@ -1,0 +1,74 @@
+[
+  {
+    "path": "code/pretrained/jx_vit_base_patch16_224_in21k-e5005f0a.pth",
+    "bytes": 412768565,
+    "sha256": "e5005f0a7a836470c1dbd39d848eabf0a5b1d8f9a066aa46e6ff00261db44cb5",
+    "storage": "breastdm-v1.0.0-rc1-pretrained-01.zip"
+  },
+  {
+    "path": "code/pretrained/se_resnet50-ce0d4300.pth",
+    "bytes": 112611220,
+    "sha256": "ce0d430017d3f4aa6b5658c72209f3bfffb060207fd26a2ef0b203ce592eba01",
+    "storage": "breastdm-v1.0.0-rc1-pretrained-01.zip"
+  },
+  {
+    "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/best_fusion_model.pth",
+    "bytes": 247700475,
+    "sha256": "10340e861cdba7bea421627d120bec96dd0c873852a1fd6ba50a398ac0520b41",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/best_fusion_model.pth",
+    "bytes": 247700475,
+    "sha256": "b1a13bc671fa785baaf188415213fe5f3ca5e659940f32e28ad58a17faaa949b",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/best_fusion_model.pth",
+    "bytes": 247700475,
+    "sha256": "0cbffcb560b902b958c9bf4f095c661784d3492ffe3c24546e2f43706975148a",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/best_fusion_model.pth",
+    "bytes": 254092283,
+    "sha256": "98fb37b9c13f9788ee8523b03d1872fdcd6da933f60afcd08adcee584bf9ff73",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/best_fusion_model.pth",
+    "bytes": 254092283,
+    "sha256": "5258272a799604f3ce54a4f6759f7b4d56800f2ae193308b371279c86a57acaa",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/best_fusion_model.pth",
+    "bytes": 254092283,
+    "sha256": "652dd70cee573a38b652e06d09e896156853095685c426fa8a636b4266b0da09",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/seg2d_unet_seed123_gpu_20260911/best_model.pth",
+    "bytes": 51918375,
+    "sha256": "2df071f3a5f69bd6d1c96f2c3d105526c20ec461590c286732cfb28a1af4d677",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/seg2d_unet_seed123_gpu_20260911/last_checkpoint.pth",
+    "bytes": 51919795,
+    "sha256": "2838ad08b4dcf3f8381d819d2f449861f445f239e626dbda37a757946a327de2",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-01.zip"
+  },
+  {
+    "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/best_model.pth",
+    "bytes": 67303299,
+    "sha256": "38f7ae7f9a59bdbed2a5730a29600474efe8081ae68ab3ff7758f7b1a70e260a",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-02.zip"
+  },
+  {
+    "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/last_checkpoint.pth",
+    "bytes": 67304539,
+    "sha256": "7b8527be59b1511cbe55a5b7c90a5104ee934a254782b99995bc825fd49c6b87",
+    "storage": "breastdm-v1.0.0-rc1-trained-models-02.zip"
+  }
+]
