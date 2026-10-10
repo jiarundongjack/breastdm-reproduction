@@ -12,6 +12,7 @@ Reproduction and analysis materials for **Reproducibility and Discrepancy Analys
 - [分析脚本使用指南：输入、命令和输出](#analysis)
 - [重新训练八次实验](#training)
 - [复现检查记录](#checks)
+- [版本与模型附件](#versions)
 
 <a id="resources"></a>
 ## Original resources / 原始资源
@@ -361,3 +362,18 @@ The source-slice audit searches only the local repository's `code` and `data` di
 源切片审计只检查本地仓库内的 `code` 和 `data`，不搜索其他个人目录。临时运行结构仅负责导入和路径衔接，不构成新增实验；保留已有指标、损失、架构、增强和选模规则。
 
 See [reproduction checks](reproduction%20checks/README.md) for executed checks and their limitations / 实际执行的检查及其范围见[复现检查说明](reproduction%20checks/README.md)。
+
+<a id="versions"></a>
+## Versions and model archives / 版本与模型附件
+
+The current source is maintained on the `main` branch. Record the Git commit SHA of the revision used to identify the exact source version.
+
+当前源码维护在 `main` 分支；请记录所用版本的 Git 提交 SHA，以明确对应的源码版本。
+
+The `v1.0.0-rc1` and `v1.0.0-rc2` tags identify historical source snapshots. Their source archives do not include subsequent changes on `main`.
+
+`v1.0.0-rc1` 和 `v1.0.0-rc2` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。
+
+Model archives are provided in the [v1.0.0-rc1 release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). See the [archive inventory](pretrained%20and%20trained%20weights/ASSETS.json) and [download and restoration instructions](pretrained%20and%20trained%20weights/DOWNLOADS.md) for the current model files and their use.
+
+模型附件位于 [v1.0.0-rc1 发布页](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)。当前模型文件清单及使用方法见[附件清单](pretrained%20and%20trained%20weights/ASSETS.json)和[下载与恢复说明](pretrained%20and%20trained%20weights/DOWNLOADS.md)。
