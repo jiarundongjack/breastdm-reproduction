@@ -47,6 +47,6 @@ Replace the example path with your download directory. The first command verifie
 
 ## Sources and redistribution / 来源与再分发
 
-For original resource access, see the links above. For model-branch licenses, see the [license guide](../Classification%20model%20branch%20licenses/README.md).
+For original resource access, see the links above. For model-branch licenses, see the [license guide](Classification%20model%20branch%20licenses/README.md).
 
-原始资源获取见上文链接；模型分支许可见[许可说明](../Classification%20model%20branch%20licenses/README.md)。
+原始资源获取见上文链接；模型分支许可见[许可说明](Classification%20model%20branch%20licenses/README.md)。

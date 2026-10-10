@@ -14,9 +14,9 @@ Redistribution terms for the BreastDM data and adapted code have not been clearl
 
 BreastDM 数据与改编代码的再分发条款尚未明确。本项目采用提供原始资源入口，以及我们自己的准备与分析脚本、环境配置和运行说明的发布方式。
 
-See [DOWNLOADS.md](DOWNLOADS.md) for resource access instructions and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for sources and redistribution notes.
+See [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md) for resource access instructions and [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md) for upstream model-branch licensing information.
 
-资源获取说明见 [DOWNLOADS.md](DOWNLOADS.md)，来源与再分发说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+资源获取说明见 [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md)，模型分支上游许可见 [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md)。
 
 The reported experiments used task-specific prepared datasets. Files obtained from the original resources require preparation before they can be used with the experiment commands below.
 

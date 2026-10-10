@@ -42,9 +42,9 @@ python code/run.py TASK --output-root result/reproduced/my_analysis
 | D2D | `data/segmentation_2d/seg2D_clean_v2/` |
 | D3D | `data/segmentation_3d/seg3D_clean/` |
 
-Resource access is described in [DOWNLOADS.md](DOWNLOADS.md). The [classification preparation script](code/preparation/classification/README.md) organizes existing 9-channel and 17-channel arrays using the study-specific file selection. The [segmentation preparation scripts](code/preparation/segmentation/README.md) organize existing split segmentation inputs. These scripts require the documented prepared input structures; they do not perform a complete raw-image-to-training conversion.
+Resource access is described in [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md). The [classification preparation script](code/preparation/classification/README.md) organizes existing 9-channel and 17-channel arrays using the study-specific file selection. The [segmentation preparation scripts](code/preparation/segmentation/README.md) organize existing split segmentation inputs. These scripts require the documented prepared input structures; they do not perform a complete raw-image-to-training conversion.
 
-资源获取见 [DOWNLOADS.md](DOWNLOADS.md)。[分类准备脚本](code/preparation/classification/README.md)按本研究的文件选择规则整理已有九通道、十七通道数组；[分割准备脚本](code/preparation/segmentation/README.md)整理已有划分的分割数据。这些脚本要求输入符合说明中的既有预处理结构，不完成从原始图像到训练输入的全部转换。
+资源获取见 [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md)。[分类准备脚本](code/preparation/classification/README.md)按本研究的文件选择规则整理已有九通道、十七通道数组；[分割准备脚本](code/preparation/segmentation/README.md)整理已有划分的分割数据。这些脚本要求输入符合说明中的既有预处理结构，不完成从原始图像到训练输入的全部转换。
 
 ## 3. Analyses using saved records / 使用已有结果记录的分析
 
@@ -171,6 +171,6 @@ python -m pip install -r environment/reference_evaluator.txt
 python code/run.py segmentation_2d/ppv_reference -- --test_images "D:/exported_masks/predictions" --ground_truth_images "D:/exported_masks/ground_truth"
 ```
 
-For original sources and redistribution notes, see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This functional index does not assign a new license or independent authorship to upstream model, training or evaluation code. For previously executed validation and its limitations, see [VALIDATION.md](VALIDATION.md).
+For upstream model-branch licensing information, see [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md). This functional index does not assign a new license or independent authorship to upstream model, training or evaluation code. For previously executed validation and its limitations, see [VALIDATION.md](VALIDATION.md).
 
-原始来源及再分发说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本功能索引不为原作者模型、训练或评估代码赋予新许可或独立原创身份。已有运行验证及其范围见 [VALIDATION.md](VALIDATION.md)。
+模型分支上游许可见 [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md)。本功能索引不为原作者模型、训练或评估代码赋予新许可或独立原创身份。已有运行验证及其范围见 [VALIDATION.md](VALIDATION.md)。

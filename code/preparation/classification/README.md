@@ -6,9 +6,9 @@ This script organizes existing 9-channel and 17-channel `.npy` arrays into the i
 
 ## Inputs / 输入
 
-For original resource access, see [DOWNLOADS.md](../../../DOWNLOADS.md). Select the existing 9-channel and 17-channel directories as `--source9` and `--source17`. The locally inspected directories were named `cls/img9Se` and `cls/img17Se`. Check the downloaded contents: the current upstream download layout has not been verified, and this script requires the structure below.
+For original resource access, see [DOWNLOADS.md](../../../pretrained%20and%20trained%20weights/DOWNLOADS.md). Select the existing 9-channel and 17-channel directories as `--source9` and `--source17`. The locally inspected directories were named `cls/img9Se` and `cls/img17Se`. Check the downloaded contents: the current upstream download layout has not been verified, and this script requires the structure below.
 
-原始资源入口见 [DOWNLOADS.md](../../../DOWNLOADS.md)。用 `--source9` 和 `--source17` 指定已有的九通道、十七通道目录。本地核对的目录名为 `cls/img9Se`、`cls/img17Se`。请先检查实际下载内容：尚未核实上游当前下载包结构，脚本要求以下输入结构。
+原始资源入口见 [DOWNLOADS.md](../../../pretrained%20and%20trained%20weights/DOWNLOADS.md)。用 `--source9` 和 `--source17` 指定已有的九通道、十七通道目录。本地核对的目录名为 `cls/img9Se`、`cls/img17Se`。请先检查实际下载内容：尚未核实上游当前下载包结构，脚本要求以下输入结构。
 
 ```text
 img9Se/ or img17Se/
