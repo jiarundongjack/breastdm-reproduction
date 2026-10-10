@@ -55,20 +55,20 @@ Run from the reproduction repository root. Replace `D:/downloaded_BreastDM/seg` 
 First check inputs without copying / 先检查输入，不复制文件：
 
 ```powershell
-python code/preparation/make_seg2d_clean.py --source "D:/downloaded_BreastDM/seg" --output "data/segmentation_2d/seg2D_clean_v2" --dry-run
-python code/preparation/make_seg3d_clean.py --source "D:/downloaded_BreastDM/seg3D" --output "data/segmentation_3d/seg3D_clean" --dry-run
+python code/preparation/segmentation/make_seg2d_clean.py --source "D:/downloaded_BreastDM/seg" --output "data/segmentation_2d/seg2D_clean_v2" --dry-run
+python code/preparation/segmentation/make_seg3d_clean.py --source "D:/downloaded_BreastDM/seg3D" --output "data/segmentation_3d/seg3D_clean" --dry-run
 ```
 
 Then copy the selected data / 检查通过后复制所选数据：
 
 ```powershell
-python code/preparation/make_seg2d_clean.py --source "D:/downloaded_BreastDM/seg" --output "data/segmentation_2d/seg2D_clean_v2"
-python code/preparation/make_seg3d_clean.py --source "D:/downloaded_BreastDM/seg3D" --output "data/segmentation_3d/seg3D_clean"
+python code/preparation/segmentation/make_seg2d_clean.py --source "D:/downloaded_BreastDM/seg" --output "data/segmentation_2d/seg2D_clean_v2"
+python code/preparation/segmentation/make_seg3d_clean.py --source "D:/downloaded_BreastDM/seg3D" --output "data/segmentation_3d/seg3D_clean"
 ```
 
-Use these standalone commands directly; these scripts are not tasks registered with `code/run.py`. The output locations match the segmentation input paths in the main [README](../../README.md). Model dependencies and training requirements are described there separately.
+Use these standalone commands directly; these scripts are not tasks registered with `code/run.py`. The output locations match the segmentation input paths in the main [README](../../../README.md). Model dependencies and training requirements are described there separately.
 
-直接使用上述独立命令；这两个脚本不是 `code/run.py` 中注册的任务。输出位置对应[首页 README](../../README.md)中的分割输入路径，模型依赖及训练要求另见该文档。
+直接使用上述独立命令；这两个脚本不是 `code/run.py` 中注册的任务。输出位置对应[首页 README](../../../README.md)中的分割输入路径，模型依赖及训练要求另见该文档。
 
 ## Output handling / 输出处理
 
