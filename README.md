@@ -32,6 +32,16 @@ These scripts organize existing split segmentation data; they do not perform the
 
 这些脚本用于整理已有划分的分割数据，不负责从原始下载物到训练输入的全部转换。
 
+## Analysis scripts / 分析脚本
+
+See [ANALYSIS.md](ANALYSIS.md) for analysis tasks, required input files, data and model dependencies, execution commands, and output locations.
+
+分析任务、所需输入文件、数据与模型依赖、运行命令及输出位置，见 [ANALYSIS.md](ANALYSIS.md)。
+
+The guide distinguishes analyses using saved prediction records from tasks requiring prepared samples, model weights, or complete experimental records.
+
+该索引区分基于已有预测记录的分析，以及需要预处理样本、模型权重或完整实验记录的任务。
+
 ## Contents / 目录
 
 The paths below describe the local directory structure used by the experiments. A listed path does not imply that its data or model files are included in this repository.
