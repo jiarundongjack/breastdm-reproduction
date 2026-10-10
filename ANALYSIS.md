@@ -6,9 +6,9 @@ This guide lists the current analysis tasks, their inputs, and their outputs. It
 
 ## 1. Environment and entry point / 环境与入口
 
-Use the classification or segmentation environment documented in [README.md](README.md) and [environment/](environment/). Run commands from the repository root, using that environment's Python interpreter. Use `code/run.py` for the tasks below, not the individual task files directly.
+Use the classification or segmentation environment documented in [README.md](README.md) and [environment/](environment/). Run commands from the repository root, using that environment's Python interpreter. Use `code/run.py` for the task identifiers in the tables below, not the individual task files directly. The standalone CSV summary in Section 3 uses its own command shown there.
 
-按 [README.md](README.md) 和 [environment/](environment/) 配置相应的分类或分割环境。在仓库根目录使用该环境的 Python 执行命令。下列任务通过 `code/run.py` 运行，不直接执行任务目录内的文件。
+按 [README.md](README.md) 和 [environment/](environment/) 配置相应的分类或分割环境。在仓库根目录使用该环境的 Python 执行命令。下列表格中的任务标识通过 `code/run.py` 运行，不直接执行任务目录内的文件。第 3 节的独立 CSV 汇总脚本使用该节单独列出的命令。
 
 ```powershell
 python code/run.py --list
@@ -47,6 +47,30 @@ Resource access is described in [DOWNLOADS.md](DOWNLOADS.md). The [segmentation 
 资源获取见 [DOWNLOADS.md](DOWNLOADS.md)。[分割准备脚本](code/preparation/README.md)整理已有划分的分割数据，不生成分类输入，也不完成从原始下载物到训练输入的全部转换。
 
 ## 3. Analyses using saved records / 使用已有结果记录的分析
+
+
+### Prediction-only classification summary / 仅凭预测记录汇总分类指标
+
+[Script and usage instructions](code/analysis/README.md). This standalone script reads only the three `test_predictions_two_class.csv` files for the selected experiment (C1 or C2). It uses the Python standard library and requires no sample data, model weights, or completion manifests.
+
+[脚本与使用说明](code/analysis/README.md)。该独立脚本只读取所选实验（C1 或 C2）的三份 `test_predictions_two_class.csv`，仅使用 Python 标准库，不需要样本、模型权重或完整运行清单。
+
+Run from the repository root / 在仓库根目录运行：
+
+```powershell
+python code/analysis/summarize_predictions.py --experiment exp1 --output result/prediction_statistics_exp1
+python code/analysis/summarize_predictions.py --experiment exp2 --output result/prediction_statistics_exp2
+```
+
+Outputs in each selected directory: `per_seed.csv`, `mean_sd.csv`, and `input_record.json`. They contain per-run metrics and confusion counts, three-run means and sample standard deviations (ddof=1), and input SHA-256 fingerprints. AUC uses flattened two-column probabilities and one-hot labels, following the existing classification metric implementation.
+
+每个指定目录输出 `per_seed.csv`、`mean_sd.csv` 和 `input_record.json`，分别记录各次运行指标与混淆计数、三次运行的均值与样本标准差（ddof=1），以及输入文件的 SHA-256 指纹。AUC 沿用现有分类指标实现，将两列概率与独热标签分别展平后计算。
+
+Use a new output directory. Add `--runs-root "D:/my_records"` if records are stored elsewhere. This command recomputes saved predictions; the full-record audits in Section 4 remain separate.
+
+请使用新的输出目录。记录位于其他位置时，添加 `--runs-root "D:/my_records"`。此命令重算已有预测记录；第 4 节的完整记录审计另行保留。
+
+### Plotting and case selection / 绘图与病例筛选
 
 These tasks do not load model checkpoints or raw sample arrays. They still require the listed records and the appropriate Python dependencies.
 
