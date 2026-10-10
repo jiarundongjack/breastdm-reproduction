@@ -1,6 +1,11 @@
-v1.0.0-rc2
-Source/documentation candidate / 源码与文档候选版
-Prepared: 2026-10-07
-Data/model assets: v1.0.0-rc1 (unchanged)
-Exact source revision is identified by the GitHub tag once created.
-创建对应GitHub标签后，以该标签确定源码版本。
+Current source: main branch; identify the exact revision by its Git commit SHA.
+当前源码：main 分支；具体版本以 Git 提交 SHA 为准。
+
+The v1.0.0-rc1 and v1.0.0-rc2 tags identify historical source snapshots. Their source archives do not include subsequent main-branch changes.
+v1.0.0-rc1 和 v1.0.0-rc2 标签对应历史源码快照，其源码压缩包不包含 main 分支后续修改。
+
+Model archive release: v1.0.0-rc1; current archive inventory: ASSETS.json.
+模型附件发布位置：v1.0.0-rc1；当前附件清单见 ASSETS.json。
+
+Dataset access: original resources linked in DOWNLOADS.md.
+数据获取：见 DOWNLOADS.md 中的原始资源入口。

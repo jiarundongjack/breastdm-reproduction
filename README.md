@@ -55,6 +55,8 @@ The paths below describe the local directory structure used by the experiments. 
 | `data/segmentation_2d/seg2D_clean_v2` | 2D images and masks / 2D图像及标签 |
 | `data/segmentation_3d/seg3D_clean` | 3D volumes and masks / 3D体积及标签 |
 | `code/classification`, `code/segmentation_2d`, `code/segmentation_3d` | 46 curated source files in paper-task folders / 按论文任务保留的46个程序 |
+| `code/preparation` | Existing split segmentation data preparation / 已有划分的分割数据整理 |
+| `code/analysis` | Classification statistics from saved prediction CSVs / 基于已有预测 CSV 的分类统计 |
 | `code/pretrained` | Two classification initialization checkpoints / 分类训练使用的两份预训练权重 |
 | `result/fusion_*`, `result/seg*` | Eight unchanged formal runs / 八次未经改写的正式运行记录 |
 | `result/paper_outputs` | Cross-seed summaries, corrected Exp-2 ROC, Grad-CAM and confusion matrices / 多种子汇总、修正后的实验二ROC、Grad-CAM及混淆矩阵 |
@@ -108,9 +110,13 @@ python code/run.py segmentation_3d/table7_fig8_9_12_training -- --help
 Do not execute files inside task folders directly. `code/run.py` copies the selected task's
 modules into a temporary conventional package layout, launches them with the same interpreter,
 and removes the temporary directory on completion. Canonical source files remain in their task folders.
-所有任务通过`code/run.py`运行；它临时组织导入结构，执行后清理临时目录，不改变任务文件夹中的源码。
+分类与分割任务目录内的程序通过`code/run.py`运行；它临时组织导入结构，执行后清理临时目录，不改变任务文件夹中的源码。
 Repository locations are resolved from the launcher, so no personal drive letters are required.
 路径由入口文件定位，无需修改个人电脑盘符。Additional options follow `--` / 任务参数放在`--`之后。
+
+The standalone scripts in `code/preparation/` and `code/analysis/` run directly with Python, using the commands in their respective READMEs. They are not registered tasks of `code/run.py`.
+
+`code/preparation/` 和 `code/analysis/` 中的独立脚本按各自 README 的命令直接用 Python 运行，不通过 `code/run.py` 调用。
 
 ## Reproduce tables and figures / 复现表格和图片
 
