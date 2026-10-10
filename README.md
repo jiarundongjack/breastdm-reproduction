@@ -22,6 +22,16 @@ The reported experiments used task-specific prepared datasets. Files obtained fr
 
 论文中的实验使用按任务整理的预处理数据。从原始资源获取的文件需要经过整理，才能用于下述实验命令。
 
+## Segmentation data preparation / 分割数据整理
+
+See [segmentation preparation instructions](code/preparation/README.md) for the required input structure, patient-selection rules, and commands for the 2D and 3D preparation scripts.
+
+二维、三维分割准备脚本所需的输入结构、患者筛选规则和运行命令，见[分割数据整理说明](code/preparation/README.md)。
+
+These scripts organize existing split segmentation data; they do not perform the complete conversion from original downloads to training inputs.
+
+这些脚本用于整理已有划分的分割数据，不负责从原始下载物到训练输入的全部转换。
+
 ## Contents / 目录
 
 The paths below describe the local directory structure used by the experiments. A listed path does not imply that its data or model files are included in this repository.
