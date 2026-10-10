@@ -34,9 +34,9 @@ The script organizes existing split `.npy` arrays and preserves their contents. 
 
 ## Segmentation data preparation / 分割数据整理
 
-See [segmentation preparation instructions](code/preparation/README.md) for the required input structure, patient-selection rules, and commands for the 2D and 3D preparation scripts.
+See [segmentation preparation instructions](code/preparation/segmentation/README.md) for the required input structure, patient-selection rules, and commands for the 2D and 3D preparation scripts.
 
-二维、三维分割准备脚本所需的输入结构、患者筛选规则和运行命令，见[分割数据整理说明](code/preparation/README.md)。
+二维、三维分割准备脚本所需的输入结构、患者筛选规则和运行命令，见[分割数据整理说明](code/preparation/segmentation/README.md)。
 
 These scripts organize existing split segmentation data; they do not perform the complete conversion from original downloads to training inputs.
 
