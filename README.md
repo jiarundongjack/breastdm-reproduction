@@ -357,11 +357,9 @@ python code/run.py classification/table5_exp2_summary --runs-root result/new_run
 <a id="checks"></a>
 ## Reproduction checks / 复现检查
 
-The source-slice audit searches only the local repository's `code` and `data` directories, not other personal directories. The temporary runtime only arranges imports and paths; it does not constitute an additional experiment. Numerical definitions, losses, architecture, augmentation and checkpoint-selection criteria are retained.
+See [reproduction checks](reproduction%20checks/README.md) for the checks performed, their results, and limitations.
 
-源切片审计只检查本地仓库内的 `code` 和 `data`，不搜索其他个人目录。临时运行结构仅负责导入和路径衔接，不构成新增实验；保留已有指标、损失、架构、增强和选模规则。
-
-See [reproduction checks](reproduction%20checks/README.md) for executed checks and their limitations / 实际执行的检查及其范围见[复现检查说明](reproduction%20checks/README.md)。
+已执行的检查、检查结果及其局限，见[复现检查说明](reproduction%20checks/README.md)。
 
 <a id="versions"></a>
 ## Versions and model archives / 版本与模型附件
