@@ -11,7 +11,6 @@ Reproduction and analysis materials for **Reproducibility and Discrepancy Analys
 - [目录用途](#contents) · [环境安装](#environments) · [运行入口](#entry-point)
 - [分析脚本使用指南：输入、命令和输出](#analysis)
 - [重新训练八次实验](#training)
-- [复现检查记录](#checks)
 - [版本与模型附件](#versions)
 
 <a id="resources"></a>
@@ -354,12 +353,6 @@ python code/run.py classification/table4_exp1_summary --runs-root result/new_run
 python code/run.py classification/table5_exp2_summary --runs-root result/new_runs --output-root result/new_summary
 ```
 
-<a id="checks"></a>
-## Reproduction checks / 复现检查
-
-See [reproduction checks](reproduction%20checks/README.md) for the checks performed, their results, and limitations.
-
-已执行的检查、检查结果及其局限，见[复现检查说明](reproduction%20checks/README.md)。
 
 <a id="versions"></a>
 ## Versions and model archives / 版本与模型附件
