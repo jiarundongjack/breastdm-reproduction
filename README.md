@@ -24,9 +24,9 @@ Redistribution terms for the BreastDM data and adapted code have not been clearl
 
 BreastDM 数据与改编代码的再分发条款尚未明确。本项目采用提供原始资源入口，以及我们自己的准备与分析脚本、环境配置和运行说明的发布方式。
 
-See [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md) for resource access instructions and [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md) for upstream model-branch licensing information.
+See [DOWNLOADS.md](weight%20download%20and%20restore/DOWNLOADS.md) for resource access instructions and [model-branch license guide](weight%20download%20and%20restore/Classification%20model%20branch%20licenses/README.md) for upstream model-branch licensing information.
 
-资源获取说明见 [DOWNLOADS.md](pretrained%20and%20trained%20weights/DOWNLOADS.md)，模型分支上游许可见 [model-branch license guide](pretrained%20and%20trained%20weights/Classification%20model%20branch%20licenses/README.md)。
+资源获取说明见 [DOWNLOADS.md](weight%20download%20and%20restore/DOWNLOADS.md)，模型分支上游许可见 [model-branch license guide](weight%20download%20and%20restore/Classification%20model%20branch%20licenses/README.md)。
 
 The reported experiments used task-specific prepared datasets. Files obtained from the original resources require preparation before they can be used with the experiment commands below.
 
@@ -365,6 +365,6 @@ The `v1.0.0-rc1` tag identifies a historical source snapshot. Its source archive
 
 `v1.0.0-rc1` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。获取当前代码和说明，请在仓库首页选择 `main` 分支，通过 **Code → Download ZIP** 下载。
 
-Model archives are provided in the [v1.0.0-rc1 release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). See the [archive inventory](pretrained%20and%20trained%20weights/ASSETS.json) and [download and restoration instructions](pretrained%20and%20trained%20weights/DOWNLOADS.md) for the current model files and their use.
+Model archives are provided in the [v1.0.0-rc1 release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). See the [archive inventory](weight%20download%20and%20restore/ASSETS.json) and [download and restoration instructions](weight%20download%20and%20restore/DOWNLOADS.md) for the current model files and their use.
 
-模型附件位于 [v1.0.0-rc1 发布页](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)。当前模型文件清单及使用方法见[附件清单](pretrained%20and%20trained%20weights/ASSETS.json)和[下载与恢复说明](pretrained%20and%20trained%20weights/DOWNLOADS.md)。
+模型附件位于 [v1.0.0-rc1 发布页](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)。当前模型文件清单及使用方法见[附件清单](weight%20download%20and%20restore/ASSETS.json)和[下载与恢复说明](weight%20download%20and%20restore/DOWNLOADS.md)。

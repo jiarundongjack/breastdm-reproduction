@@ -1,5 +1,5 @@
 """Verify and restore downloaded ZIP assets beside code/data/result.
-Usage: python "pretrained and trained weights/restore_assets.py" --asset-dir path/to/downloaded/assets [--verify-only]
+Usage: python "weight download and restore/restore_assets.py" --asset-dir path/to/downloaded/assets [--verify-only]
 """
 from pathlib import Path,PurePosixPath
 import argparse,hashlib,json,zipfile,shutil
