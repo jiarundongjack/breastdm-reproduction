@@ -361,9 +361,9 @@ The current source is maintained on the `main` branch. Record the Git commit SHA
 
 当前源码维护在 `main` 分支；请记录所用版本的 Git 提交 SHA，以明确对应的源码版本。
 
-The `v1.0.0-rc1` and `v1.0.0-rc2` tags identify historical source snapshots. Their source archives do not include subsequent changes on `main`.
+The `v1.0.0-rc1` tag identifies a historical source snapshot. Its source archives do not include subsequent changes on `main`. For the current code and instructions, download the `main` branch from the repository home page using **Code → Download ZIP**.
 
-`v1.0.0-rc1` 和 `v1.0.0-rc2` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。
+`v1.0.0-rc1` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。获取当前代码和说明，请在仓库首页选择 `main` 分支，通过 **Code → Download ZIP** 下载。
 
 Model archives are provided in the [v1.0.0-rc1 release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). See the [archive inventory](pretrained%20and%20trained%20weights/ASSETS.json) and [download and restoration instructions](pretrained%20and%20trained%20weights/DOWNLOADS.md) for the current model files and their use.
 
