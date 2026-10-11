@@ -365,6 +365,20 @@ The `v1.0.0-rc1` tag identifies a historical source snapshot. Its source archive
 
 `v1.0.0-rc1` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。获取当前代码和说明，请在仓库首页选择 `main` 分支，通过 **Code → Download ZIP** 下载。
 
-Model archives are provided in the [v1.0.0-rc1 release](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1). See the [archive inventory](weight%20download%20and%20restore/ASSETS.json) and [download and restoration instructions](weight%20download%20and%20restore/DOWNLOADS.md) for the current model files and their use.
+### Download model weights / 下载模型权重
 
-模型附件位于 [v1.0.0-rc1 发布页](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)。当前模型文件清单及使用方法见[附件清单](weight%20download%20and%20restore/ASSETS.json)和[下载与恢复说明](weight%20download%20and%20restore/DOWNLOADS.md)。
+Download all three ZIP archives below. These links download the files directly; there is no need to visit the release page.
+
+请下载以下全部三个模型压缩包，点击即可直接下载，无需进入发布页。
+
+| Archive / 压缩包 | Download / 下载 |
+|---|---|
+| Pretrained initialization weights / 预训练初始化权重 | [pretrained-01.zip](https://github.com/jiarundongjack/breastdm-reproduction/releases/download/v1.0.0-rc1/breastdm-v1.0.0-rc1-pretrained-01.zip) |
+| Trained checkpoints, archive 1 / 训练后权重包一 | [trained-models-01.zip](https://github.com/jiarundongjack/breastdm-reproduction/releases/download/v1.0.0-rc1/breastdm-v1.0.0-rc1-trained-models-01.zip) |
+| Trained checkpoints, archive 2 / 训练后权重包二 | [trained-models-02.zip](https://github.com/jiarundongjack/breastdm-reproduction/releases/download/v1.0.0-rc1/breastdm-v1.0.0-rc1-trained-models-02.zip) |
+
+[SHA-256 checksums / 校验文件](https://github.com/jiarundongjack/breastdm-reproduction/releases/download/v1.0.0-rc1/SHA256SUMS.txt)
+
+After downloading, follow the [verification and restoration instructions](weight%20download%20and%20restore/DOWNLOADS.md).
+
+下载后，请按照[校验与恢复说明](weight%20download%20and%20restore/DOWNLOADS.md)将权重恢复到程序所需的位置。
