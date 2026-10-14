@@ -16,6 +16,16 @@ Reproduction and analysis materials for **Reproducibility and Discrepancy Analys
 <a id="resources"></a>
 ## Original resources / 原始资源
 
+Original BreastDM paper: [https://doi.org/10.1016/j.compbiomed.2023.107255](https://doi.org/10.1016/j.compbiomed.2023.107255).
+
+This repository does not redistribute original or preprocessed BreastDM data. Case-level CSVs, case images, masks, predictions and other BreastDM-derived patient-level files with unclear redistribution permission are excluded from the current `main` tree. Obtain data through the [original authors' repository and data links](https://github.com/smallboy-code/Breast-cancer-dataset), then generate these outputs privately using the existing scripts and the local-generation entry points linked below. Aggregate metrics and statistical figures are retained.
+
+本仓库不重新分发原始或预处理后的 BreastDM 数据。当前 `main` 不公开再分发许可不明确的病例级 CSV、病例图像、mask、预测及其他 BreastDM 派生病例文件。请通过[原作者仓库及数据入口](https://github.com/smallboy-code/Breast-cancer-dataset)自行获取数据，再按下述本地生成入口私下生成输出；公开仓库保留汇总指标及统计图。
+
+See [local generation commands](code/LOCAL_GENERATION.md) for manifests, predictions, Grad-CAM, segmentation examples and case-selection tables.
+
+清单、预测、Grad-CAM、分割病例图及筛选表的命令见[本地生成说明](code/LOCAL_GENERATION.md)。
+
 The original BreastDM code and data access information are available from the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset). Please obtain the data through the download links provided there and follow the original providers' access and use requirements.
 
 BreastDM 原始代码与数据获取信息见[原作者仓库](https://github.com/smallboy-code/Breast-cancer-dataset)。请通过其中提供的下载链接获取数据，并遵守原提供方的访问和使用要求。
@@ -177,6 +187,10 @@ The `data/` paths above are local input directories populated by the reader foll
 
 上述 `data/` 路径指读者按照准备说明在本地整理数据后使用的输入目录，不表示本仓库包含样本。准备脚本整理已有预处理数组或已划分的分割数据，不完成从原始图像到训练输入的全部转换。
 
+The patient-level input CSVs below are no longer distributed. First follow [local generation](code/LOCAL_GENERATION.md). For case analyses, use the private copy's `.local/reproduction/code/run.py`; paths C1/C2/S2/S3/D1/D2/D2D/D3D then refer to that private copy. The commands in this section describe required inputs, not files bundled with the public repository.
+
+以下病例级输入 CSV 不再公开提供，请先按[本地生成说明](code/LOCAL_GENERATION.md)准备。病例分析使用私有副本的 `.local/reproduction/code/run.py`，对应运行与数据路径均指向私有副本。
+
 ### 3. Analyses using saved records / 使用已有结果记录的分析
 
 
@@ -189,8 +203,8 @@ The `data/` paths above are local input directories populated by the reader foll
 Run from the repository root / 在仓库根目录运行：
 
 ```powershell
-python code/analysis/summarize_predictions.py --experiment exp1 --output result/prediction_statistics_exp1
-python code/analysis/summarize_predictions.py --experiment exp2 --output result/prediction_statistics_exp2
+python code/analysis/summarize_predictions.py --experiment exp1 --runs-root .local/reproduction/result --output .local/statistics_exp1
+python code/analysis/summarize_predictions.py --experiment exp2 --runs-root .local/reproduction/result --output .local/statistics_exp2
 ```
 
 Outputs in each selected directory: `per_seed.csv`, `mean_sd.csv`, and `input_record.json`. They contain per-run metrics and confusion counts, three-run means and sample standard deviations (ddof=1), and input SHA-256 fingerprints. AUC uses flattened two-column probabilities and one-hot labels, following the existing classification metric implementation.
@@ -283,9 +297,9 @@ These are study-specific checks; several select fixed cases or assert the study'
 | `segmentation_3d/fig13_slice_selection` | Same inputs as `fig13_predictions`; it executes that script internally / 同上，内部会执行预测绘图脚本 | `OUT/volume55_slice_overseg_selection/`: `all_slices_volume55.csv`, `eligible_slices_ranked.csv`, `SELECTED_slice.csv`, representative PNG / 代表切片图；also prediction outputs / 同时生成预测输出 |
 | `segmentation_3d/fig13_layout` | Existing PNG from `OUT/volume55_slice_overseg_selection/`; fallback to the same subdirectory under S3 / 已有 PNG，缺失时读取 S3 下同名子目录 | `OUT/representative_overseg_slice_2x2.png`; no model or arrays loaded by this layout task / 排版任务本身不加载模型或样本数组 |
 
-With all inference inputs available, run slice selection followed by layout in the same output root. Running layout alone may use the retained historical PNG rather than newly generated predictions.
+With all inference inputs available, run slice selection followed by layout in the same output root. Running layout alone requires a previously generated local case PNG; historical case PNGs are not distributed.
 
-具备全部推理输入后，先运行切片选择，再使用相同输出目录运行排版。单独运行排版时，可能使用已保存的历史 PNG，而非新生成的预测结果。
+具备全部推理输入后，先运行切片选择，再使用相同输出目录运行排版。单独运行排版需要已在本地生成的病例 PNG；历史病例 PNG 不再公开提供。
 
 ```powershell
 python code/run.py segmentation_3d/fig13_slice_selection --output-root result/reproduced/seg3d_example

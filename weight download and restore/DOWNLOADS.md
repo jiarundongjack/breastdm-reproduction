@@ -2,6 +2,16 @@
 
 ## Original code and data / 原始代码与数据
 
+Original BreastDM paper: [https://doi.org/10.1016/j.compbiomed.2023.107255](https://doi.org/10.1016/j.compbiomed.2023.107255).
+
+This repository does not redistribute original or preprocessed BreastDM data. Case-level CSVs, case images, masks, predictions and other BreastDM-derived patient-level files with unclear redistribution permission are excluded from the current `main` tree. Obtain data through the [original authors' repository and data links](https://github.com/smallboy-code/Breast-cancer-dataset), then generate these outputs privately using the existing scripts and the local-generation entry points linked below. Aggregate metrics and statistical figures are retained.
+
+本仓库不重新分发原始或预处理后的 BreastDM 数据。当前 `main` 不公开再分发许可不明确的病例级 CSV、病例图像、mask、预测及其他 BreastDM 派生病例文件。请通过[原作者仓库及数据入口](https://github.com/smallboy-code/Breast-cancer-dataset)自行获取数据，再按下述本地生成入口私下生成输出；公开仓库保留汇总指标及统计图。
+
+Generation commands and prerequisites: [local generation guide](../code/LOCAL_GENERATION.md). The original-to-prepared input limitations remain documented in the preparation guides.
+
+生成命令与前提见[本地生成指南](../code/LOCAL_GENERATION.md)；从原始数据到预处理输入尚未覆盖的步骤仍以准备指南说明为准。
+
 The original BreastDM code and data access information are provided in the authors' repository:
 
 [Original BreastDM repository](https://github.com/smallboy-code/Breast-cancer-dataset)

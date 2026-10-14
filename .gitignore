@@ -1,0 +1,67 @@
+# Private local workspace and raw/prepared data (never publish).
+/.local/
+/data/
+/raw_data/
+/processed_data/
+/datasets/
+/local_data/
+/local_outputs/
+/result/new_runs/
+/result/local_generated/
+*.dcm
+*.dicom
+*.npy
+*.npz
+*.nii
+*.nii.gz
+
+# Patient/sample manifests and predictions; aggregate CSVs remain trackable.
+dataset_manifest.csv
+test_predictions.csv
+test_predictions_two_class.csv
+preparation_record.json
+/result/**/exp2_top10_*.csv
+/result/**/exp1_exp2_channel_mapping_verification.csv
+/result/**/reconstructed_counts.csv
+/result/**/top20_overseg_candidates.csv
+/result/**/top3_overseg_figures/*.csv
+/result/**/top3_overseg_maxfp*/*.csv
+/result/**/volume55_slice_overseg_selection/*.csv
+/result/**/volume_overseg_two_level_selection/*.csv
+/result/**/hashes_before.json
+/result/**/hashes_after.json
+
+# Real-case images/masks/Grad-CAM and metadata; statistical figures remain trackable.
+gradcam_metadata.txt
+/result/**/*gradcam*/*.png
+/result/**/*gradcam*/*.jpg
+/result/**/*gradcam*/*.jpeg
+/result/**/representative_*.png
+/result/**/representative_*.jpg
+/result/**/representative_*.jpeg
+/result/**/top3_overseg*/*.png
+/result/**/top3_overseg*/*.jpg
+/result/**/top3_overseg*/*.jpeg
+/result/**/volume55_slice_overseg_selection/*.png
+/result/**/volume55_slice_overseg_selection/*.jpg
+/result/**/volume55_slice_overseg_selection/*.jpeg
+
+# Local checkpoint files. Git ignore rules do not affect GitHub Release assets.
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.safetensors
+/downloaded_model_assets/
+breastdm-*-pretrained-*.zip
+breastdm-*-trained-models-*.zip
+
+# Python caches, virtual environments and local configuration.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv*/
+venv/
+*_env/
+.env

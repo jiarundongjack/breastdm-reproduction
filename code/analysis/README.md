@@ -4,6 +4,10 @@
 
 本脚本仅凭已有预测 CSV 重算分类指标，只依赖 Python 标准库（使用 Python 3.12 验证），不需要样本或模型权重。原有完整审计任务另行保留。
 
+The required prediction CSVs are private local inputs, not included in the current public tree. Generate them using [local generation](../LOCAL_GENERATION.md), or supply your own private records.
+
+预测 CSV 属于私有本地输入，当前公开仓库不包含这些文件。请按[本地生成说明](../LOCAL_GENERATION.md)生成，或提供自己的私有记录。
+
 ## Inputs / 输入
 
 Under `--runs-root` (default: this repository's `result/`), each run must contain `test_predictions_two_class.csv`:
@@ -30,8 +34,8 @@ Run directly from the repository root:
 在仓库根目录直接运行：
 
 ```bash
-python code/analysis/summarize_predictions.py --experiment exp1 --output result/prediction_statistics_exp1
-python code/analysis/summarize_predictions.py --experiment exp2 --output result/prediction_statistics_exp2
+python code/analysis/summarize_predictions.py --experiment exp1 --runs-root .local/reproduction/result --output .local/statistics_exp1
+python code/analysis/summarize_predictions.py --experiment exp2 --runs-root .local/reproduction/result --output .local/statistics_exp2
 ```
 
 For records stored elsewhere, add `--runs-root "D:/my_records"`. Choose a new output directory for each invocation; existing output directories are refused. This standalone script is not a task registered with `code/run.py`.
