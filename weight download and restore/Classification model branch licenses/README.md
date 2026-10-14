@@ -2,9 +2,9 @@
 
 ## Upstream code licenses / 上游代码许可
 
-The ViT branch uses code derived from timm (Apache-2.0). The SE-ResNet50 branch uses Cadene's pretrainedmodels implementation (BSD-3-Clause). Code licenses and pretrained-weight licensing information are listed separately.
+The ViT implementation directly matches the WZMIAOMIAO GPL-3.0 implementation at a verified licensed 2022 snapshot, with a depth-7 factory modification. Its header also credits timm (Apache-2.0); that antecedent does not make the whole derivative Apache-only. The SE-ResNet50 branch uses Cadene's pretrainedmodels implementation (BSD-3-Clause). Code licenses and pretrained-weight licensing information are listed separately.
 
-ViT 分支使用源自 timm 的代码（Apache-2.0）；SE-ResNet50 分支使用 Cadene 的 pretrainedmodels 实现（BSD-3-Clause）。代码许可与预训练权重的许可信息分别说明。
+ViT 实现直接匹配已核实的 WZMIAOMIAO GPL-3.0 历史版本，并有七层工厂配置修改；其头部另注明 timm（Apache-2.0）来源，不能将整个衍生实现只标成 Apache-2.0。SE-ResNet50 分支使用 Cadene 的 pretrainedmodels 实现（BSD-3-Clause）。代码许可与预训练权重的许可信息分别说明。
 
 ## ViT pretrained weights / ViT预训练权重
 
@@ -34,3 +34,7 @@ Retain applicable copyright, attribution and NOTICE information and identify mod
 These licenses apply only to the corresponding upstream components; they do not provide a blanket license for the entire repository or its datasets.
 
 上述许可仅适用于对应的上游组件，不构成对整个仓库或数据集的统一授权。
+
+The authoritative file-level source mapping and complete additional GPL/MIT notices are in [THIRD_PARTY_CODE.md](../../THIRD_PARTY_CODE.md). This page separates dependency code from weight information; it does not license BreastDM authors’ implementations, unresolved adaptations, data or experimental outputs. This round did not change or re-audit model weight files.
+
+逐文件源码依据以 [THIRD_PARTY_CODE.md](../../THIRD_PARTY_CODE.md) 为准。本页区分依赖代码与权重信息，不为 BreastDM 作者实现、来源未确认的改编、数据或实验输出授予许可；本轮未更改或重新审计模型权重文件。

@@ -1,0 +1,19 @@
+Source attribution and modification notice (recorded 2026-10-15)
+
+File: result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/VIT_model.py
+Source SHA-256: 3bfe8c077f11646bf700daf540e0e9d8b0b98ea6f27466ce0652be0de022e674
+Upstream: https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/blob/797f12c91fbb6caaa748c09f16f0cd0fbb9cbd61/pytorch_classification/vision_transformer/vit_model.py
+License: GPL-3.0 (no later-version election asserted)
+License evidence: https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/blob/797f12c91fbb6caaa748c09f16f0cd0fbb9cbd61/LICENSE
+Modifications already present before this round: base factory depth=12 changed to depth=7; canonical file adds release_paths import; formatting/line endings
+The author/date of these earlier small edits is not established. This audit does not attribute them to the project.
+No source bytes or algorithm were changed in this round.
+Direct implementation: WZMIAOMIAO/deep-learning-for-image-processing; GPL license at the cited 2022 snapshot.
+Complete license and warranty text: repository-root provenance/licenses/WZM_GPL-3.0.txt
+These specific source files are offered under that GPL license; source is supplied here. No blanket repository license is assigned.
+Antecedent acknowledged by the source header: timm / Ross Wightman. Copyright 2020 Ross Wightman.
+Apache-2.0 text: repository-root provenance/licenses/timm_APACHE-2.0.txt
+This does not classify the WZM derivative as Apache-only. Historical timm reference: https://github.com/huggingface/pytorch-image-models/blob/5b28ef410062af2a2ab1f27bf02cf33e2ba28ca2/timm/models/vision_transformer.py
+The exact antecedent timm revision is not established; that reference supplies copyright context, not an exact-copy claim.
+
+See repository-root THIRD_PARTY_CODE.md and provenance/source_inventory.json. Keep this sidecar and the applicable complete license when redistributing the source.

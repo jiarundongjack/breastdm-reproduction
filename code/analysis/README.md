@@ -1,5 +1,7 @@
 # Saved prediction statistics / 已有预测记录统计
 
+**Prerequisite / 前置条件：** Follow the [local source setup](../../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+
 `summarize_predictions.py` recomputes classification metrics from saved prediction CSVs. It requires only the Python standard library (Python 3.12 used for validation). It does not require sample data or model weights. The existing full-audit tasks remain separate.
 
 本脚本仅凭已有预测 CSV 重算分类指标，只依赖 Python 标准库（使用 Python 3.12 验证），不需要样本或模型权重。原有完整审计任务另行保留。

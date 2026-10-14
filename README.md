@@ -4,6 +4,10 @@ Reproduction and analysis materials for **Reproducibility and Discrepancy Analys
 
 本仓库用于整理上述论文的复现与分析材料。
 
+See [THIRD_PARTY_CODE.md](THIRD_PARTY_CODE.md) for file-level code provenance and licensing information. **Complete the documented local source setup before using the commands below.** Unresolved reproduction adaptations are not distributed; the original BreastDM download alone does not restore all workflows.
+
+逐文件代码来源与许可见 [THIRD_PARTY_CODE.md](THIRD_PARTY_CODE.md)。**运行下述命令前必须完成其中的本地源码准备。** 来源未确认的复现改编不在公开仓库中分发，单独下载原作者代码不能恢复全部工作流。
+
 ## Navigation / 阅读目录
 
 - [原始资源与获取说明](#resources)
@@ -30,9 +34,9 @@ The original BreastDM code and data access information are available from the [o
 
 BreastDM 原始代码与数据获取信息见[原作者仓库](https://github.com/smallboy-code/Breast-cancer-dataset)。请通过其中提供的下载链接获取数据，并遵守原提供方的访问和使用要求。
 
-Redistribution terms for the BreastDM data and adapted code have not been clearly established. Our distribution approach is to direct users to the original resources and provide our own preparation and analysis scripts, environment specifications, and execution instructions.
+Redistribution terms for the BreastDM data and adapted code have not been clearly established. Source files are distributed only where authorship or applicable redistribution terms have been established; unresolved preparation and analysis implementations require private local setup as described in THIRD_PARTY_CODE.md. Environment specifications and execution instructions remain available.
 
-BreastDM 数据与改编代码的再分发条款尚未明确。本项目采用提供原始资源入口，以及我们自己的准备与分析脚本、环境配置和运行说明的发布方式。
+BreastDM 数据与改编代码的再分发条款尚未明确。本项目提供原始资源入口、环境配置与运行说明；仅公开来源或适用再分发条件已确认的源码，来源待确认的准备和分析实现须按 THIRD_PARTY_CODE.md 在本地自行准备。
 
 See [DOWNLOADS.md](weight%20download%20and%20restore/DOWNLOADS.md) for resource access instructions and [model-branch license guide](weight%20download%20and%20restore/Classification%20model%20branch%20licenses/README.md) for upstream model-branch licensing information.
 

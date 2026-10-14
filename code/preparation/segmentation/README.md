@@ -1,5 +1,7 @@
 # Segmentation data preparation / 分割数据整理
 
+**Prerequisite / 前置条件：** Follow the [local source setup](../../../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+
 These scripts implement the existing patient-directory selection and copying steps used in this reproduction. They accept explicit source and output paths and use only the Python standard library. Python 3.11 is the version used for this project.
 
 这两个脚本实现本复现使用的患者目录筛选和复制步骤，可通过参数指定输入、输出路径，仅使用 Python 标准库。本项目使用 Python 3.11。

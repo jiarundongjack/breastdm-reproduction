@@ -1,5 +1,7 @@
 # Resource access / 资源获取
 
+**Prerequisite / 前置条件：** Follow the [local source setup](../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+
 ## Original code and data / 原始代码与数据
 
 Original BreastDM paper: [https://doi.org/10.1016/j.compbiomed.2023.107255](https://doi.org/10.1016/j.compbiomed.2023.107255).

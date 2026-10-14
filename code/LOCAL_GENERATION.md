@@ -1,5 +1,7 @@
 # Local generation of case outputs / 本地生成病例输出
 
+**Prerequisite / 前置条件：** Follow the [local source setup](../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+
 Case-level CSVs, images, masks, predictions and case-linked metadata are not distributed in the current `main` tree when redistribution permission is unclear. Obtain inputs via the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset); cite the [original paper](https://doi.org/10.1016/j.compbiomed.2023.107255). Neither original nor preprocessed BreastDM data are provided here.
 
 当前 `main` 不公开再分发许可不明确的病例级 CSV、影像、mask、预测与病例关联元数据，也不提供原始或预处理 BreastDM 数据。请从原作者入口自行获取数据并引用原论文。

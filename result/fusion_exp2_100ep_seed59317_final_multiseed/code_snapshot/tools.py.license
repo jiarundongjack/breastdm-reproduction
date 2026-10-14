@@ -1,0 +1,14 @@
+Source attribution and modification notice (recorded 2026-10-15)
+
+File: result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/tools.py
+Source SHA-256: 579b7b22a921c7177db09c324745603e874b9a504613436b6747261846a75a47
+Upstream: https://github.com/Bjarten/early-stopping-pytorch/blob/3a28f68adeb44eab97716694367cc8c19ab331fd/pytorchtools.py
+License: MIT
+License evidence: https://github.com/Bjarten/early-stopping-pytorch/blob/3a28f68adeb44eab97716694367cc8c19ab331fd/LICENSE
+Modifications already present before this round: np.Inf changed to np.inf; whitespace/line endings
+The author/date of these earlier small edits is not established. This audit does not attribute them to the project.
+No source bytes or algorithm were changed in this round.
+Copyright (c) 2018 Bjarte Mehus Sunde
+Complete permission and warranty text: repository-root provenance/licenses/Bjarten_MIT.txt
+
+See repository-root THIRD_PARTY_CODE.md and provenance/source_inventory.json. Keep this sidecar and the applicable complete license when redistributing the source.
