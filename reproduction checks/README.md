@@ -4,6 +4,8 @@ Date / 日期: 2026-10-07. This report concerns the portable local release, not 
 
 本报告针对本地发布版运行整理，不代表重新完成了八次100轮训练。
 
+Current output locations and status are defined by the [manuscript-final map](../result/README.md#manuscript-final-results). The counts and execution statements below describe the dated historical checks. Round 3 removed two obsolete classification tables and 19 byte-identical generated copies; it did not rerun these checks or change the recorded outcomes. / 下文为当时的验证记录，当前文件位置与身份以正式结果对应表为准；本轮整理未重跑历史验证。
+
 ## Changes / 修改范围
 
 - Preserved all 46 task source files and their task-folder names. Added `code/run.py` and

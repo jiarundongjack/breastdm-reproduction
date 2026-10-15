@@ -125,3 +125,9 @@ python code/analysis/summarize_predictions.py --experiment exp2 --runs-root .loc
 The `.gitignore` protects known output names and the whole `.local/` workspace. It is not a content classifier; renamed patient files outside those locations still require review before any commit.
 
 `.gitignore` 保护已知文件名及整个 `.local/`。它不能判断内容；把病例文件改名或放到其他目录后，仍需提交前检查。
+
+## Result identity / 结果身份
+
+Local generation does not replace the [manuscript-final result map](../result/README.md#manuscript-final-results). Classification Exp-1 uses 31415/27182/16180 and Exp-2 uses 48271/59317/84629; 2D seed123 and 3D seed42 are separate single-run experiments. Locally regenerated outputs remain local analysis until explicitly validated; never overwrite or relabel the recorded formal results.
+
+本地新生成结果不自动成为论文正式结果，也不得覆盖或重新标记正式记录。分类与分割的种子命名空间独立。

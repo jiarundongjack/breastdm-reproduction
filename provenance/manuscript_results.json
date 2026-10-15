@@ -1,0 +1,2833 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "b14873d76470e428fd5f22db8ef4410f76e3ccbf",
+  "scope": "Repository-result alignment to the user-specified manuscript-final experiment set. No manuscript Word/PDF inspected; no metrics recomputed. Baseline hashes identify pre-cleanup files.",
+  "classification_exp1": {
+    "seeds": [
+      31415,
+      27182,
+      16180
+    ],
+    "reporting": "mean_sd",
+    "runs": 3,
+    "auc_definition": "author-released-code-compatible flattened two-class AUC",
+    "run_directories": [
+      "result/fusion_exp1_100ep_seed31415_final_multiseed",
+      "result/fusion_exp1_100ep_seed27182_final_multiseed",
+      "result/fusion_exp1_100ep_seed16180_final_multiseed"
+    ],
+    "aggregate_directory": "result/paper_outputs/exp1_final_multiseed_summary"
+  },
+  "classification_exp2": {
+    "seeds": [
+      48271,
+      59317,
+      84629
+    ],
+    "reporting": "mean_sd",
+    "runs": 3,
+    "auc_definition": "author-released-code-compatible flattened two-class AUC",
+    "run_directories": [
+      "result/fusion_exp2_100ep_seed48271_final_multiseed",
+      "result/fusion_exp2_100ep_seed59317_final_multiseed",
+      "result/fusion_exp2_100ep_seed84629_final_multiseed"
+    ],
+    "aggregate_directory": "result/paper_outputs/exp2_final_multiseed_summary"
+  },
+  "segmentation_2d": {
+    "seed": 123,
+    "runs": 1,
+    "reporting": "single_run",
+    "run_directory": "result/seg2d_unet_seed123_gpu_20260911",
+    "metrics": "result/seg2d_unet_seed123_gpu_20260911/test_metrics.csv"
+  },
+  "segmentation_3d": {
+    "seed": 42,
+    "runs": 1,
+    "reporting": "single_run",
+    "run_directory": "result/seg3d_unet_locked_volume_ppv_seed42_20260911",
+    "metrics": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/test_metrics.csv"
+  },
+  "rule": "Files outside the explicitly designated canonical set must not automatically be interpreted as manuscript-final.",
+  "files": [
+    {
+      "path": "result/README.md",
+      "baseline_sha256": "9173dcd9f53842aac9bab1444a080f741dc7a8378fdee77d8c7f240eef17f40b",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "text_lines": 9
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "5c4acdbc771964f8ecd81dde5a42a61e9f51b51d7c57a62008050cb33b9d0351",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "a95761b0774de913eff54ef12dd35fbbad31e944aea92f1532cd9a0958fdcf2a",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "16180"
+      ]
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_sha256.json",
+      "baseline_sha256": "9410d5d582ac9efd129b773e56804716e6280e78eb81a4a27e61edfc7938b7f1",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train.py",
+          "classification_auc.py",
+          "data_loader.py",
+          "fusionModels.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp1_provenance.py",
+          "summarize_exp1_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "74ce55e75f4096bf9e98c04e89b6139d9956384ca0a6183bbb00b0c1c06ebfa1",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/data_loader.py",
+      "baseline_sha256": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/exp1_provenance.py",
+      "baseline_sha256": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 228
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "baseline_sha256": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "11030ab001494e73425bcefc714f43fc66c68d4ca73a319a40a2e77ae5935b3c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/completion.json",
+      "baseline_sha256": "51e68d4bc3b2095253a3d56b00a42c1ce400ee39fd56af5b61fd935ff2cc663c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "1b7ca4ff2bc8799ae7b8d99f6a85823282f4f01e45f352e5f9fc99478c99c5bf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/loss_curve.png",
+      "baseline_sha256": "9380454d8455eb257efbf7764be676b4a97a995f2baec23afdfefc46df7f9be0",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/run_config.json",
+      "baseline_sha256": "f6786e76b5a24fcfcdc50dd7362de82018089440995f38f8228a42df0d21a7b3",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "71446d1138bec13a0053f834a7e598ca9d93ef1edc15ade2d19926d18553cc6d",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "08bde403f78a79c5d66ca7bd67b2fe9ac85ea1ac6b438476e5b5c873b8c34e87",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/training_history.csv",
+      "baseline_sha256": "0a29a3eb25aacb67426bc2b8fefa61409bf4c10d9e6f1b676ab8cddd69d323be",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed16180_final_multiseed/training_log.txt",
+      "baseline_sha256": "f21efd19731cbacd5ed44447ba5bb0b465236e75499eda0f7ff5d1b30e77fb5d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 311
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "8b4184d77eb41cef90424f332e17b07ec1a9c68980d7ebf663b933e3b0ac5401",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "4b7ea0e1ff56d2075680a9829faf5157c74ba0e734c7e8d07f29d431423d7a0a",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "27182"
+      ]
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_sha256.json",
+      "baseline_sha256": "9410d5d582ac9efd129b773e56804716e6280e78eb81a4a27e61edfc7938b7f1",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train.py",
+          "classification_auc.py",
+          "data_loader.py",
+          "fusionModels.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp1_provenance.py",
+          "summarize_exp1_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "5f642cf3f70d9e7f2a7465fdfb291287a81c5b8901fce19a29a8b22466e766ea",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/data_loader.py",
+      "baseline_sha256": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/exp1_provenance.py",
+      "baseline_sha256": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 228
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "baseline_sha256": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "dc767fbdf5e35e3271de14f82f58f568450ce73c81de7c918c6edcf234657b2b",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/completion.json",
+      "baseline_sha256": "3c9b47b48f3891e8fb9b567010fa283c6ff8d54f91acd83d99181f9c8f8f12fd",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "1b7ca4ff2bc8799ae7b8d99f6a85823282f4f01e45f352e5f9fc99478c99c5bf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/loss_curve.png",
+      "baseline_sha256": "4b712c0ebd4d004e411190352e0ddf0fc804ef9c643b95e05a090fe59ec44a84",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/run_config.json",
+      "baseline_sha256": "15747bd040d62be4e21207627ab43b25098b5a3a021ec37dec06572a63f82f53",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "0d4897198983beb28ff4a20105f551bdd68ef54c55270f9933b70de954fa82d5",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "c85063478f53fb102dd46ad64290d89d047df498bf22083bd4830bfe458c0d82",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/training_history.csv",
+      "baseline_sha256": "e27827cc5829e501abf84bf74054653e092fbf0b176b943ce221d8707e715dab",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed27182_final_multiseed/training_log.txt",
+      "baseline_sha256": "2dc5696186dd16995f4cf8eabfcb99d415ea39b65d2a913920142733a0fc3c64",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 312
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "44c44fe68eaf3302a86304b5f3f0d6b45b3a47dd1d19ddbc6c895ef891d8fa00",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "dbad542fa08be76603c9f5ef5c0ec96932c486202adb12dac1e0538af9d5f890",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "31415"
+      ]
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_sha256.json",
+      "baseline_sha256": "9410d5d582ac9efd129b773e56804716e6280e78eb81a4a27e61edfc7938b7f1",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train.py",
+          "classification_auc.py",
+          "data_loader.py",
+          "fusionModels.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp1_provenance.py",
+          "summarize_exp1_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "67666859513b85ae4714feb0a55cd4b5c2dba518257123fb1b10ba0427a04b2c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/data_loader.py",
+      "baseline_sha256": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/exp1_provenance.py",
+      "baseline_sha256": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 228
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "baseline_sha256": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "92fdadc1a3a753d6f7e7feac1a89b70079af2d9766b450e0ee3c6f03a10e0e20",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/completion.json",
+      "baseline_sha256": "5d391d3b1e24f273b0f1d3e8d27c0f9d7db86282837c5ef3f882cf2b26b00423",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "1b7ca4ff2bc8799ae7b8d99f6a85823282f4f01e45f352e5f9fc99478c99c5bf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/loss_curve.png",
+      "baseline_sha256": "ee5a7163bc8024fb7a9fbdc253c2d3ccdeda37a8687220d88036f9159dcd17e6",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/run_config.json",
+      "baseline_sha256": "71cedec7b4792087d64a2efb36124069a3361cabd825aeb3c222f469af69a8cc",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "c80a4f1a0516e4aab937185977927a43b4dd27eb4a30e6efdff06ee31e722b4c",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "8d13ee84280ec3856bc7a20f72f2495c4ab7b96a5346be332b090279281a0409",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/training_history.csv",
+      "baseline_sha256": "e23f519ad2f546487d4aac790fe0123442e9a9ecc5f1d5cd0e18ade07a5f7aeb",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp1_100ep_seed31415_final_multiseed/training_log.txt",
+      "baseline_sha256": "ca0675830dae8585a12f94ed1855cff6ff4426453585a5f6aa418fe99bee3457",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 311
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "2c95fd6746831aa8096177e9e709fede0f91cc4de8390af9399f5c62328bb857",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "d0a6aae7ff4a9570bc7afe1f783b229ed5ad335ed14365fdcfdba3163b63dc51",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "48271"
+      ]
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/best_checkpoint_reload.json",
+      "baseline_sha256": "e228e0f7970139e792abc1b8ce26cc5d32b33121989ab34b5d640d9d267863eb",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "Best Epoch",
+          "Best Validation AUC",
+          "sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_sha256.json",
+      "baseline_sha256": "019c9c3eec13c113b86947e3be58ed47ec9bc5c14d86d03d2bd2917ac8d4f0e7",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train_exp2.py",
+          "classification_auc.py",
+          "data_loader_exp2.py",
+          "fusionModels_exp2.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp2_provenance.py",
+          "summarize_exp2_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "52d87a2be3698aa75e253b403be716967f88f37ab8a722dc69284221a5dab8b9",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "baseline_sha256": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/exp2_provenance.py",
+      "baseline_sha256": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 283
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "baseline_sha256": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "c17743d79bc186e701da144d139052493920b28cfa9af5718fe3e1790490959a",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/completion.json",
+      "baseline_sha256": "4e8a2add85d195e87be7b55d96a7e8bbfd625188087fb2b6ea06359eea8efd76",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "df8affce0eb8eac7476fe94c9f3d7dce47d38fbb7fc05cc9ae316a2bb716d387",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/loss_curve.png",
+      "baseline_sha256": "7e65dcee1ce8d5c29849cf0683a9e47e7bdc2a6bce59751ef1a687e36c8eafd3",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/run_config.json",
+      "baseline_sha256": "04cb3d065bc75146302269cd005b031ff24d0cc1afbb710e1c6213ee4fe5d661",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "732d12834cfe1bb57fec7f99b41bebb819e102c0567049492206ae9e0dff6f4f",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "bc20f869de43760031bbc32c1248085b0131881a84b009754be130a51454d12f",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/training_history.csv",
+      "baseline_sha256": "478e6effcc53644c292d946046c3767afc3fa965eadcbec030b65549e03ff79e",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed48271_final_multiseed/training_log.txt",
+      "baseline_sha256": "1e7a1677cf3915ba2c828576d7c9c60f35df31ff0d0cc63a2a5c974d223a1409",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 547
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "9cac516ed3168ecadf94458c481bf2ef29ae9658ba6408d04c7a5bab4808f6b2",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "bda15f2cae4d81ee951c477053c9aa58927354979c8c06b8639732a62a2eeb74",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "59317"
+      ]
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/best_checkpoint_reload.json",
+      "baseline_sha256": "92e5f1c1c4a044f766d845e8989b01837322cf42adfb43ed78e47786a2c02ebf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "Best Epoch",
+          "Best Validation AUC",
+          "sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_sha256.json",
+      "baseline_sha256": "019c9c3eec13c113b86947e3be58ed47ec9bc5c14d86d03d2bd2917ac8d4f0e7",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train_exp2.py",
+          "classification_auc.py",
+          "data_loader_exp2.py",
+          "fusionModels_exp2.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp2_provenance.py",
+          "summarize_exp2_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "fe263973621e713dc6aaef50b5b6b905bae2036cfd4821742569c1a56c125643",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "baseline_sha256": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/exp2_provenance.py",
+      "baseline_sha256": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 283
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "baseline_sha256": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "cfec395e7c1b44ca1707813c188b908feb745736f4c3649b2e15e28f381202ac",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/completion.json",
+      "baseline_sha256": "6ede689e71dd774fe076ee9a3aec05da985114939bdc840cd07913d84a90b041",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "df8affce0eb8eac7476fe94c9f3d7dce47d38fbb7fc05cc9ae316a2bb716d387",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/loss_curve.png",
+      "baseline_sha256": "a2f68c9c5817be4e649c00d8380851f00d7d2b172909a63c600ea6ccafdcdc6e",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/run_config.json",
+      "baseline_sha256": "3b8339cfc3f4f11db856829206dee4f8877abeb3384245b55ac481f49d898a17",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "06cb72eb3c7ab2756a52b1ba75d786efc4593879892aef89480c0bcd17786123",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "00ae92edfb671cc18e99767401d3286ca000116805570e0b926c85ac8b8dda56",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/training_history.csv",
+      "baseline_sha256": "609267a236bd81879ec90d92376ab9edfc43e5bf6961a206b36555e4b43882cb",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed59317_final_multiseed/training_log.txt",
+      "baseline_sha256": "68e9e5150b3038d1598ab12783518a4a2f80b9916b450001f2efc231afc7578f",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 548
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/accuracy_curve.png",
+      "baseline_sha256": "9a99ee6eeccf2569bb3b54afa8b1467e740158f1ea2f220c21577040f0814589",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/author_style_metrics.csv",
+      "baseline_sha256": "15b5c3a7b9df801d3b846e7364cc067339b6e7ca62cb4d28601e24b15673167d",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "Experiment",
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 1
+      },
+      "recorded_seeds": [
+        "84629"
+      ]
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/best_checkpoint_reload.json",
+      "baseline_sha256": "d129f26253d14553a97ac971345ae7a408ba0ff33676c0544581e44cd2535646",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "Best Epoch",
+          "Best Validation AUC",
+          "sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_sha256.json",
+      "baseline_sha256": "019c9c3eec13c113b86947e3be58ed47ec9bc5c14d86d03d2bd2917ac8d4f0e7",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "train_exp2.py",
+          "classification_auc.py",
+          "data_loader_exp2.py",
+          "fusionModels_exp2.py",
+          "VIT_model.py",
+          "Models.py",
+          "tools.py",
+          "exp2_provenance.py",
+          "summarize_exp2_final_multiseed.py"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/VIT_model.py",
+      "baseline_sha256": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 422
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/VIT_model.py.license",
+      "baseline_sha256": "afce46c2faf49888db4a99a2ac5063f316fd2c94d4a6da7ca5bba2163098b466",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 19
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/classification_auc.py",
+      "baseline_sha256": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 109
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "baseline_sha256": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 176
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/exp2_provenance.py",
+      "baseline_sha256": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 283
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "baseline_sha256": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 50
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/tools.py",
+      "baseline_sha256": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 51
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/tools.py.license",
+      "baseline_sha256": "d42a4f20e577f11be4f9661f6df92bd3cfc07528e602a58f4b1642c12b03f86b",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 14
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/completion.json",
+      "baseline_sha256": "f1ac6d0fb3fb02cd41f2559ad084e05011a389146ea838dc212887c6b1854753",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "status",
+          "result",
+          "files_sha256"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/dataset_manifest_sha256.txt",
+      "baseline_sha256": "df8affce0eb8eac7476fe94c9f3d7dce47d38fbb7fc05cc9ae316a2bb716d387",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/loss_curve.png",
+      "baseline_sha256": "055c6a63c7cfbf34273dba8503c075511633bc4d308ba88946c4dc82299ce893",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/run_config.json",
+      "baseline_sha256": "acbe19017cf87afe689dc3dafb87be50e1509090d699373380063ba141200543",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "seed",
+          "output_directory",
+          "timestamp",
+          "argv",
+          "invariants"
+        ]
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/test_pr_curve.png",
+      "baseline_sha256": "99440eb195600c8110c6a208183af753775b132817a1865e2261d183d7a9ac76",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/test_roc_curve.png",
+      "baseline_sha256": "bbbe4bde44901ab7e1d94c954b3417b241be1cb26996341a9db122eccbe6f24c",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/training_history.csv",
+      "baseline_sha256": "364a94d73d0b13383a0fee9a089524ae146d8412cbd5a01fff959b610e289cec",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "Epoch",
+          "Train Loss",
+          "Val Loss",
+          "Train Accuracy",
+          "Val Accuracy",
+          "Val AUC",
+          "Best Epoch",
+          "Best Val AUC"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/fusion_exp2_100ep_seed84629_final_multiseed/training_log.txt",
+      "baseline_sha256": "f550bceff2fdd54c1419aa1a04d09a1e458b4c302271945972cb8ced362b75a0",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 546
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_auc_summary.csv",
+      "baseline_sha256": "29aa3f65bb277569d376055700ace92ba66b9e8bdb20c25a7bb7847cb0362314",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "AUC"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "16180",
+        "27182",
+        "31415"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_confusion_per_seed.csv",
+      "baseline_sha256": "53a31cd4a7b7b609c226622b463a6a63daf33389785787e4390b223f0f5d19a0",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "TN",
+          "FP",
+          "FN",
+          "TP",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision_Malignant"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "16180",
+        "27182",
+        "31415"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.csv",
+      "baseline_sha256": "ec0b85f888d58c2154d5757b95eec8c47a5ddbb07c9f6f28425b8cae7f989d01",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png",
+      "baseline_sha256": "8dffea441f99f326c2b7083d4eb7eaf98f1ae885bf2714a35bbbccf313c04206",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity."
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_mean_outputs_report.txt",
+      "baseline_sha256": "66100af46533795007519973f1d93f4b9316f443ef725aa250e5fc930419a2f8",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "text_lines": 20
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_mean_roc.png",
+      "baseline_sha256": "38d3ef3a46142868983eba99fd029e7b64750b9c1488acc0133a090bf76ae52b",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity."
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_mean_std.csv",
+      "baseline_sha256": "8f382248c9a8bf75bfb29233882649f91e9c658efb14d83e39a405d754860e7b",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "seeds": [
+        42,
+        123,
+        2026
+      ],
+      "reason": "Superseded historical Exp-1 three-seed table or its companion mean/std summary; replaced by canonical 31415/27182/16180 tables.",
+      "replacement": "result/paper_outputs/exp1_final_multiseed_summary",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Mean",
+          "Std",
+          "Mean ± Std"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp1_figures/exp1_three_seed_results.csv",
+      "baseline_sha256": "37f9bf31b687044a270f5d8b4c545c888d7b86457c2a25fb76cbf8d712943214",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "seeds": [
+        42,
+        123,
+        2026
+      ],
+      "reason": "Superseded historical Exp-1 three-seed table or its companion mean/std summary; replaced by canonical 31415/27182/16180 tables.",
+      "replacement": "result/paper_outputs/exp1_final_multiseed_summary",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "Accuracy",
+          "AUC",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AP",
+          "TN",
+          "FP",
+          "FN",
+          "TP"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "42",
+        "123",
+        "2026"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp1_final_multiseed_summary/exp1_multiseed_mean_sd.csv",
+      "baseline_sha256": "33b7012bcb41535da8e5425e1495645e497d237dd78d8426242e9b24f3e47868",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Mean",
+          "SD",
+          "ddof",
+          "Runs",
+          "Definition"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp1_final_multiseed_summary/exp1_multiseed_summary.csv",
+      "baseline_sha256": "9e86869217dd3cd2792747cd6586c65e5182ec2a76360dee169eb4a7379bb66c",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "seed",
+          "Best Epoch",
+          "Best Validation AUC",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "31415",
+        "27182",
+        "16180"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp1_final_multiseed_summary/exp1_table5_comparison.csv",
+      "baseline_sha256": "c67cdc9c2f821462e701be91c09794b71f22f26b875d8f92775bc7d7204d41e1",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Original Table 5",
+          "seed31415",
+          "seed27182",
+          "seed16180",
+          "Mean",
+          "SD",
+          "Mean +/- SD",
+          "Notes",
+          "Units"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_exact.csv",
+      "baseline_sha256": "11f0e04a49bdcafed01830e9255d93b394649ac53f6db8a24aca50067010009e",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.csv",
+      "baseline_sha256": "47d87eeb5b754a3a98436916139a0a0452e0e6e9d1f4ec346b7991d72b5601cc",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png",
+      "baseline_sha256": "332e3fe5f36113799022eb501dbb4324bc01f2eb5180e134e36db2cf2443a3cc",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity."
+    },
+    {
+      "path": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_note.txt",
+      "baseline_sha256": "eef897fca4537bc6e20a96c255576811d5197bb60213e30996b12ce13777b743",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "text_lines": 11
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_auc_summary.csv",
+      "baseline_sha256": "9c7020bff9afc414682408c650321f257d6edcda5ebaeaa6165e38074c0497fe",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "AUC"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_confusion_per_seed.csv",
+      "baseline_sha256": "d64879c7446561017a19e631fdde892f02b4fc00636f9cc17ef72df311725391",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "TN",
+          "FP",
+          "FN",
+          "TP"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_confusion_matrix.csv",
+      "baseline_sha256": "11f0e04a49bdcafed01830e9255d93b394649ac53f6db8a24aca50067010009e",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_confusion_matrix.png",
+      "baseline_sha256": "f1332235223269b7192eb026ae7d244552d9265f21b3936bccb779d0945daced",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity."
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_outputs_report.txt",
+      "baseline_sha256": "77ada359051c97054e3c7c2bb1083be30cde106cda1f5e4004705d67904983c9",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "text_lines": 7
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_roc.png",
+      "baseline_sha256": "06b8b765533f7c448f23c2b13fe8054321436702be3834caa807378fa0e198bf",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity."
+    },
+    {
+      "path": "result/paper_outputs/exp2_final_multiseed_summary/exp2_multiseed_mean_sd.csv",
+      "baseline_sha256": "d9360f7060fe5a2e82f75401dcfa7583ed2036f129e7c1eda4c40eb7f541ad9c",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Mean",
+          "SD",
+          "ddof",
+          "Runs",
+          "Definition"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/paper_outputs/exp2_final_multiseed_summary/exp2_multiseed_summary.csv",
+      "baseline_sha256": "8e40f5af159c2f824b9dcfe5d6ae0f8d92220d9df7553ed1cde555d2e66fb96f",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "seed",
+          "Best Epoch",
+          "Best Validation AUC",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/paper_outputs/exp2_final_multiseed_summary/exp2_table5_comparison.csv",
+      "baseline_sha256": "a439a6a9176baa3c6d03c78bdfc60c68c6650d40065b8009754f349f95582cfb",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Canonical seed tables/figures, associated mean/SD or exact/displayed confusion matrices; historical figure/table filenames do not change experiment identity.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Original Table 5",
+          "seed48271",
+          "seed59317",
+          "seed84629",
+          "Mean",
+          "SD",
+          "Mean +/- SD",
+          "Notes",
+          "Units"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/reproduced/audit_results.json",
+      "baseline_sha256": "5b48175c6d2262fbb57ca68b24d94d8179022d310b713ddf0bcf7289a403ece7",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "epochs_complete",
+          "best_epoch",
+          "best_checkpoint_raw_epoch",
+          "last_checkpoint_raw_epoch",
+          "best_validation_DSC",
+          "tied_max_epochs",
+          "formal_test",
+          "recomputations",
+          "confusion_matrix",
+          "class_IoUs",
+          "lr_reduction_epochs",
+          "final_lr",
+          "nan_inf_in_saved_metrics",
+          "paper_comparison",
+          "checkpoint_optimizer_weight_decay",
+          "formal_files",
+          "evidence_chain"
+        ]
+      }
+    },
+    {
+      "path": "result/reproduced/evidence_chain.csv",
+      "baseline_sha256": "e03eb500fcd9c34cbc00c95501ebc391cf3342ed13364cb3877f8214332be529",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "Evidence_source",
+          "Best_Epoch",
+          "Best_Val_DSC",
+          "Test_DSC",
+          "Test_mIoU",
+          "Test_PPV",
+          "Status"
+        ],
+        "data_rows": 5
+      }
+    },
+    {
+      "path": "result/reproduced/exp1_auc_summary.csv",
+      "baseline_sha256": "29aa3f65bb277569d376055700ace92ba66b9e8bdb20c25a7bb7847cb0362314",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_figures/exp1_auc_summary.csv",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "AUC"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "16180",
+        "27182",
+        "31415"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp1_confusion_per_seed.csv",
+      "baseline_sha256": "53a31cd4a7b7b609c226622b463a6a63daf33389785787e4390b223f0f5d19a0",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_figures/exp1_confusion_per_seed.csv",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "TN",
+          "FP",
+          "FN",
+          "TP",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision_Malignant"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "16180",
+        "27182",
+        "31415"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp1_final_multiseed_summary/exp1_multiseed_mean_sd.csv",
+      "baseline_sha256": "33b7012bcb41535da8e5425e1495645e497d237dd78d8426242e9b24f3e47868",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_final_multiseed_summary/exp1_multiseed_mean_sd.csv",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Mean",
+          "SD",
+          "ddof",
+          "Runs",
+          "Definition"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/reproduced/exp1_final_multiseed_summary/exp1_multiseed_summary.csv",
+      "baseline_sha256": "9e86869217dd3cd2792747cd6586c65e5182ec2a76360dee169eb4a7379bb66c",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_final_multiseed_summary/exp1_multiseed_summary.csv",
+      "inspection": {
+        "columns": [
+          "seed",
+          "Best Epoch",
+          "Best Validation AUC",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "31415",
+        "27182",
+        "16180"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp1_final_multiseed_summary/exp1_table5_comparison.csv",
+      "baseline_sha256": "c67cdc9c2f821462e701be91c09794b71f22f26b875d8f92775bc7d7204d41e1",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_final_multiseed_summary/exp1_table5_comparison.csv",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Original Table 5",
+          "seed31415",
+          "seed27182",
+          "seed16180",
+          "Mean",
+          "SD",
+          "Mean +/- SD",
+          "Notes",
+          "Units"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/reproduced/exp1_mean_confusion_matrix.csv",
+      "baseline_sha256": "ec0b85f888d58c2154d5757b95eec8c47a5ddbb07c9f6f28425b8cae7f989d01",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.csv",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/reproduced/exp1_mean_confusion_matrix.png",
+      "baseline_sha256": "de2afb6ddd5fc425b06efc9f664b0a124a7d8be631fdbbe6873c9a4efa59c1b0",
+      "action": "retain",
+      "category": "AMBIGUOUS_DO_NOT_TOUCH",
+      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
+      "candidate_final": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png"
+    },
+    {
+      "path": "result/reproduced/exp1_mean_outputs_report.txt",
+      "baseline_sha256": "66100af46533795007519973f1d93f4b9316f443ef725aa250e5fc930419a2f8",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp1_figures/exp1_mean_outputs_report.txt",
+      "inspection": {
+        "text_lines": 20
+      }
+    },
+    {
+      "path": "result/reproduced/exp1_mean_roc.png",
+      "baseline_sha256": "156682047bfe636ae30af5d4631665fae243e7290950562b278f405d2d816c21",
+      "action": "retain",
+      "category": "AMBIGUOUS_DO_NOT_TOUCH",
+      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
+      "candidate_final": "result/paper_outputs/exp1_figures/exp1_mean_roc.png"
+    },
+    {
+      "path": "result/reproduced/exp2_final_multiseed_summary/exp2_multiseed_mean_sd.csv",
+      "baseline_sha256": "d9360f7060fe5a2e82f75401dcfa7583ed2036f129e7c1eda4c40eb7f541ad9c",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_final_multiseed_summary/exp2_multiseed_mean_sd.csv",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Mean",
+          "SD",
+          "ddof",
+          "Runs",
+          "Definition"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_final_multiseed_summary/exp2_multiseed_summary.csv",
+      "baseline_sha256": "8e40f5af159c2f824b9dcfe5d6ae0f8d92220d9df7553ed1cde555d2e66fb96f",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_final_multiseed_summary/exp2_multiseed_summary.csv",
+      "inspection": {
+        "columns": [
+          "seed",
+          "Best Epoch",
+          "Best Validation AUC",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "AUC",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "TP",
+          "TN",
+          "FP",
+          "FN",
+          "N"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp2_final_multiseed_summary/exp2_table5_comparison.csv",
+      "baseline_sha256": "a439a6a9176baa3c6d03c78bdfc60c68c6650d40065b8009754f349f95582cfb",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_final_multiseed_summary/exp2_table5_comparison.csv",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Original Table 5",
+          "seed48271",
+          "seed59317",
+          "seed84629",
+          "Mean",
+          "SD",
+          "Mean +/- SD",
+          "Notes",
+          "Units"
+        ],
+        "data_rows": 6
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_mean_confusion_matrix_exact.csv",
+      "baseline_sha256": "11f0e04a49bdcafed01830e9255d93b394649ac53f6db8a24aca50067010009e",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_exact.csv",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_mean_confusion_matrix_integer.csv",
+      "baseline_sha256": "47d87eeb5b754a3a98436916139a0a0452e0e6e9d1f4ec346b7991d72b5601cc",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.csv",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_mean_confusion_matrix_integer.png",
+      "baseline_sha256": "4ea7ad1095d10ffd097689741d20ac2347c75f2a5ddc87c04862a7b588f6480a",
+      "action": "retain",
+      "category": "AMBIGUOUS_DO_NOT_TOUCH",
+      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
+      "candidate_final": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png"
+    },
+    {
+      "path": "result/reproduced/exp2_mean_confusion_matrix_note.txt",
+      "baseline_sha256": "eef897fca4537bc6e20a96c255576811d5197bb60213e30996b12ce13777b743",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_note.txt",
+      "inspection": {
+        "text_lines": 11
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_auc_summary.csv",
+      "baseline_sha256": "9c7020bff9afc414682408c650321f257d6edcda5ebaeaa6165e38074c0497fe",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_auc_summary.csv",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "Accuracy",
+          "Sensitivity",
+          "Specificity",
+          "Precision_Malignant",
+          "Precision_Weighted",
+          "AUC"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_confusion_per_seed.csv",
+      "baseline_sha256": "d64879c7446561017a19e631fdde892f02b4fc00636f9cc17ef72df311725391",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_confusion_per_seed.csv",
+      "inspection": {
+        "columns": [
+          "Seed",
+          "TN",
+          "FP",
+          "FN",
+          "TP"
+        ],
+        "data_rows": 3
+      },
+      "recorded_seeds": [
+        "48271",
+        "59317",
+        "84629"
+      ]
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_mean_confusion_matrix.csv",
+      "baseline_sha256": "11f0e04a49bdcafed01830e9255d93b394649ac53f6db8a24aca50067010009e",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_exact.csv",
+      "inspection": {
+        "columns": [
+          "",
+          "Predicted Benign",
+          "Predicted Malignant"
+        ],
+        "data_rows": 2
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_mean_confusion_matrix.png",
+      "baseline_sha256": "f1332235223269b7192eb026ae7d244552d9265f21b3936bccb779d0945daced",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_confusion_matrix.png"
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_mean_outputs_report.txt",
+      "baseline_sha256": "77ada359051c97054e3c7c2bb1083be30cde106cda1f5e4004705d67904983c9",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_outputs_report.txt",
+      "inspection": {
+        "text_lines": 7
+      }
+    },
+    {
+      "path": "result/reproduced/exp2_roc/exp2_mean_roc.png",
+      "baseline_sha256": "06b8b765533f7c448f23c2b13fe8054321436702be3834caa807378fa0e198bf",
+      "action": "remove",
+      "category": "LEGACY_OBSOLETE",
+      "reason": "Byte-identical generated duplicate of retained authoritative paper output; not a different experiment or new numerical result.",
+      "replacement": "result/paper_outputs/exp2_corrected_flattened_roc_20261007/exp2_mean_roc.png"
+    },
+    {
+      "path": "result/reproduced/fp_fn_cases/subtraction_formula_all_candidates.csv",
+      "baseline_sha256": "be57848c5e969827b4aa5bce02dea4058e218e05a2e9ec051475f6ae77b92790",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "Exp2 New Channel",
+          "Formula",
+          "Pre Channel",
+          "Post Channel",
+          "Exact Files",
+          "Total Files",
+          "File Match Rate",
+          "Pixel Match Rate",
+          "Max Abs Difference"
+        ],
+        "data_rows": 1728
+      }
+    },
+    {
+      "path": "result/reproduced/fp_fn_cases/subtraction_formula_best_mapping.csv",
+      "baseline_sha256": "bcdccbe6d1bc8a569a2ad2c6f9b72eb6284c23e4fe814f842df5a3a377296d5f",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "Exp2 New Channel",
+          "Formula",
+          "Pre Channel",
+          "Post Channel",
+          "Exact Files",
+          "Total Files",
+          "File Match Rate",
+          "Pixel Match Rate",
+          "Max Abs Difference"
+        ],
+        "data_rows": 8
+      }
+    },
+    {
+      "path": "result/reproduced/paper_vs_reproduction.csv",
+      "baseline_sha256": "6bf2d630741526aadcbed86ed6143747bd9b6f689ebe19f68cd68ad25cf640b3",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Paper_percent",
+          "Reproduction_percent",
+          "Difference_pp"
+        ],
+        "data_rows": 3
+      }
+    },
+    {
+      "path": "result/reproduced/recomputed_metric_check.csv",
+      "baseline_sha256": "9d4d0f9dd104a2d82ed6663f4389ccec0c46a3e4b7cb0dfac985c5500e3c9f01",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "Metric",
+          "Recomputed",
+          "Official",
+          "Absolute_difference"
+        ],
+        "data_rows": 4
+      }
+    },
+    {
+      "path": "result/reproduced/test_metrics.csv",
+      "baseline_sha256": "e02ff9bd1ecfd0030e11a886022c0d30656fe5df59a00dc9531bd39fe1bd5787",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "best_epoch",
+          "test_dice",
+          "test_miou",
+          "test_ppv",
+          "PPV",
+          "PPV_volume_mean",
+          "ppv_num_volumes",
+          "ppv_zero_prediction_volumes"
+        ],
+        "data_rows": 1
+      }
+    },
+    {
+      "path": "result/reproduced/test_report.json",
+      "baseline_sha256": "900787312e47577374002784550790bbafc22ed6c5abb75c8af6c629ddc9a230",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "json_type": "dict",
+        "keys": [
+          "synthetic_batch_invariance",
+          "all_volume_PPVs_included",
+          "missing_class_NaN_retained",
+          "depth_cases_5_8_11_pass",
+          "scheduler_reduces_on_bad_epoch_10",
+          "formal_CSV_writer_pass",
+          "synthetic_DSC",
+          "synthetic_PPV",
+          "dataset",
+          "patient_overlap",
+          "training",
+          "full_inference"
+        ]
+      }
+    },
+    {
+      "path": "result/reproduced/threshold_sensitivity_volume_ppv.csv",
+      "baseline_sha256": "9229fd7ff1e915b8b5473bf56b5be93124c1e22c0ce1751bd0071f44b485d89b",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Documented audit/protocol/subtraction/threshold evidence; not an additional manuscript-final experiment. In particular reproduced/test_metrics.csv is the four-volume synthetic check.",
+      "inspection": {
+        "columns": [
+          "threshold",
+          "DSC",
+          "mIoU",
+          "PPV_volume_mean",
+          "TP",
+          "FP",
+          "FN",
+          "TN",
+          "Pred_GT_ratio",
+          "zero_prediction_volumes",
+          "num_volumes"
+        ],
+        "data_rows": 5
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/my_dataset.py",
+      "baseline_sha256": "0302b50d1ba71b69087a23b7053f578af6adff3a33e0bc8a5a0f43fa99e7537c",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 90
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/src/unet.py",
+      "baseline_sha256": "8eb7a76bdc2a53a784f1ddaea66eb0e59ac63ccd7ca8c68f5f9b9461e19c6f33",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 96
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/src/unet.py.license",
+      "baseline_sha256": "b91e2022f53178ea5098add57c258598e82541d4c0aeca12bff4ca08328fec35",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 15
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/dice_curve.png",
+      "baseline_sha256": "4edaf2a13993a52f25bc87d3de726fd88d85d7cddffd297e6d4876099646d912",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/loss_curve.png",
+      "baseline_sha256": "e1d2546f00907f0575e065e074297a9b41dfc6e7f9fd7b87f150fec7197a9b09",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/lr_curve.png",
+      "baseline_sha256": "8d0a1eac6a36a518e062f5fc2df5e0cf46e6e365d407a9337a298ab7fd4d3f4f",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/miou_curve.png",
+      "baseline_sha256": "6d0cc83b143a58ad8fad3e1a82219b814a4ef301034ee0041ab53e774a8a429b",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/ppv_curve.png",
+      "baseline_sha256": "41ae9f2359950d4db95a7831caf51a3f7560ce76e90bf3ec19ac77c8ceb7d777",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/run_config.txt",
+      "baseline_sha256": "e596deb0f7c4efb9474ad4b0e57499c47e88f3f5b34ee800f6ba5f3d1f32ae15",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 27
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/test_metrics.csv",
+      "baseline_sha256": "937a175feae452fb39320cc73133fdfaa762b38459fa182e83038ea38ac73d10",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "best_epoch",
+          "test_dice",
+          "test_miou",
+          "test_ppv",
+          "PPV_global",
+          "PPV_author_separate_evaluator",
+          "author_ppv_included_images",
+          "author_ppv_excluded_images",
+          "author_ppv_tp_zero_images",
+          "author_ppv_tn_zero_images"
+        ],
+        "data_rows": 1
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/training_history.csv",
+      "baseline_sha256": "d64c27186d1b45cdf881c92b1582a072c83363137cc9520447a46c6b3bd1ce73",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "epoch",
+          "train_loss",
+          "val_dice",
+          "val_miou",
+          "val_ppv",
+          "lr"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/seg2d_unet_seed123_gpu_20260911/training_log.txt",
+      "baseline_sha256": "8236e1e68802fb8f9fd8384a33565b6d18e97637ada19659a96028c3b54a24a9",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1100
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/my_dataset3d.py",
+      "baseline_sha256": "203e3ec35c67ac38a6a283b3a74f2891cbbc93ec656fb89b1afd74ae63158e31",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 183
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/segmentation3d_metrics.py",
+      "baseline_sha256": "13669caad03010bc0770fa3f3f932e773ea4aa0843ac85534072d3ae65243397",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 86
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/dice_curve.png",
+      "baseline_sha256": "dc5e0249eed79dc8b40426198c178804f1cfc82af6dc68fd4033320ae891f03d",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/find_overseg_case.py",
+      "baseline_sha256": "d5255a60c1ce8b880634c8bccfd03851b3a40cfcdba9f55e5cf9f81606b7a0e4",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 86
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/loss_curve.png",
+      "baseline_sha256": "d57bc754bcf96455a61b70797ec170f3b53008fbcc5aad35494e6e6348b12573",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/lr_curve.png",
+      "baseline_sha256": "f7ad6f30bd5189a5d0afa3fb323f8aa929d4f6f0c7ed93a50a584983d46d09f7",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_figures.py",
+      "baseline_sha256": "187671a9c17681462f1e3c0a657f528a0ea1036fd345546d404f2ed6eadd732d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 255
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp.py",
+      "baseline_sha256": "a5db684c48efb88a662bdefa874f62c61fd5aae1ad4d0696edc34b23454c6a83",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1451
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v2.py",
+      "baseline_sha256": "f1bf04d10e1b043528cb4313ead1979d7f2343a431b5417ae56838cc8bc01265",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1582
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v3.py",
+      "baseline_sha256": "428d08a9abf1a0fba965e01938e0ce7b1661a2e87608226b145aa624dd9b53d8",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 2200
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_publication_layout.py",
+      "baseline_sha256": "166efd6db00a5fdac05f1bd7525b9afacb389b18ad0f71a41c38e262d5cff0d0",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 324
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/miou_curve.png",
+      "baseline_sha256": "eda51b91064281267666d6305032e6b755001ef7c0d90aeda4d6d3316c8d746c",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/ppv_curve.png",
+      "baseline_sha256": "1f4f0a4285dc5fb1dc647e5e896d517f0bfdc32072eb9ba92a367e969e955ff5",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment."
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/run_config.txt",
+      "baseline_sha256": "fde5fba585ad2488e8d63785365fe47338c04f1b2e5f2a0f98026014199da29d",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 96
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_slice_volume55_overseg.py",
+      "baseline_sha256": "7ac6c3f8ac9810d4ea09725196b4519f42a3085bb8b0bbcb85ba3a216e5a0ebe",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 964
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_top3_overseg_volumes_two_level.py",
+      "baseline_sha256": "c1810cfd82f3b0795bbcc78c9e5ed2c543f445dc9cb42fd1e75c855e18144dee",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 183
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/test_metrics.csv",
+      "baseline_sha256": "c5ed771be29b926bb75a3a12e56c51fb9fe92e8954c23fe83cb4468cb3f275dd",
+      "action": "retain",
+      "category": "MANUSCRIPT_FINAL",
+      "reason": "Recorded formal run metric or training/validation/test curve directly supporting the specified canonical experiment.",
+      "inspection": {
+        "columns": [
+          "best_epoch",
+          "test_dice",
+          "test_miou",
+          "test_ppv",
+          "PPV",
+          "PPV_volume_mean",
+          "PPV_global_aux",
+          "ppv_num_volumes",
+          "ppv_zero_prediction_volumes"
+        ],
+        "data_rows": 1
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/threshold_sensitivity_volume_ppv.csv",
+      "baseline_sha256": "234b37d56d218e57e0f6dbd8c3faf2879c7d1bcb84eca087a50c0cc62dd072bd",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "threshold",
+          "DSC",
+          "mIoU",
+          "PPV_volume_mean",
+          "PPV_global_aux",
+          "TP",
+          "FP",
+          "FN",
+          "TN",
+          "Pred_GT_ratio",
+          "zero_prediction_volumes",
+          "num_volumes"
+        ],
+        "data_rows": 5
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/training_history.csv",
+      "baseline_sha256": "373f79d54c7da930f660f565e4c7443f3da220c371f07f4de906e29630338673",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "columns": [
+          "epoch",
+          "train_loss",
+          "val_dice",
+          "val_miou",
+          "val_ppv",
+          "lr",
+          "PPV_volume_mean",
+          "PPV_global_aux",
+          "ppv_num_volumes",
+          "ppv_zero_prediction_volumes"
+        ],
+        "data_rows": 100
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/training_log.txt",
+      "baseline_sha256": "0a747264a2923c423a0f77ece910eef1ecbfa80d81f6b18bdb6d004997042dfa",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 1200
+      }
+    },
+    {
+      "path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/volume55_slice_overseg_selection/make_overseg_slice_2x2.py",
+      "baseline_sha256": "2128d4c56d1d5fdd6ea526ccdcbb22e2e7542d57319ba2fba60e403e9cf36acc",
+      "action": "retain",
+      "category": "REPRODUCTION_EVIDENCE",
+      "reason": "Canonical run configuration, history, completion/hash evidence, retained source snapshot, diagnostic table or project case-selection implementation; preserve unchanged.",
+      "inspection": {
+        "text_lines": 210
+      }
+    }
+  ]
+}

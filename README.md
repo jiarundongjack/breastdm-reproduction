@@ -8,6 +8,8 @@ The public repository includes the project-specific preparation, analysis, verif
 
 当前公开仓库保留本项目的数据准备、分析、验证、汇总与绘图脚本；涉及再分发许可尚未确认的原作者或第三方源码的工作流，需要先按[说明](THIRD_PARTY_CODE.md)完成本地源码准备。纯统计与绘图不要求补齐私有模型源码，但仍需要相应输入和环境。项目来源分类及其限定见逐文件清单。
 
+The authoritative [manuscript-final result map](result/README.md#manuscript-final-results) distinguishes formal outputs, reproduction evidence and unresolved variants; its [manifest](provenance/manuscript_results.json) records the canonical seeds and file-level decisions. / 正式结果、复现证据及待确认版本以该对应表和清单为准。
+
 ## Navigation / 阅读目录
 
 - [原始资源与获取说明](#resources)
@@ -86,8 +88,8 @@ The paths below describe the local directory structure used by the experiments. 
 | `code/analysis` | Classification statistics from saved prediction CSVs / 基于已有预测 CSV 的分类统计 |
 | `code/pretrained` | Two classification initialization checkpoints / 分类训练使用的两份预训练权重 |
 | `result/fusion_*`, `result/seg*` | Eight unchanged formal runs / 八次未经改写的正式运行记录 |
-| `result/paper_outputs` | Cross-seed summaries, corrected Exp-2 ROC, Grad-CAM and confusion matrices / 多种子汇总、修正后的实验二ROC、Grad-CAM及混淆矩阵 |
-| `result/reproduced` | New analysis outputs, separate from historical evidence / 本次重新分析输出，与历史记录分开 |
+| `result/paper_outputs` | Canonical cross-seed summaries, flattened ROC and confusion matrices / 正式多种子汇总、展平 ROC 与混淆矩阵 |
+| `result/reproduced` | Retained diagnostic/reproduction evidence and explicitly unresolved PNG variants; see result/README.md / 诊断与复现证据及明确待确认的 PNG，见结果说明 |
 | `environment` | Observed dependencies for two environments / 两套环境的依赖记录 |
 
 Use **`result`**, singular. Historical configuration files retain their original absolute
