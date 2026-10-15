@@ -1,6 +1,6 @@
 # Resource access / 资源获取
 
-**Prerequisite / 前置条件：** Follow the [local source setup](../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+The archive verification/restoration utility is public and needs no private model source. Actual inference may require workflow-specific [source setup](../THIRD_PARTY_CODE.md). / 权重校验与恢复脚本已公开，不要求私有模型源码；后续推理按具体工作流准备源码。
 
 ## Original code and data / 原始代码与数据
 

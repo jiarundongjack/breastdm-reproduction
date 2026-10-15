@@ -24,6 +24,34 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def selected_records(paths=None, workflow=None):
+    excluded = [row for row in records() if row['action'] == 'remove']
+    if paths and workflow:
+        raise ValueError('Choose --path or --workflow, not both.')
+    if workflow is not None:
+        mapping = json.loads((ROOT / 'provenance/workflow_sources.json').read_text(encoding='utf-8'))['workflows']
+        if workflow not in mapping:
+            raise ValueError('Unknown source workflow: ' + workflow)
+        paths = mapping[workflow]
+    if paths is None:
+        return excluded
+    if not set(paths).issubset({row['path'] for row in excluded}):
+        raise ValueError('Only excluded external/mixed-origin source paths can be restored.')
+    return [row for row in excluded if row['path'] in paths]
+
+
+def restored_source_paths():
+    """Return only present, verified private implementations; absent ones are optional."""
+    paths = []
+    for row in selected_records():
+        path = contained(ROOT, row['path'])
+        if path.exists():
+            if not path.is_file() or not valid(path.read_bytes(), row):
+                raise ValueError('Local source hash mismatch: ' + row['path'])
+            paths.append(row['path'])
+    return paths
+
+
 def contained(root, relative):
     root = root.resolve()
     path = root / relative
@@ -41,32 +69,29 @@ def valid(data, row):
     return digest(normalized(data).encode('utf-8')) == row['normalized_sha256']
 
 
-def missing_sources(root=None):
+def missing_sources(root=None, paths=None, workflow=None):
     root = ROOT if root is None else root
     missing = []
-    for row in records():
-        if row['action'] != 'remove':
-            continue
+    for row in selected_records(paths, workflow):
         path = contained(root, row['path'])
         if not path.is_file() or not valid(path.read_bytes(), row):
             missing.append(row['path'])
     return missing
 
 
-def require_sources(root=None):
-    missing = missing_sources(root)
+def require_sources(root=None, paths=None, workflow=None):
+    missing = missing_sources(root, paths, workflow)
     if missing:
         raise RuntimeError(
             f'{len(missing)} source files are absent or do not match the audited version. '
-            'Run python code/setup_third_party.py --check and follow THIRD_PARTY_CODE.md. '
+            'Run python code/setup_third_party.py --check'
+            + (f' --workflow {workflow}' if workflow else '')
+            + ' and follow THIRD_PARTY_CODE.md. Missing: ' + ', '.join(missing) + '. '
             'Original BreastDM sources alone cannot supply unresolved reproduction adaptations.')
 
 
-def restore(private_source=None, breastdm_source=None, paths=None):
-    selected = [r for r in records() if r['action'] == 'remove'
-                and (not paths or r['path'] in paths)]
-    if paths and set(paths) != {r['path'] for r in selected}:
-        raise ValueError('--path must name a removed file in the inventory.')
+def restore(private_source=None, breastdm_source=None, paths=None, workflow=None):
+    selected = selected_records(paths, workflow)
     pending, unavailable = [], []
     for row in selected:
         target = contained(ROOT, row['path'])
@@ -132,13 +157,14 @@ def main():
     parser.add_argument('--breastdm-source', type=Path,
                         help='your own original-author source tree at the documented revision')
     parser.add_argument('--path', action='append', help='restore only this inventory path (repeatable)')
+    parser.add_argument('--workflow', help='check/restore only the sources needed by a documented workflow')
     args = parser.parse_args()
     try:
         if args.check or not (args.private_source or args.breastdm_source):
-            missing = missing_sources()
+            missing = missing_sources(paths=args.path, workflow=args.workflow)
             print('\n'.join(missing) if missing else 'All required restored source hashes match.')
             return 2 if missing else 0
-        print(f'Restored {restore(args.private_source, args.breastdm_source, args.path)} files locally.')
+        print(f'Restored {restore(args.private_source, args.breastdm_source, args.path, args.workflow)} files locally.')
         return 0
     except (ValueError, RuntimeError, OSError, UnicodeError) as error:
         print(str(error), file=sys.stderr)

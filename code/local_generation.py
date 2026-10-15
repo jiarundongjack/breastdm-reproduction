@@ -27,8 +27,8 @@ SEEDS = {'exp1': (31415, 27182, 16180), 'exp2': (48271, 59317, 84629)}
 
 def initialize():
     """Copy public files plus verified local source; never copy data or weights."""
-    from setup_third_party import require_sources, records
-    require_sources()
+    from setup_third_party import restored_source_paths
+    restored = restored_source_paths()
     if (ROOT / MARKER).exists():
         raise RuntimeError('Run init from the public checkout, not its private copy.')
     destination = (ROOT / '.local/reproduction').resolve()
@@ -37,7 +37,7 @@ def initialize():
     names = subprocess.check_output(
         ['git', '-C', str(ROOT), 'ls-files', '-z'], text=True).split('\0')
     # Restored implementations are deliberately ignored/untracked in public Git.
-    names = sorted(set(names) | {r['path'] for r in records() if r['action'] == 'remove'})
+    names = sorted(set(names) | set(restored))
     files = []
     for name in filter(None, names):
         source = ROOT / name
@@ -192,8 +192,6 @@ def main():
         return
     if not (ROOT / MARKER).is_file() or ROOT.name != 'reproduction' or ROOT.parent.name != '.local':
         parser.error('Use .local/reproduction/code/local_generation.py after init.')
-    from setup_third_party import require_sources
-    require_sources()
     if args.action == 'legacy-selection':
         legacy_selection()
         return
@@ -204,6 +202,9 @@ def main():
         parser.error('manifest is for classification; segmentation predictions contain paths.')
     if is_classification and args.seed is None:
         parser.error('--seed is required for classification.')
+    from setup_third_party import require_sources
+    workflow = ('classification-' + args.experiment) if is_classification else args.experiment
+    require_sources(workflow=workflow)
     os.environ.update(BREASTDM_ROOT=str(ROOT), BREASTDM_RUNS=str(ROOT / 'result'),
                       BREASTDM_OUTPUT=str(ROOT / 'result/reproduced'), MPLBACKEND='Agg')
     sys.dont_write_bytecode = True

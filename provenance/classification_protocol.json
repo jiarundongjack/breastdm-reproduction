@@ -1,0 +1,107 @@
+{
+  "scope": "Documentation-only extraction of literal protocol facts from the restored provenance modules; not consumed by training and not a replacement trainer. Dynamic data paths, hashes and environment are intentionally omitted.",
+  "experiments": {
+    "exp1": {
+      "source": "code/classification/exp1_run_records/exp1_provenance.py",
+      "baseline_sha256": "81565d83c246b8aa0ffd90c8809d7b5e6fe689a061436779d6ac151c77d4c3f4",
+      "facts": {
+        "seeds": [
+          31415,
+          27182,
+          16180
+        ],
+        "model": "fusion",
+        "num_classes": 2,
+        "auto_split": 0,
+        "batch_size": 32,
+        "epochs": 100,
+        "optimizer": "SGD",
+        "initial_lr": 0.01,
+        "momentum": 0.9,
+        "weight_decay": 0.01,
+        "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+        "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+        "input_channels": 9,
+        "input_size": [
+          96,
+          96
+        ],
+        "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+        "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+        "train_shuffle": true,
+        "eval_shuffle": false,
+        "num_workers": 0,
+        "drop_last": false,
+        "freeze": false,
+        "pretrained_adaptation": "CNN and ViT 3->9 repeat /3; ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+        "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+        "hard_decision": "torch.argmax(logits, dim=1)",
+        "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+        "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)"
+      }
+    },
+    "exp2": {
+      "source": "code/classification/exp2_run_records/exp2_provenance.py",
+      "baseline_sha256": "9679634d62c5371060439c7da919cf66c90f65f2e35b0355ea2992069d668e53",
+      "facts": {
+        "seeds": [
+          48271,
+          59317,
+          84629
+        ],
+        "model": "fusion",
+        "num_classes": 2,
+        "class_counts": {
+          "train": {
+            "Benign": 327,
+            "Malignant": 875
+          },
+          "val": {
+            "Benign": 24,
+            "Malignant": 93
+          },
+          "test": {
+            "Benign": 114,
+            "Malignant": 289
+          }
+        },
+        "auto_split": 0,
+        "batch_size": 32,
+        "epochs": 100,
+        "optimizer": "SGD",
+        "initial_lr": 0.01,
+        "momentum": 0.9,
+        "weight_decay": 0.01,
+        "sgd_foreach": false,
+        "mixed_precision_train": true,
+        "train_autocast": "torch.cuda.amp.autocast(); default dtype=float16",
+        "grad_scaler": "torch.cuda.amp.GradScaler(); scale/backward/step/update",
+        "validation_autocast": false,
+        "test_autocast": false,
+        "class_weights_used": false,
+        "input_dtype": "uint8",
+        "channel_semantics": "cannot be independently verified",
+        "patient_overlap": 0,
+        "lr_schedule": "max(0.01 * 0.1 ** (epoch // 10), 1e-5); epoch range 1..100",
+        "loss": "nll_loss(log_softmax(logits, dim=1), label); mean; no class weights",
+        "input_channels": 17,
+        "input_size": [
+          96,
+          96
+        ],
+        "preprocessing": "HWD -> CHW -> float / 255 -> bilinear 96x96; align_corners=False",
+        "augmentation": "train: HFlip p=.5; scale U(.9,1.1), center crop/zero pad; retain U(.9,1), random crop then bilinear resize; val/test augment=False",
+        "train_shuffle": true,
+        "eval_shuffle": false,
+        "num_workers": 0,
+        "drop_last": false,
+        "freeze": false,
+        "pretrained_adaptation": "CNN and ViT w.repeat(1,6,1,1)[:, :17] * (3.0/17.0); ViT positional grid bicubic 14x14->6x6; load once, strict=False matching keys",
+        "checkpoint_selection": "Validation AUC strictly increases (val_auc > best_val_auc); ties keep earlier; Test excluded",
+        "hard_decision": "torch.argmax(logits, dim=1)",
+        "precision": "Precision = Precision_Malignant = TP/(TP+FP); undefined returns NaN",
+        "precision_weighted": "precision_score(full labels, full predictions, average=\"weighted\", zero_division=0)"
+      }
+    }
+  }
+}

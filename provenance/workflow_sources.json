@@ -1,0 +1,187 @@
+{
+  "description": "Source prerequisites only. Data, weights, Python packages, and historical completion evidence are separate prerequisites. Pure analysis workflows do not require private model code.",
+  "workflows": {
+    "classification/channel_mapping": [],
+    "classification/classification_metrics": [],
+    "classification/exp1_data_loader": [],
+    "classification/exp1_model": [
+      "code/classification/exp1_model/fusionModels.py"
+    ],
+    "classification/exp1_run_records": [],
+    "classification/exp1_training": [
+      "code/classification/exp1_model/fusionModels.py",
+      "code/classification/exp1_training/train.py"
+    ],
+    "classification/exp2_data_loader": [],
+    "classification/exp2_false_positive_cases": [],
+    "classification/exp2_model": [
+      "code/classification/exp2_model/fusionModels_exp2.py"
+    ],
+    "classification/exp2_run_records": [],
+    "classification/exp2_training": [
+      "code/classification/exp2_model/fusionModels_exp2.py",
+      "code/classification/exp2_training/train_exp2.py"
+    ],
+    "classification/fig10_11_case_source": [],
+    "classification/fig10_11_gradcam": [
+      "code/classification/exp2_model/fusionModels_exp2.py"
+    ],
+    "classification/fig2_3_exp1_roc": [],
+    "classification/fig2_confusion_matrix": [],
+    "classification/fig4_5_exp2_roc": [],
+    "classification/fig4_confusion_matrix": [],
+    "classification/shared_transformer": [],
+    "classification/subtraction_check": [],
+    "classification/table4_exp1_summary": [],
+    "classification/table5_exp2_summary": [],
+    "segmentation_2d/augmentation": [
+      "code/segmentation_2d/augmentation/transforms.py"
+    ],
+    "segmentation_2d/data_loader": [],
+    "segmentation_2d/ppv_reference": [
+      "code/segmentation_2d/ppv_reference/evaluation.py"
+    ],
+    "segmentation_2d/shared_2d_3d_dice_loss": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_2d/shared_2d_3d_metrics": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_2d/shared_2d_3d_model_imports": [],
+    "segmentation_2d/shared_2d_3d_training": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_2d/shared_2d_3d_training_imports": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_2d/table6_fig6_7_training": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py",
+      "code/segmentation_2d/augmentation/transforms.py",
+      "code/segmentation_2d/table6_fig6_7_training/train.py"
+    ],
+    "segmentation_2d/unet_model": [],
+    "segmentation_3d/data_loader": [],
+    "segmentation_3d/fig13_layout": [],
+    "segmentation_3d/fig13_predictions": [
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/src/unet3d.py",
+      "code/segmentation_3d/unet_model/unet3d.py"
+    ],
+    "segmentation_3d/fig13_slice_selection": [
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/src/unet3d.py",
+      "code/segmentation_3d/unet_model/unet3d.py"
+    ],
+    "segmentation_3d/fig13_volume_selection": [],
+    "segmentation_3d/protocol_checks": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_3d/rgb_intensity_check": [],
+    "segmentation_3d/rgb_prediction_impact": [
+      "code/segmentation_3d/unet_model/unet3d.py"
+    ],
+    "segmentation_3d/source_slice_matching": [],
+    "segmentation_3d/table7_fig8_9_12_training": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py",
+      "code/segmentation_3d/unet_model/unet3d.py",
+      "code/segmentation_3d/table7_fig8_9_12_training/train3d.py"
+    ],
+    "segmentation_3d/table7_metrics": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_3d/table7_result_audit": [
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train3d.py"
+    ],
+    "segmentation_3d/threshold_analysis": [
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train3d.py",
+      "code/segmentation_3d/unet_model/unet3d.py",
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py"
+    ],
+    "segmentation_3d/unet_model": [
+      "code/segmentation_3d/unet_model/unet3d.py"
+    ],
+    "segmentation_3d/zero_padding_check": [],
+    "classification-exp1": [
+      "code/classification/exp1_model/fusionModels.py",
+      "code/classification/exp1_training/train.py"
+    ],
+    "classification-exp2": [
+      "code/classification/exp2_model/fusionModels_exp2.py",
+      "code/classification/exp2_training/train_exp2.py"
+    ],
+    "seg2d": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py",
+      "code/segmentation_2d/augmentation/transforms.py",
+      "code/segmentation_2d/table6_fig6_7_training/train.py"
+    ],
+    "seg3d": [
+      "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
+      "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
+      "code/segmentation_2d/shared_2d_3d_training/train_and_eval.py",
+      "code/segmentation_2d/shared_2d_3d_training_imports/__init__.py",
+      "code/segmentation_3d/unet_model/unet3d.py",
+      "code/segmentation_3d/table7_fig8_9_12_training/train3d.py"
+    ],
+    "ppv-reference": [
+      "code/segmentation_2d/ppv_reference/evaluation.py"
+    ],
+    "historical-snapshots": [
+      "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/fusionModels.py",
+      "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/train.py",
+      "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/fusionModels.py",
+      "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/train.py",
+      "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/fusionModels.py",
+      "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/train.py",
+      "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/fusionModels_exp2.py",
+      "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/train_exp2.py",
+      "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/fusionModels_exp2.py",
+      "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/train_exp2.py",
+      "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/Models.py",
+      "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/fusionModels_exp2.py",
+      "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/train_exp2.py",
+      "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/train.py",
+      "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/train_utils/dice_coefficient_loss.py",
+      "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/train_utils/distributed_utils.py",
+      "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/train_utils/train_and_eval.py",
+      "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/transforms.py",
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/src/unet3d.py",
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train3d.py",
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/dice_coefficient_loss.py",
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/distributed_utils.py",
+      "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/train_and_eval.py"
+    ]
+  }
+}

@@ -4,9 +4,9 @@ Reproduction and analysis materials for **Reproducibility and Discrepancy Analys
 
 本仓库用于整理上述论文的复现与分析材料。
 
-See [THIRD_PARTY_CODE.md](THIRD_PARTY_CODE.md) for file-level code provenance and licensing information. **Complete the documented local source setup before using the commands below.** Unresolved reproduction adaptations are not distributed; the original BreastDM download alone does not restore all workflows.
+The public repository includes the project-specific preparation, analysis, verification, aggregation and plotting scripts. Workflows that depend on original-author or third-party source with unresolved redistribution permission require the documented [local source setup](THIRD_PARTY_CODE.md). Pure statistics and plotting do not require private model source; their local inputs and environment are still required.
 
-逐文件代码来源与许可见 [THIRD_PARTY_CODE.md](THIRD_PARTY_CODE.md)。**运行下述命令前必须完成其中的本地源码准备。** 来源未确认的复现改编不在公开仓库中分发，单独下载原作者代码不能恢复全部工作流。
+当前公开仓库保留本项目的数据准备、分析、验证、汇总与绘图脚本；涉及再分发许可尚未确认的原作者或第三方源码的工作流，需要先按[说明](THIRD_PARTY_CODE.md)完成本地源码准备。纯统计与绘图不要求补齐私有模型源码，但仍需要相应输入和环境。项目来源分类及其限定见逐文件清单。
 
 ## Navigation / 阅读目录
 
@@ -34,9 +34,9 @@ The original BreastDM code and data access information are available from the [o
 
 BreastDM 原始代码与数据获取信息见[原作者仓库](https://github.com/smallboy-code/Breast-cancer-dataset)。请通过其中提供的下载链接获取数据，并遵守原提供方的访问和使用要求。
 
-Redistribution terms for the BreastDM data and adapted code have not been clearly established. Source files are distributed only where authorship or applicable redistribution terms have been established; unresolved preparation and analysis implementations require private local setup as described in THIRD_PARTY_CODE.md. Environment specifications and execution instructions remain available.
+Original-author data and complete external/mixed implementations with unresolved redistribution permission are not republished in the current tree. Project-specific scripts are public, and licensed third-party files retain their attribution and license texts. See [training modifications](provenance/TRAINING_MODIFICATIONS.md) for preserved reproduction-specific protocol facts without republishing the excluded training bodies.
 
-BreastDM 数据与改编代码的再分发条款尚未明确。本项目提供原始资源入口、环境配置与运行说明；仅公开来源或适用再分发条件已确认的源码，来源待确认的准备和分析实现须按 THIRD_PARTY_CODE.md 在本地自行准备。
+当前树不重新分发许可未明确的原作者数据及外部/混合来源完整实现。本项目专用脚本公开，许可明确的第三方文件保留来源与许可文本。[训练改动说明](provenance/TRAINING_MODIFICATIONS.md)记录复现协议，不复制被排除的完整训练实现。
 
 See [DOWNLOADS.md](weight%20download%20and%20restore/DOWNLOADS.md) for resource access instructions and [model-branch license guide](weight%20download%20and%20restore/Classification%20model%20branch%20licenses/README.md) for upstream model-branch licensing information.
 

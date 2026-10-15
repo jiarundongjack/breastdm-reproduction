@@ -1,6 +1,6 @@
 # Local generation of case outputs / 本地生成病例输出
 
-**Prerequisite / 前置条件：** Follow the [local source setup](../THIRD_PARTY_CODE.md) before the commands in this document. Unresolved script implementations are excluded from public Git; a matching user-supplied private source tree is required for the full workflow. 本文命令依赖的部分实现已移出公开树；须先自行准备与记录哈希一致的私有源码，原作者下载包不足以恢复全部复现改编。
+Initialization, preparation and CSV-only analysis use public scripts. Only workflows importing excluded model/training/evaluation implementations require the [selected source setup](../THIRD_PARTY_CODE.md); initialization does not require restoring all sources. / 初始化、整理及纯 CSV 分析使用公开脚本；只有依赖被排除实现的工作流才需要针对性源码准备。
 
 Case-level CSVs, images, masks, predictions and case-linked metadata are not distributed in the current `main` tree when redistribution permission is unclear. Obtain inputs via the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset); cite the [original paper](https://doi.org/10.1016/j.compbiomed.2023.107255). Neither original nor preprocessed BreastDM data are provided here.
 
@@ -41,6 +41,17 @@ python ".local/reproduction/weight download and restore/restore_assets.py" --ass
 ```
 
 This restores into the private copy's `code/pretrained/` and `result/` folders. It does not download BreastDM data. No release, tag or asset is changed by these commands.
+
+Before a model-dependent command, check and restore only its sources in the private copy:
+
+```powershell
+python .local/reproduction/code/setup_third_party.py --check --workflow classification-exp1
+python .local/reproduction/code/setup_third_party.py --private-source "D:/private/breastdm-reproduction-source" --workflow classification-exp1
+```
+
+Choose `classification-exp2`, `seg2d`, `seg3d`, or a task name from `code/run.py --list` as appropriate. Manifest generation uses the existing evidence collector, which also hashes classification model/training code and pretrained weights; it retains those prerequisites. Pure plotting/statistics requires local CSVs and packages, not private model source. Figure 13 and threshold tasks use specific historical snapshots; the workflow check names those exact files. Full completion audits additionally require the original recorded hashes, data outputs and checkpoints; they are not CSV-only statistics.
+
+先初始化，再按具体任务在私有副本恢复所需源码；不需要一次补齐全部 41 项。分类 manifest 沿用证据收集器，会核对源码和预训练权重，因此仍有这些前提。病例图与完整审计另需本地数据、权重和历史记录，不能用虚构记录替代。
 
 ## 2. Manifests and checkpoint inference / 清单和检查点推理
 
