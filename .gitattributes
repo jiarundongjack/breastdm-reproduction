@@ -1,0 +1,2 @@
+# Expand the exporting commit SHA in the release manifest only.
+provenance/release_manifest.json export-subst

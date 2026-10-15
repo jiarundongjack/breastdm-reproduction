@@ -131,3 +131,5 @@ The `.gitignore` protects known output names and the whole `.local/` workspace. 
 Local generation does not replace the [manuscript-final result map](../result/README.md#manuscript-final-results). Classification Exp-1 uses 31415/27182/16180 and Exp-2 uses 48271/59317/84629; 2D seed123 and 3D seed42 are separate single-run experiments. Locally regenerated outputs remain local analysis until explicitly validated; never overwrite or relabel the recorded formal results.
 
 本地新生成结果不自动成为论文正式结果，也不得覆盖或重新标记正式记录。分类与分割的种子命名空间独立。
+
+Use source tag `v1.0.0` for these instructions. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明对应源码 v1.0.0，模型附件仍使用独立的历史 rc1 版本。

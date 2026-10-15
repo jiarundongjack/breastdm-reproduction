@@ -2090,10 +2090,48 @@
     {
       "path": "result/reproduced/exp1_mean_confusion_matrix.png",
       "baseline_sha256": "de2afb6ddd5fc425b06efc9f664b0a124a7d8be631fdbbe6873c9a4efa59c1b0",
-      "action": "retain",
-      "category": "AMBIGUOUS_DO_NOT_TOUCH",
-      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
-      "candidate_final": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png"
+      "action": "remove",
+      "category": "DUPLICATE_VARIANT",
+      "reason": "Identical decoded RGBA pixels, dimensions and DPI. PNG chunk comparison differs only in tEXt Software metadata: Matplotlib 3.11.0 vs 3.11.1. Canonical image and its formal seed data retained unchanged.",
+      "round3_decision": {
+        "category": "AMBIGUOUS_DO_NOT_TOUCH",
+        "action": "retain",
+        "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final."
+      },
+      "replacement": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png",
+      "round4_image_identity": {
+        "path": "result/reproduced/exp1_mean_confusion_matrix.png",
+        "canonical": "result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png",
+        "size": [
+          2080,
+          1603
+        ],
+        "canonical_size": [
+          2080,
+          1603
+        ],
+        "sha256": "de2afb6ddd5fc425b06efc9f664b0a124a7d8be631fdbbe6873c9a4efa59c1b0",
+        "canonical_sha256": "8dffea441f99f326c2b7083d4eb7eaf98f1ae885bf2714a35bbbccf313c04206",
+        "metadata": {
+          "Software": "Matplotlib version3.11.0, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "canonical_metadata": {
+          "Software": "Matplotlib version3.11.1, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "decoded_pixels_identical": true,
+        "changed_chunk_types": [
+          "tEXt"
+        ],
+        "decision": "DUPLICATE_VARIANT"
+      }
     },
     {
       "path": "result/reproduced/exp1_mean_outputs_report.txt",
@@ -2109,10 +2147,48 @@
     {
       "path": "result/reproduced/exp1_mean_roc.png",
       "baseline_sha256": "156682047bfe636ae30af5d4631665fae243e7290950562b278f405d2d816c21",
-      "action": "retain",
-      "category": "AMBIGUOUS_DO_NOT_TOUCH",
-      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
-      "candidate_final": "result/paper_outputs/exp1_figures/exp1_mean_roc.png"
+      "action": "remove",
+      "category": "DUPLICATE_VARIANT",
+      "reason": "Identical decoded RGBA pixels, dimensions and DPI. PNG chunk comparison differs only in tEXt Software metadata: Matplotlib 3.11.0 vs 3.11.1. Canonical image and its formal seed data retained unchanged.",
+      "round3_decision": {
+        "category": "AMBIGUOUS_DO_NOT_TOUCH",
+        "action": "retain",
+        "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final."
+      },
+      "replacement": "result/paper_outputs/exp1_figures/exp1_mean_roc.png",
+      "round4_image_identity": {
+        "path": "result/reproduced/exp1_mean_roc.png",
+        "canonical": "result/paper_outputs/exp1_figures/exp1_mean_roc.png",
+        "size": [
+          2100,
+          1800
+        ],
+        "canonical_size": [
+          2100,
+          1800
+        ],
+        "sha256": "156682047bfe636ae30af5d4631665fae243e7290950562b278f405d2d816c21",
+        "canonical_sha256": "38d3ef3a46142868983eba99fd029e7b64750b9c1488acc0133a090bf76ae52b",
+        "metadata": {
+          "Software": "Matplotlib version3.11.0, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "canonical_metadata": {
+          "Software": "Matplotlib version3.11.1, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "decoded_pixels_identical": true,
+        "changed_chunk_types": [
+          "tEXt"
+        ],
+        "decision": "DUPLICATE_VARIANT"
+      }
     },
     {
       "path": "result/reproduced/exp2_final_multiseed_summary/exp2_multiseed_mean_sd.csv",
@@ -2224,10 +2300,48 @@
     {
       "path": "result/reproduced/exp2_mean_confusion_matrix_integer.png",
       "baseline_sha256": "4ea7ad1095d10ffd097689741d20ac2347c75f2a5ddc87c04862a7b588f6480a",
-      "action": "retain",
-      "category": "AMBIGUOUS_DO_NOT_TOUCH",
-      "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final.",
-      "candidate_final": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png"
+      "action": "remove",
+      "category": "DUPLICATE_VARIANT",
+      "reason": "Identical decoded RGBA pixels, dimensions and DPI. PNG chunk comparison differs only in tEXt Software metadata: Matplotlib 3.11.0 vs 3.11.1. Canonical image and its formal seed data retained unchanged.",
+      "round3_decision": {
+        "category": "AMBIGUOUS_DO_NOT_TOUCH",
+        "action": "retain",
+        "reason": "Regenerated PNG has different bytes from the corresponding paper PNG; exact rendering/selection provenance is not established. Preserve; not designated manuscript-final."
+      },
+      "replacement": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png",
+      "round4_image_identity": {
+        "path": "result/reproduced/exp2_mean_confusion_matrix_integer.png",
+        "canonical": "result/paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png",
+        "size": [
+          1728,
+          1271
+        ],
+        "canonical_size": [
+          1728,
+          1271
+        ],
+        "sha256": "4ea7ad1095d10ffd097689741d20ac2347c75f2a5ddc87c04862a7b588f6480a",
+        "canonical_sha256": "332e3fe5f36113799022eb501dbb4324bc01f2eb5180e134e36db2cf2443a3cc",
+        "metadata": {
+          "Software": "Matplotlib version3.11.0, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "canonical_metadata": {
+          "Software": "Matplotlib version3.11.1, https://matplotlib.org/",
+          "dpi": [
+            299.9994,
+            299.9994
+          ]
+        },
+        "decoded_pixels_identical": true,
+        "changed_chunk_types": [
+          "tEXt"
+        ],
+        "decision": "DUPLICATE_VARIANT"
+      }
     },
     {
       "path": "result/reproduced/exp2_mean_confusion_matrix_note.txt",

@@ -8,7 +8,7 @@ The public repository includes the project-specific preparation, analysis, verif
 
 当前公开仓库保留本项目的数据准备、分析、验证、汇总与绘图脚本；涉及再分发许可尚未确认的原作者或第三方源码的工作流，需要先按[说明](THIRD_PARTY_CODE.md)完成本地源码准备。纯统计与绘图不要求补齐私有模型源码，但仍需要相应输入和环境。项目来源分类及其限定见逐文件清单。
 
-The authoritative [manuscript-final result map](result/README.md#manuscript-final-results) distinguishes formal outputs, reproduction evidence and unresolved variants; its [manifest](provenance/manuscript_results.json) records the canonical seeds and file-level decisions. / 正式结果、复现证据及待确认版本以该对应表和清单为准。
+The authoritative [manuscript-final result map](result/README.md#manuscript-final-results) distinguishes formal outputs and reproduction evidence; its [manifest](provenance/manuscript_results.json) records the canonical seeds and file-level decisions. / 正式结果与复现证据以该对应表和清单为准。
 
 ## Navigation / 阅读目录
 
@@ -89,7 +89,7 @@ The paths below describe the local directory structure used by the experiments. 
 | `code/pretrained` | Two classification initialization checkpoints / 分类训练使用的两份预训练权重 |
 | `result/fusion_*`, `result/seg*` | Eight unchanged formal runs / 八次未经改写的正式运行记录 |
 | `result/paper_outputs` | Canonical cross-seed summaries, flattened ROC and confusion matrices / 正式多种子汇总、展平 ROC 与混淆矩阵 |
-| `result/reproduced` | Retained diagnostic/reproduction evidence and explicitly unresolved PNG variants; see result/README.md / 诊断与复现证据及明确待确认的 PNG，见结果说明 |
+| `result/reproduced` | Retained diagnostic/reproduction evidence; see result/README.md / 保留的诊断与复现证据，见结果说明 |
 | `environment` | Observed dependencies for two environments / 两套环境的依赖记录 |
 
 Use **`result`**, singular. Historical configuration files retain their original absolute
@@ -377,13 +377,17 @@ python code/run.py classification/table5_exp2_summary --runs-root result/new_run
 <a id="versions"></a>
 ## Versions and model archives / 版本与模型附件
 
-The current source is maintained on the `main` branch. Record the Git commit SHA of the revision used to identify the exact source version.
+**Source version: [v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0)** — the final cleaned, manuscript-aligned reproduction source. Use this fixed tag for the code and instructions corresponding to the manuscript; `main` may subsequently advance. See [release_manifest.json](provenance/release_manifest.json) for resource mapping.
 
-当前源码维护在 `main` 分支；请记录所用版本的 Git 提交 SHA，以明确对应的源码版本。
+**源码版本：[v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0)**，对应完成整理并与论文正式实验集合对齐的复现源码。论文引用与复现应使用该固定标签；`main` 后续可能继续更新。资源对应关系见版本清单。
 
-The `v1.0.0-rc1` tag identifies a historical source snapshot. Its source archives do not include subsequent changes on `main`. For the current code and instructions, download the `main` branch from the repository home page using **Code → Download ZIP**.
+**Model assets: [v1.0.0-rc1](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)** — retained solely as the historical model-weight prerelease. Its three model ZIPs and checksum file are unchanged. **Do not use the rc1 “Source code” archive as the current reproduction source.** Those automatic archives reflect the historical tagged tree.
 
-`v1.0.0-rc1` 标签对应历史源码快照，其源码压缩包不包含 `main` 分支后续修改。获取当前代码和说明，请在仓库首页选择 `main` 分支，通过 **Code → Download ZIP** 下载。
+**模型附件：v1.0.0-rc1**，保留为历史模型权重预发布版本，三份模型 ZIP 和校验文件不变。**不要用 rc1 的 “Source code” 压缩包作为当前复现源码**；它对应历史标签树。
+
+To identify the exact fixed source commit in a Git clone, run `git rev-parse 'v1.0.0^{commit}'` after fetching the tag. The release manifest uses Git `export-subst`: source archives exported from the commit contain its literal SHA, while a Git checkout retains the format token and the tag-resolution instruction. This avoids a self-referential commit hash inside its own committed file. The release body also records the exact commit.
+
+Git 克隆可用上述命令取得固定代码提交。清单的 commit 占位符在 Git 导出的源码包中自动展开；克隆中的占位符不是实际哈希，应通过标签解析。最终完整哈希另见发布说明。
 
 ### Download model weights / 下载模型权重
 

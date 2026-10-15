@@ -1,0 +1,19 @@
+{
+  "source_release": "v1.0.0",
+  "source_commit": "$Format:%H$",
+  "source_commit_ref": "refs/tags/v1.0.0^{commit}",
+  "source_commit_resolution": "In a Git checkout run git rev-parse v1.0.0^{commit}; git archive export-subst replaces the format token with the exporting commit SHA. Resolve the tag for the fixed publication version, not later main commits.",
+  "source_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0",
+  "model_assets_release": "v1.0.0-rc1",
+  "model_assets_commit": "03db653bc7939591d1acffcd37fc6d09aa14b555",
+  "model_assets_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1",
+  "original_paper": "10.1016/j.compbiomed.2023.107255",
+  "original_paper_url": "https://doi.org/10.1016/j.compbiomed.2023.107255",
+  "original_repository": "https://github.com/smallboy-code/Breast-cancer-dataset",
+  "results_manifest": "provenance/manuscript_results.json",
+  "third_party_provenance": "THIRD_PARTY_CODE.md",
+  "environment": "environment/",
+  "instructions": "README.md",
+  "downloads": "weight download and restore/DOWNLOADS.md",
+  "local_workflow": "code/LOCAL_GENERATION.md"
+}

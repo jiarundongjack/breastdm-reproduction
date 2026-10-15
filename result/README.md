@@ -57,16 +57,20 @@ Historical `Fig2`/`Fig3`, `fig2_3_*`, `fig4_5_*` and `exp1_table5_comparison.csv
 
 上述内容用于复现验证和差异分析，不能作为额外正式实验或替代正式指标。合成测试、阈值扫描与正式评价尤其需要区分。
 
-### Legacy cleanup and unresolved variants / 旧输出清理与待确认版本
+### Legacy cleanup and resolved variants / 旧输出清理与已确认重复版本
 
 The old Exp-1 `exp1_three_seed_results.csv` (42/123/2026) and its companion `exp1_mean_std.csv` were superseded by the formal three-seed summaries and removed. The other six files in `exp1_figures/` belong to the formal seeds and remain. Nineteen byte-identical generated copies under `reproduced/` were removed in favor of their authoritative `paper_outputs/` counterparts; exact replacements and original hashes are recorded in the manifest. The formal paper outputs were not rewritten.
 
 旧 Exp-1 的 42/123/2026 两份表已移除，同目录其余六份正式输出保留。另移除 `reproduced/` 下 19 个与正式输出逐字节相同的副本，清单中逐项指向保留版本；未改写正式图表。
 
-These three different-byte PNG variants remain **AMBIGUOUS_DO_NOT_TOUCH**, not designated manuscript-final. Their precise rendering/selection relationship is not established, so they were not deleted:
+Round 4 resolved the three previously ambiguous PNG variants as **DUPLICATE_VARIANT** and removed only the `reproduced/` copies. All decoded RGBA pixels, image dimensions and DPI match the canonical figures exactly. PNG chunks differ only in the Software text metadata (Matplotlib 3.11.0 versus 3.11.1); there is no crop, layout or numerical difference.
 
-- `reproduced/exp1_mean_confusion_matrix.png`
-- `reproduced/exp1_mean_roc.png`
-- `reproduced/exp2_mean_confusion_matrix_integer.png`
+| Removed variant | Canonical replacement |
+|---|---|
+| `reproduced/exp1_mean_confusion_matrix.png` | [Formal Exp-1 CM](paper_outputs/exp1_figures/exp1_mean_confusion_matrix.png) |
+| `reproduced/exp1_mean_roc.png` | [Formal Exp-1 ROC](paper_outputs/exp1_figures/exp1_mean_roc.png) |
+| `reproduced/exp2_mean_confusion_matrix_integer.png` | [Formal Exp-2 display CM](paper_outputs/exp2_confusion/exp2_mean_confusion_matrix_integer.png) |
 
-这三份 PNG 与正式版本字节不同，尚不能确定其排版/选择关系，故保留待确认，不列为正式图表。后续用户生成结果也不自动成为正式结果；以本节及清单为准。
+Round 4 剩余待确认图像：**None**。三张图与正式图逐像素相同，仅软件版本元数据不同；已移除重复副本，保留正式图。前后哈希、尺寸、DPI、元数据和替代路径见清单中的 `round4_image_identity`。没有重画图、重算指标或修改正式结果。
+
+The source version for this map is `v1.0.0`; see [release_manifest.json](../provenance/release_manifest.json). Later local outputs do not automatically become manuscript-final.

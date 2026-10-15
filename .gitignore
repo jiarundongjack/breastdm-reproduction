@@ -132,3 +132,8 @@ venv/
 /result/reproduced/exp2_roc/exp2_mean_confusion_matrix.png
 /result/reproduced/exp2_roc/exp2_mean_outputs_report.txt
 /result/reproduced/exp2_roc/exp2_mean_roc.png
+
+# Round 4: pixel-identical PNG variants; authoritative paper figures remain tracked.
+/result/reproduced/exp1_mean_confusion_matrix.png
+/result/reproduced/exp1_mean_roc.png
+/result/reproduced/exp2_mean_confusion_matrix_integer.png

@@ -34,6 +34,12 @@ The experiments use task-specific prepared inputs. Files downloaded from the ori
 
 本研究的实验使用按任务整理的输入数据。从原始入口下载的文件不一定直接对应本研究使用的预处理目录结构。
 
+## Source and model versions / 源码与模型版本
+
+The model-weight release and the source-code release are versioned separately. Use [v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0) for source code and instructions, and [v1.0.0-rc1](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1) only for the model assets listed in ASSETS.json. Do not use the rc1 automatic “Source code” archives as the current source. See [release_manifest.json](../provenance/release_manifest.json).
+
+模型权重与源码独立版本管理：源码及说明使用 v1.0.0；v1.0.0-rc1 仅用于 ASSETS.json 所列历史模型附件。rc1 自动生成的源码压缩包不是当前源码。模型清单中的 `version` 表示清单所随的源码版本，`asset_version` 仍是 rc1；资产文件名、大小和校验值未改变。
+
 ## Archive restoration / 归档恢复
 
 `restore_assets.py` is a restoration utility for the reproduction-specific ZIP archives listed in `ASSETS.json`. It does not download or prepare the original BreastDM data and should not be run on the original authors' downloaded archives.

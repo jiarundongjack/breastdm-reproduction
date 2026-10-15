@@ -79,3 +79,7 @@ two new base-environment installations.
 Historical snapshots and log paths remain unchanged as evidence. They can differ from the portable
 release in path handling and auxiliary fields, including the historical 3D global auxiliary PPV.
 历史快照和日志保留原样；其路径处理和辅助输出字段可能与发布版不同，包括历史3D全局辅助PPV。
+
+## Archival asset log / 历史附件日志
+
+`logs/asset_restore_validation.log` records an earlier local validation, including archive names that are no longer current public assets. It is archival provenance, not a current download list. Only the three model ZIPs and SHA256SUMS.txt currently listed in the historical rc1 release are model downloads; use source tag v1.0.0 for code. / 历史日志中的数据包名称不表示当前提供这些下载；当前模型附件以 rc1 实际清单为准，源码使用 v1.0.0。
