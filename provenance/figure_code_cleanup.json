@@ -1,0 +1,1666 @@
+{
+  "baseline_commit": "b26a3def1542dbaa0a1ec8997f6c5c96d34ce856",
+  "scope": "All 92 tracked Python files inspected for figure/presentation logic and scientific/support dependencies; historical snapshots retained. Inventory created before deletions.",
+  "figure1": "No tracked workflow-schematic/boxes/arrows-only script found; preparation/protocol/workflow code retained.",
+  "classification_rule": "Ordinary plot styling within scientific aggregation is SCIENTIFIC_PLOTTING. Explicit manuscript panel composition coupled to computation is MIXED_NEEDS_REVIEW.",
+  "adapter_exception": "Only code/run.py task discovery may change as explicitly authorized; no numerical, staging, model or CLI argument logic changes.",
+  "files": [
+    {
+      "old_path": "code/analysis/summarize_predictions.py",
+      "new_path": "code/analysis/summarize_predictions.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "5b2f7196bdd958f24f1b2cc2c9d9e4c563513923c1d7029a8e0cdfd2848a2932",
+      "evidence_functions": [
+        "rank_auc",
+        "compute",
+        "write_csv",
+        "main",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "code/classification/channel_mapping/verify_exp1_exp2_channel_mapping.py",
+      "new_path": "code/classification/channel_mapping/verify_exp1_exp2_channel_mapping.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "c4728d1fd3b00276c4be0d140126eb3a16fcdd45be8eedb102c84c298d1baefb",
+      "evidence_functions": [
+        "collect_files"
+      ]
+    },
+    {
+      "old_path": "code/classification/classification_metrics/classification_auc.py",
+      "new_path": "code/classification/classification_metrics/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "2395b836ce642033c2c33532c69871204ec03ce9272d523d5bdc590429f62539",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "code/classification/exp1_data_loader/data_loader.py",
+      "new_path": "code/classification/exp1_data_loader/data_loader.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "295fe343eb61ef9513457bfede09d7429247911f2e4051e0054a4a69e8b7012c",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "code/classification/exp1_run_records/exp1_provenance.py",
+      "new_path": "code/classification/exp1_run_records/exp1_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "81565d83c246b8aa0ffd90c8809d7b5e6fe689a061436779d6ac151c77d4c3f4",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "code/classification/exp2_data_loader/data_loader_exp2.py",
+      "new_path": "code/classification/exp2_data_loader/data_loader_exp2.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "abb6d55d856b993039432d8f4551dbd2a561a2ffa5a848f09e61fe3c1d2fc457",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "code/classification/exp2_false_positive_cases/find_exp2_false_positive_top10.py",
+      "new_path": "code/classification/exp2_false_positive_cases/find_exp2_false_positive_top10.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "41b1ad17441ffbfc97046c10fd8d6cbfd4625529913cb6d7f1f6f5d975cb1989",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/exp2_run_records/exp2_provenance.py",
+      "new_path": "code/classification/exp2_run_records/exp2_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "9679634d62c5371060439c7da919cf66c90f65f2e35b0355ea2992069d668e53",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "code/classification/fig10_11_case_source/trace_index96_source.py",
+      "new_path": "code/classification/exp2_seed59317_case_source/trace_index96_source.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "MOVE/RENAME",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged. Runtime paths come from unchanged release_paths; run.py stages the same basename. No directory-name/self-location dependency found.",
+      "scientific_content": true,
+      "sha256_before": "625d98ff48c29cea79abe0001ccde97fd6b13d24aacfcaa435a116ef11dc1c5c",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/fig10_11_gradcam/make_exp2_seed59317_index96_gradcam.py",
+      "new_path": "code/classification/fig10_11_gradcam/make_exp2_seed59317_index96_gradcam.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "9615a46f54ed7d8255df8726aa24d87fdb1fa38cd594ce06ca6bf8ba55bbb31d",
+      "evidence_functions": [
+        "load_module_from_file",
+        "first_existing",
+        "normalize01",
+        "avgpool_hook",
+        "save_gradient"
+      ]
+    },
+    {
+      "old_path": "code/classification/fig2_3_exp1_roc/make_exp1_mean_outputs.py",
+      "new_path": "code/classification/exp1_mean_roc/make_exp1_mean_outputs.py",
+      "classification": "SCIENTIFIC_PLOTTING",
+      "action": "MOVE/RENAME",
+      "reason": "Computes confusion matrices across formal seeds and/or flattened ROC/AUC interpolation and mean/SD, then plots. Numeric outputs feed analysis; not pure layout. Runtime paths come from unchanged release_paths; run.py stages the same basename. No directory-name/self-location dependency found.",
+      "scientific_content": true,
+      "sha256_before": "604e53255c62c140ecf5fdeb9322c5dec5d24d49306a7a043448a57623c7fe7c",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/fig2_confusion_matrix/make_exp1_cm_png.py",
+      "new_path": null,
+      "classification": "PURE_PRESENTATION",
+      "action": "DELETE",
+      "reason": "Reads an already-aggregated confusion CSV; numeric coercion and max/2 threshold only style annotation colors. No confusion computation, aggregation or metric output. Pure rendering of an existing result.",
+      "scientific_content": true,
+      "sha256_before": "04a49c345b4f062ec87b3d9730dcaadb99ebfbccc1e92905327a8c4fadb43569",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/fig4_5_exp2_roc/make_exp2_mean_outputs.py",
+      "new_path": "code/classification/exp2_mean_outputs/make_exp2_mean_outputs.py",
+      "classification": "SCIENTIFIC_PLOTTING",
+      "action": "MOVE/RENAME",
+      "reason": "Computes confusion matrices across formal seeds and/or flattened ROC/AUC interpolation and mean/SD, then plots. Numeric outputs feed analysis; not pure layout. Runtime paths come from unchanged release_paths; run.py stages the same basename. No directory-name/self-location dependency found.",
+      "scientific_content": true,
+      "sha256_before": "fdd8ebc41204eaf1c765dba6696f73ed73ea12b43e4d043b6cba04c538cd5ba8",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/fig4_confusion_matrix/make_exp2_int_confmat.py",
+      "new_path": "code/classification/exp2_mean_confusion_matrix/make_exp2_int_confmat.py",
+      "classification": "SCIENTIFIC_PLOTTING",
+      "action": "MOVE/RENAME",
+      "reason": "Computes confusion matrices across formal seeds and/or flattened ROC/AUC interpolation and mean/SD, then plots. Numeric outputs feed analysis; not pure layout. Runtime paths come from unchanged release_paths; run.py stages the same basename. No directory-name/self-location dependency found.",
+      "scientific_content": true,
+      "sha256_before": "9e50468379d2079814ac608506d66bf8f2dcbbc62c27e1cd2eab37db6a977d0d",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/classification/shared_transformer/VIT_model.py",
+      "new_path": "code/classification/shared_transformer/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "054cf67be6bf296e233d42d9729c9e7c703e9a1b66da44b0fb81ffdd8bd55d08",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "code/classification/subtraction_check/verify_subtraction_formula.py",
+      "new_path": "code/classification/subtraction_check/verify_subtraction_formula.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "5b3ac7220f834b071325e13a65f3b7608b226038999bfbb186d73394d670984d",
+      "evidence_functions": [
+        "collect_files",
+        "post_minus_pre",
+        "pre_minus_post",
+        "absolute_difference"
+      ]
+    },
+    {
+      "old_path": "code/classification/table4_exp1_summary/summarize_exp1_final_multiseed.py",
+      "new_path": "code/classification/table4_exp1_summary/summarize_exp1_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "ceeea9c3566d10e8ca8519f35b72819d4465eb8f3d319e8bcb08ae3f65400bf9",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "code/classification/table5_exp2_summary/summarize_exp2_final_multiseed.py",
+      "new_path": "code/classification/table5_exp2_summary/summarize_exp2_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "6dcfce0d824e43ddb7267bef26cecaa48aec0712cbe7829d607e0c0985862368",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "code/local_generation.py",
+      "new_path": "code/local_generation.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "c81b9394ddbecd8fd04bdf29bc85a4099407b0d6bd02b588b7d689eb8d43520f",
+      "evidence_functions": [
+        "initialize",
+        "evaluator_namespace",
+        "classification",
+        "segmentation",
+        "legacy_selection",
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/preparation/classification/prepare_classification.py",
+      "new_path": "code/preparation/classification/prepare_classification.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "df8b9885c60bf9fb7577ab10cb0ca1408a04100a592910d2cd8e7865793fd956",
+      "evidence_functions": [
+        "overlap",
+        "collect",
+        "digest",
+        "prepare",
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/preparation/segmentation/make_seg2d_clean.py",
+      "new_path": "code/preparation/segmentation/make_seg2d_clean.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "823adb3ef8517c3d3f63d1844f16b5ca4bc988c1f07f0e8470644ad98a9d495f",
+      "evidence_functions": [
+        "prepare",
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/preparation/segmentation/make_seg3d_clean.py",
+      "new_path": "code/preparation/segmentation/make_seg3d_clean.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "807c032901ac5cc49e5c1fba51a7bcc10a0b9453b1228d9e9accd07a00d35088",
+      "evidence_functions": [
+        "prepare",
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/release_paths.py",
+      "new_path": "code/release_paths.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "a4d13390e966bfb82980d21b7fb8a85bc7197f0fd0e841c4d4d9a8cb5cdb1067",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/run.py",
+      "new_path": "code/run.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": false,
+      "sha256_before": "1dd6f5190d23628d5d6b63369ce02da6febadadb9de987c313e849fbe88031a2",
+      "evidence_functions": [
+        "sources",
+        "stage",
+        "main",
+        "protect"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_2d/data_loader/my_dataset.py",
+      "new_path": "code/segmentation_2d/data_loader/my_dataset.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "15dd3f6d88e47f09a9b0d39f5fcf85230659ce8f625a835c4504e3d9d0752388",
+      "evidence_functions": [
+        "DriveDataset",
+        "__init__",
+        "__getitem__",
+        "__len__"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_2d/shared_2d_3d_model_imports/__init__.py",
+      "new_path": "code/segmentation_2d/shared_2d_3d_model_imports/__init__.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "9b41eef8fb64f35dbc1d5bc8d755633e6e2096e79f5701b2387edb1404446c2e",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/segmentation_2d/unet_model/unet.py",
+      "new_path": "code/segmentation_2d/unet_model/unet.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "c8db4dce0f6aa34a950a3a0e0078c38de44e8330dd37dcc3a79f8f9937e018ef",
+      "evidence_functions": [
+        "DoubleConv",
+        "Down",
+        "Up",
+        "OutConv",
+        "UNet",
+        "__init__",
+        "__init__",
+        "__init__",
+        "forward",
+        "__init__",
+        "__init__",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/data_loader/my_dataset3d.py",
+      "new_path": "code/segmentation_3d/data_loader/my_dataset3d.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "afcb5af7ae9f2286d41c2e2fd2b217ad92fedc75bfee574f3a00b0d498171e18",
+      "evidence_functions": [
+        "breastdm_zscore_3d",
+        "standardize_depth",
+        "DriveDataset",
+        "__init__",
+        "__getitem__",
+        "__len__"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/fig13_layout/make_overseg_slice_2x2.py",
+      "new_path": null,
+      "classification": "PURE_PRESENTATION",
+      "action": "DELETE",
+      "reason": "Reads an existing rendered PNG, detects/crops panel bounds, arranges a 2x2 canvas and adds text. Image-file size selection is layout input selection, not scientific case selection.",
+      "scientific_content": true,
+      "sha256_before": "257b1eac7cbf1f013118f8a37a42e2a57b45fc092317272a93378fc300bb150e",
+      "evidence_functions": [
+        "pick_source_png",
+        "find_content_regions",
+        "get_font",
+        "paste_center"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/fig13_predictions/make_top3_overseg_maxfp_v3.py",
+      "new_path": "code/segmentation_3d/fig13_predictions/make_top3_overseg_maxfp_v3.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "0f9c25ca1e7d5e7f51ee2fb92a5ef6e824cc7c2dc4d54086ead8f109c9f85cfe",
+      "evidence_functions": [
+        "FormalEvalIdentity",
+        "build_test_dataset",
+        "extract_state_dict",
+        "find_first_existing_key",
+        "norm_path",
+        "calculate_volume_metrics",
+        "verify_dataset_index",
+        "validate_reinference",
+        "calculate_slice_stats",
+        "select_overseg_slice",
+        "normalize_mri",
+        "draw_case",
+        "__call__",
+        "safe_ratio"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/fig13_slice_selection/select_slice_volume55_overseg.py",
+      "new_path": "code/segmentation_3d/fig13_slice_selection/select_slice_volume55_overseg.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "7aba238dfd6231f4a37b5cf8460ebb0439f3617daee1d8652773c99a3aeeee38",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/segmentation_3d/fig13_volume_selection/select_top3_overseg_volumes_two_level.py",
+      "new_path": "code/segmentation_3d/oversegmentation_volume_selection/select_top3_overseg_volumes_two_level.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "MOVE/RENAME",
+      "reason": "Reconstructs TP/FP/FN, checks TP recovery, filters eligible volumes and ranks by GT coverage/PPV with deterministic ties. Scientific selection; no panel layout. Safe task-folder rename; basename and runtime paths unchanged.",
+      "scientific_content": true,
+      "sha256_before": "1a53536b82d4f1b30a482cadbd411cc65220083da058cb6bf5977919a0bcadb0",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/segmentation_3d/protocol_checks/checks.py",
+      "new_path": "code/segmentation_3d/protocol_checks/checks.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "498585d68514a016fedbabf3d2b86f674f588f1b5d122c96058b1664b92de5d3",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/segmentation_3d/rgb_intensity_check/check_rgb_intensity_discrepancy.py",
+      "new_path": "code/segmentation_3d/rgb_intensity_check/check_rgb_intensity_discrepancy.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4a17176f0568306ee2e94e05b3d69d9de67909851a1b38387903c43068d5e1bf",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "code/segmentation_3d/rgb_prediction_impact/check_rgb_discrepancy_impact.py",
+      "new_path": "code/segmentation_3d/rgb_prediction_impact/check_rgb_discrepancy_impact.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4264cef6eca4ab084ef0e093b8e474377956e71895c120aca7260a22fe7ff0ba",
+      "evidence_functions": [
+        "breastdm_zscore_3d",
+        "preprocess",
+        "calculate_metrics"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/source_slice_matching/audit_remaining_3d_preprocessing.py",
+      "new_path": "code/segmentation_3d/source_slice_matching/audit_remaining_3d_preprocessing.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "d06101518a49e45b3f99dfd61ccd25a0af67abeb192e5d18608d468889640875",
+      "evidence_functions": [
+        "natural_key",
+        "load_gray",
+        "load_3d_slices",
+        "get_nonzero_indices",
+        "match_slices"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/table7_metrics/segmentation3d_metrics.py",
+      "new_path": "code/segmentation_3d/table7_metrics/segmentation3d_metrics.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "59fbaa5d41e52112a764c729c49e5e7ca48b4f2d4bc9a331516acc081b0e8161",
+      "evidence_functions": [
+        "VolumeMetrics",
+        "evaluate",
+        "__init__",
+        "update",
+        "compute"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/table7_result_audit/audit.py",
+      "new_path": "code/segmentation_3d/table7_result_audit/audit.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "79d32b9d947b29573bdb948007a59d8e68924793d3cf2437ed46c5a7f9b96825",
+      "evidence_functions": [
+        "sha",
+        "readcsv",
+        "ev",
+        "writecsv"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/threshold_analysis/threshold_sensitivity_3d.py",
+      "new_path": "code/segmentation_3d/threshold_analysis/threshold_sensitivity_3d.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "a85a8a75d9e878403bf5bc9eccd89a64f288064331313ac50ed9c9a49ebef6e8",
+      "evidence_functions": [
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/segmentation_3d/zero_padding_check/check_seg3d_zero_padding.py",
+      "new_path": "code/segmentation_3d/zero_padding_check/check_seg3d_zero_padding.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bdc89ea94b64e4b16051eed38146c263483b4cda0444f796f5cea5016da16b44",
+      "evidence_functions": [
+        "analyze_volume"
+      ]
+    },
+    {
+      "old_path": "code/setup_third_party.py",
+      "new_path": "code/setup_third_party.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "49ad84db04b5a9ecbb7db5de7b6e65e0251e211791faf0303bfa73c9dfb8b96f",
+      "evidence_functions": [
+        "records",
+        "normalized",
+        "digest",
+        "selected_records",
+        "restored_source_paths",
+        "contained",
+        "valid",
+        "missing_sources",
+        "require_sources",
+        "restore",
+        "main"
+      ]
+    },
+    {
+      "old_path": "code/verify_ppv_reference.py",
+      "new_path": "code/verify_ppv_reference.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "c2276701ba424acb42a57fe4b03671433b6e2c0c77f27bc2a28bf68fad3c9387",
+      "evidence_functions": [
+        "main"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/data_loader.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/data_loader.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/exp1_provenance.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/exp1_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp1_100ep_seed16180_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/data_loader.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/data_loader.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/exp1_provenance.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/exp1_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp1_100ep_seed27182_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/data_loader.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/data_loader.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "b758b7d1132b4c82781ad8b0ad7492150fcaf1f97686e7e179819d555220b6d3",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/exp1_provenance.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/exp1_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "fb87f16de98fc26cfefcf7ae7845bc2a6eff4009847a4063d486329e90ebd427",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/summarize_exp1_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "3a0acaa4d07649af7e57e6ee1d284cb48199732b5c398004d9d066fc63638746",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp1_100ep_seed31415_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/exp2_provenance.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/exp2_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp2_100ep_seed48271_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/exp2_provenance.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/exp2_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp2_100ep_seed59317_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/VIT_model.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/VIT_model.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "bf3a99a76dc700b7a88273686860e63a0c3e00c219f0b75a15c23c3501a05fbf",
+      "evidence_functions": [
+        "drop_path",
+        "DropPath",
+        "PatchEmbed",
+        "Attention",
+        "Mlp",
+        "Block",
+        "VisionTransformer",
+        "_init_vit_weights",
+        "vit_base_patch16_224",
+        "vit_base_patch16_224_in21k",
+        "vit_base_patch32_224",
+        "vit_base_patch32_224_in21k",
+        "vit_large_patch16_224",
+        "vit_large_patch16_224_in21k",
+        "vit_large_patch32_224_in21k",
+        "vit_huge_patch14_224_in21k",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward",
+        "__init__",
+        "forward_features",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/classification_auc.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/classification_auc.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "e3662c3f0bf6e06cf6a13c73a253343257eded0be19b60318231b1be342d2e4d",
+      "evidence_functions": [
+        "classification_roc",
+        "classification_auc",
+        "classification_metrics",
+        "classification_test_metrics",
+        "metrics_from_frame",
+        "read_auc_predictions",
+        "ratio"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/data_loader_exp2.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "6dc0bd6809ed6c6453675c64cd35d21c314cb22bc05c070fa1e702714bed275c",
+      "evidence_functions": [
+        "BreastDMNpyDataset",
+        "__init__",
+        "__len__",
+        "__getitem__"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/exp2_provenance.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/exp2_provenance.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "add1dcd0e6009da683782b02ce6a6bf9c019dbde9032ecd3717b542840ef00c8",
+      "evidence_functions": [
+        "sha256",
+        "read_json",
+        "write_json",
+        "run_path",
+        "validate_output",
+        "validate_args",
+        "collect_evidence",
+        "check_predecessors",
+        "save_evidence",
+        "Tee",
+        "begin_run",
+        "validate_results",
+        "finish_run",
+        "verify_completed",
+        "__init__",
+        "write",
+        "flush",
+        "read"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/summarize_exp2_final_multiseed.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Computes prediction/seed aggregates and summary metrics used by scientific tables; keep all logic unchanged.",
+      "scientific_content": true,
+      "sha256_before": "ca61bcc65414ffcf3f5e02c6221c0806ee1b540b0d99e7f84f274af20c368850",
+      "evidence_functions": [
+        "summarize",
+        "save"
+      ]
+    },
+    {
+      "old_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/tools.py",
+      "new_path": "result/fusion_exp2_100ep_seed84629_final_multiseed/code_snapshot/tools.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "4d59ae6176fe6a56d91841615ec51f7b1248d6f9ebc6c7c47c40c04f16a0a369",
+      "evidence_functions": [
+        "EarlyStopping",
+        "__init__",
+        "__call__",
+        "save_checkpoint"
+      ]
+    },
+    {
+      "old_path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/my_dataset.py",
+      "new_path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/my_dataset.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "0302b50d1ba71b69087a23b7053f578af6adff3a33e0bc8a5a0f43fa99e7537c",
+      "evidence_functions": [
+        "DriveDataset",
+        "__init__",
+        "__getitem__",
+        "__len__"
+      ]
+    },
+    {
+      "old_path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/src/unet.py",
+      "new_path": "result/seg2d_unet_seed123_gpu_20260911/code_snapshot/src/unet.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "8eb7a76bdc2a53a784f1ddaea66eb0e59ac63ccd7ca8c68f5f9b9461e19c6f33",
+      "evidence_functions": [
+        "DoubleConv",
+        "Down",
+        "Up",
+        "OutConv",
+        "UNet",
+        "__init__",
+        "__init__",
+        "__init__",
+        "forward",
+        "__init__",
+        "__init__",
+        "forward"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/my_dataset3d.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/my_dataset3d.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "203e3ec35c67ac38a6a283b3a74f2891cbbc93ec656fb89b1afd74ae63158e31",
+      "evidence_functions": [
+        "breastdm_zscore_3d",
+        "standardize_depth",
+        "DriveDataset",
+        "__init__",
+        "__getitem__",
+        "__len__"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/segmentation3d_metrics.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/segmentation3d_metrics.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "13669caad03010bc0770fa3f3f932e773ea4aa0843ac85534072d3ae65243397",
+      "evidence_functions": [
+        "VolumeMetrics",
+        "evaluate",
+        "__init__",
+        "update",
+        "compute"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/find_overseg_case.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/find_overseg_case.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "d5255a60c1ce8b880634c8bccfd03851b3a40cfcdba9f55e5cf9f81606b7a0e4",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_figures.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_figures.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "187671a9c17681462f1e3c0a657f528a0ea1036fd345546d404f2ed6eadd732d",
+      "evidence_functions": [
+        "load_array",
+        "normalize_to_gray",
+        "pick_slice",
+        "binarize",
+        "contour_overlay",
+        "try_find_pred_path",
+        "get_row_by_index"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "a5db684c48efb88a662bdefa874f62c61fd5aae1ad4d0696edc34b23454c6a83",
+      "evidence_functions": [
+        "get_saved_args",
+        "arg_value",
+        "extract_state_dict",
+        "build_eval_transform",
+        "build_test_dataset",
+        "infer_base_channels_from_state",
+        "build_model",
+        "norm_path",
+        "calculate_volume_metrics",
+        "validate_against_csv",
+        "verify_dataset_index",
+        "get_slice_stats",
+        "select_max_fp_overseg_slice",
+        "normalize_for_display",
+        "draw_case",
+        "ratio_for_sort"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v2.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v2.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "f1bf04d10e1b043528cb4313ead1979d7f2343a431b5417ae56838cc8bc01265",
+      "evidence_functions": [
+        "FormalEvalIdentity",
+        "build_test_dataset",
+        "extract_state_dict",
+        "saved_arg",
+        "infer_base_channels",
+        "build_formal_model",
+        "norm_path",
+        "volume_metrics",
+        "validate_case",
+        "verify_dataset_path",
+        "calculate_slice_stats",
+        "choose_max_fp_overseg_slice",
+        "normalize_mri",
+        "draw_four_panel",
+        "__call__",
+        "safe_ratio"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v3.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_maxfp_v3.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "428d08a9abf1a0fba965e01938e0ce7b1661a2e87608226b145aa624dd9b53d8",
+      "evidence_functions": [
+        "FormalEvalIdentity",
+        "build_test_dataset",
+        "extract_state_dict",
+        "find_first_existing_key",
+        "norm_path",
+        "calculate_volume_metrics",
+        "verify_dataset_index",
+        "validate_reinference",
+        "calculate_slice_stats",
+        "select_overseg_slice",
+        "normalize_mri",
+        "draw_case",
+        "__call__",
+        "safe_ratio"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_publication_layout.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/make_top3_overseg_publication_layout.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Despite its layout-only docstring, runpy.run_path executes make_top3_overseg_maxfp_v3.py, including inference, metric validation and slice selection, before publication composition. Keep unchanged for manual review.",
+      "scientific_content": true,
+      "sha256_before": "166efd6db00a5fdac05f1bd7525b9afacb389b18ad0f71a41c38e262d5cff0d0",
+      "evidence_functions": [
+        "draw_panel"
+      ]
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_slice_volume55_overseg.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_slice_volume55_overseg.py",
+      "classification": "MIXED_NEEDS_REVIEW",
+      "action": "NO CHANGE / REVIEW",
+      "reason": "Scientific inference, case/slice selection or Grad-CAM is coupled to explicit multi-panel composition. Preserve file and location; do not split or edit.",
+      "scientific_content": true,
+      "sha256_before": "7ac6c3f8ac9810d4ea09725196b4519f42a3085bb8b0bbcb85ba3a216e5a0ebe",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_top3_overseg_volumes_two_level.py",
+      "new_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/select_top3_overseg_volumes_two_level.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Reconstructs TP/FP/FN, checks TP recovery, filters eligible volumes and ranks by GT coverage/PPV with deterministic ties. Scientific selection; no panel layout. Historical working-directory dependency: leave in place.",
+      "scientific_content": true,
+      "sha256_before": "c1810cfd82f3b0795bbcc78c9e5ed2c543f445dc9cb42fd1e75c855e18144dee",
+      "evidence_functions": []
+    },
+    {
+      "old_path": "result/seg3d_unet_locked_volume_ppv_seed42_20260911/volume55_slice_overseg_selection/make_overseg_slice_2x2.py",
+      "new_path": null,
+      "classification": "PURE_PRESENTATION",
+      "action": "DELETE",
+      "reason": "Historical layout-only copy: selects existing PNG by file size, crops/repositions panels and adds a title; no data arrays, predictions or case-selection calculation.",
+      "scientific_content": true,
+      "sha256_before": "2128d4c56d1d5fdd6ea526ccdcbb22e2e7542d57319ba2fba60e403e9cf36acc",
+      "evidence_functions": [
+        "pick_source_png",
+        "find_content_regions",
+        "get_font",
+        "paste_center"
+      ]
+    },
+    {
+      "old_path": "weight download and restore/restore_assets.py",
+      "new_path": "weight download and restore/restore_assets.py",
+      "classification": "SCIENTIFIC_CORE",
+      "action": "KEEP",
+      "reason": "Scientific computation or required scientific workflow dependency; retained without edits. Existing source provenance is unchanged.",
+      "scientific_content": true,
+      "sha256_before": "ec64decd40c91d01dd44b294bd8a1d3cde8135285582fa00e1ae1140f94fd748",
+      "evidence_functions": [
+        "digest",
+        "main"
+      ]
+    }
+  ]
+}

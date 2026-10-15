@@ -34,6 +34,9 @@ def sources():
     # Keep excluded task names discoverable; setup checks occur only when invoked.
     inventory = ROOT / 'provenance/source_inventory.json'
     for row in json.loads(inventory.read_text(encoding='utf-8'))['files']:
+        # Historical retained entries may have moved or been presentation-only.
+        if row['action'] != 'remove':
+            continue
         parts = row['path'].split('/')
         if len(parts) == 4 and parts[0] == 'code' and parts[1] in {
                 'classification', 'segmentation_2d', 'segmentation_3d'}:

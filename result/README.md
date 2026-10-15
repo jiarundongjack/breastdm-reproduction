@@ -74,3 +74,7 @@ Round 4 resolved the three previously ambiguous PNG variants as **DUPLICATE_VARI
 Round 4 剩余待确认图像：**None**。三张图与正式图逐像素相同，仅软件版本元数据不同；已移除重复副本，保留正式图。前后哈希、尺寸、DPI、元数据和替代路径见清单中的 `round4_image_identity`。没有重画图、重算指标或修改正式结果。
 
 The source version for this map is `v1.0.0`; see [release_manifest.json](../provenance/release_manifest.json). Later local outputs do not automatically become manuscript-final.
+
+## Post-release code organization / 发布后的代码目录整理
+
+Scientific result files, values and canonical experiment mapping are unchanged. Pure presentation-only Python helpers were removed; mixed case-computation/layout scripts remain unchanged for manual review. Historical result-manifest entries describe the original baseline; current code paths/dispositions are overlaid by [figure_code_cleanup.json](../provenance/figure_code_cleanup.json). Repository tasks describe scientific function rather than final manuscript panel composition. / 科学结果文件、数值及正式实验对应关系不变；只移除纯展示 Python 工具，混合脚本原样保留待复核。当前代码路径以本轮清单补充说明，历史结果清单不改写。

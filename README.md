@@ -83,7 +83,7 @@ The paths below describe the local directory structure used by the experiments. 
 | `data/classification_exp2/img17Se` | Exp-2, seventeen channels / 实验二17通道输入 |
 | `data/segmentation_2d/seg2D_clean_v2` | 2D images and masks / 2D图像及标签 |
 | `data/segmentation_3d/seg3D_clean` | 3D volumes and masks / 3D体积及标签 |
-| `code/classification`, `code/segmentation_2d`, `code/segmentation_3d` | 46 curated source files in paper-task folders / 按论文任务保留的46个程序 |
+| `code/classification`, `code/segmentation_2d`, `code/segmentation_3d` | Scientific task implementations and shared modules; see the cleanup inventory / 科学任务实现与共享模块，见整理清单 |
 | `code/preparation` | Existing split classification and segmentation input preparation / 已有划分的分类与分割输入整理 |
 | `code/analysis` | Classification statistics from saved prediction CSVs / 基于已有预测 CSV 的分类统计 |
 | `code/pretrained` | Two classification initialization checkpoints / 分类训练使用的两份预训练权重 |
@@ -229,12 +229,11 @@ These tasks do not load model checkpoints or raw sample arrays. They still requi
 
 | Task / 任务标识 | Required inputs / 必需输入 | Main outputs / 主要输出 |
 |---|---|---|
-| `classification/fig2_3_exp1_roc` | All three C1 `test_predictions_two_class.csv` files / C1 三个种子的预测记录 | `OUT/exp1_mean_roc.png`, `exp1_auc_summary.csv`, `exp1_confusion_per_seed.csv`, `exp1_mean_confusion_matrix.csv`, report / 报告 |
-| `classification/fig2_confusion_matrix` | `OUT/exp1_mean_confusion_matrix.csv`; fallback / 回退：`result/paper_outputs/exp1_figures/exp1_mean_confusion_matrix.csv` | `OUT/exp1_mean_confusion_matrix.png` |
-| `classification/fig4_5_exp2_roc` | All three C2 `test_predictions_two_class.csv` and `author_style_metrics.csv` files / C2 三组预测及指标记录 | `OUT/exp2_roc/`: ROC, confusion-matrix PNGs, AUC and confusion CSVs, report / ROC、混淆矩阵图、指标 CSV 和报告 |
-| `classification/fig4_confusion_matrix` | All three C2 `test_predictions_two_class.csv` files / C2 三组预测记录 | `OUT/exp2_mean_confusion_matrix_exact.csv`, `exp2_mean_confusion_matrix_integer.csv`, `exp2_mean_confusion_matrix_integer.png`, note / 说明 |
+| `classification/exp1_mean_roc` | All three C1 `test_predictions_two_class.csv` files / C1 三个种子的预测记录 | `OUT/exp1_mean_roc.png`, `exp1_auc_summary.csv`, `exp1_confusion_per_seed.csv`, `exp1_mean_confusion_matrix.csv`, report / 报告 |
+| `classification/exp2_mean_outputs` | All three C2 `test_predictions_two_class.csv` and `author_style_metrics.csv` files / C2 三组预测及指标记录 | `OUT/exp2_roc/`: ROC, confusion-matrix PNGs, AUC and confusion CSVs, report / ROC、混淆矩阵图、指标 CSV 和报告 |
+| `classification/exp2_mean_confusion_matrix` | All three C2 `test_predictions_two_class.csv` files / C2 三组预测记录 | `OUT/exp2_mean_confusion_matrix_exact.csv`, `exp2_mean_confusion_matrix_integer.csv`, `exp2_mean_confusion_matrix_integer.png`, note / 说明 |
 | `classification/exp2_false_positive_cases` | All three C2 `test_predictions_two_class.csv` files / C2 三组预测记录 | Three `OUT/exp2_top10_*.csv` files: single-run cases, persistent cases and details / 单次、持续假阳性及详细记录 |
-| `segmentation_3d/fig13_volume_selection` | S3 `test_predictions.csv` | `OUT/volume_overseg_two_level_selection/all_eligible_volumes_ranked.csv` and `TOP3_volumes_two_level_selection.csv` |
+| `segmentation_3d/oversegmentation_volume_selection` | S3 `test_predictions.csv` | `OUT/volume_overseg_two_level_selection/all_eligible_volumes_ranked.csv` and `TOP3_volumes_two_level_selection.csv` |
 
 For classification prediction CSVs, preserve the original columns, including `True Label`, `Predicted Label`, `Benign Probability` and `Malignant Probability`. Case-selection tasks also use sample-identifying columns. Do not substitute a summary-only CSV for the per-sample predictions.
 
@@ -243,14 +242,13 @@ For classification prediction CSVs, preserve the original columns, including `Tr
 Example: regenerate Exp-1 ROC and then its confusion-matrix plot / 示例：先生成 Exp-1 ROC，再生成混淆矩阵图：
 
 ```powershell
-python code/run.py classification/fig2_3_exp1_roc --output-root result/reproduced/exp1_record_analysis
-python code/run.py classification/fig2_confusion_matrix --output-root result/reproduced/exp1_record_analysis
+python code/run.py classification/exp1_mean_roc --output-root result/reproduced/exp1_record_analysis
 ```
 
 Example: regenerate Exp-2 ROC / 示例：重新生成 Exp-2 ROC：
 
 ```powershell
-python code/run.py classification/fig4_5_exp2_roc --output-root result/reproduced/exp2_record_analysis
+python code/run.py classification/exp2_mean_outputs --output-root result/reproduced/exp2_record_analysis
 ```
 
 The Exp-2 ROC task creates an `exp2_roc` subdirectory and requires it not to exist. These examples recalculate saved predictions; they do not rerun training or establish the original paper's evaluation procedure.
@@ -282,7 +280,7 @@ python code/run.py segmentation_3d/table7_result_audit --output-root result/repr
 |---|---|---|
 | `classification/channel_mapping` | D1 and D2 test arrays / 两组分类测试数组；no weights / 无需权重 | `OUT/fp_fn_cases/exp1_exp2_channel_mapping_verification.csv` |
 | `classification/subtraction_check` | D1 and D2 test arrays / 两组分类测试数组；no weights / 无需权重 | `OUT/fp_fn_cases/subtraction_formula_all_candidates.csv`, `subtraction_formula_best_mapping.csv` |
-| `classification/fig10_11_case_source` | D2 test data and C2 seed59317 `code_snapshot/data_loader_exp2.py` / 测试数据及历史读取代码；no weights / 无需权重 | Console: sample index 96 source / 终端显示索引 96 的样本来源 |
+| `classification/exp2_seed59317_case_source` | D2 test data and C2 seed59317 `code_snapshot/data_loader_exp2.py` / 测试数据及历史读取代码；no weights / 无需权重 | Console: sample index 96 source / 终端显示索引 96 的样本来源 |
 | `classification/fig10_11_gradcam` | D2 test data; C2 seed59317 predictions, `best_fusion_model.pth`, and required model/loader snapshot modules / 样本、预测 CSV、模型权重和快照模块 | `OUT/exp2_seed59317_index96_gradcam/`: input, Grad-CAM, channel PNGs and metadata / 输入图、热力图、通道图与元数据 |
 | `segmentation_3d/protocol_checks` | D3D all splits and current segmentation modules / 全部分割数据及当前代码；no trained weights / 无需训练权重 | `OUT/test_report.json`, synthetic `test_metrics.csv`, console / 合成测试 CSV 及终端结果 |
 | `segmentation_3d/zero_padding_check` | D3D volumes / 三维体积；no weights / 无需权重 | Console zero-slice statistics / 终端零切片统计 |
@@ -301,7 +299,6 @@ These are study-specific checks; several select fixed cases or assert the study'
 |---|---|---|
 | `segmentation_3d/fig13_predictions` | D3D test data; S3 `test_predictions.csv`, `best_model.pth`, model and dataset snapshots / 测试数据、预测记录、权重及快照 | `OUT/top3_overseg_maxfp_v3/`: prediction PNGs, slice CSVs and summary / 预测图、切片统计及汇总 |
 | `segmentation_3d/fig13_slice_selection` | Same inputs as `fig13_predictions`; it executes that script internally / 同上，内部会执行预测绘图脚本 | `OUT/volume55_slice_overseg_selection/`: `all_slices_volume55.csv`, `eligible_slices_ranked.csv`, `SELECTED_slice.csv`, representative PNG / 代表切片图；also prediction outputs / 同时生成预测输出 |
-| `segmentation_3d/fig13_layout` | Existing PNG from `OUT/volume55_slice_overseg_selection/`; fallback to the same subdirectory under S3 / 已有 PNG，缺失时读取 S3 下同名子目录 | `OUT/representative_overseg_slice_2x2.png`; no model or arrays loaded by this layout task / 排版任务本身不加载模型或样本数组 |
 
 With all inference inputs available, run slice selection followed by layout in the same output root. Running layout alone requires a previously generated local case PNG; historical case PNGs are not distributed.
 
@@ -309,7 +306,6 @@ With all inference inputs available, run slice selection followed by layout in t
 
 ```powershell
 python code/run.py segmentation_3d/fig13_slice_selection --output-root result/reproduced/seg3d_example
-python code/run.py segmentation_3d/fig13_layout --output-root result/reproduced/seg3d_example
 ```
 
 ### 7. Reference evaluator / 参考评估器
@@ -406,3 +402,15 @@ Download all three ZIP archives below. These links download the files directly; 
 After downloading, follow the [verification and restoration instructions](weight%20download%20and%20restore/DOWNLOADS.md).
 
 下载后，请按照[校验与恢复说明](weight%20download%20and%20restore/DOWNLOADS.md)将权重恢复到程序所需的位置。
+
+## Scientific-function organization / 按科学功能组织代码
+
+Repository organization is based on scientific function rather than manuscript figure numbering. Final manuscript panel composition and publication layout are not part of the reproducibility codebase. This is a post-v1.0.0 navigation cleanup on main; the fixed v1.0.0 source tag and all scientific result records remain unchanged.
+
+代码按科学功能组织，不以论文图号作为科学标识。最终论文的面板拼接与版面设计不属于复现代码库。本次仅整理发布后的 main 导航，不改变固定 v1.0.0 标签或科学结果。
+
+The [file-level cleanup inventory](provenance/figure_code_cleanup.json) maps old/new paths and explains decisions; [SHA-256 verification](provenance/figure_code_sha256_before_after.json) records byte identity. Scripts mixing scientific computation and explicit manuscript composition remain untouched for manual review, including the Grad-CAM and over-segmentation figure tasks that still have historical figure-number folder names. They were not split or renamed. Historical source/result inventories retain their original paths and hashes; use this cleanup inventory as the path/disposition overlay for current main. Excluded private-source restoration paths are unchanged.
+
+混合计算与排版的脚本原样保留待人工复核，因此部分入口仍保留历史图号名称；没有拆分或改写。历史来源/结果清单保留原始路径与哈希，当前路径和纯展示脚本移除情况以本轮清单补充说明。论文表格计算及训练任务未改名。
+
+The standalone Exp-1 confusion-matrix renderer only styled an existing aggregate CSV and was removed; the computation of that CSV remains in `classification/exp1_mean_roc`, and its canonical saved PNG is unchanged. Scientific case/slice selection and Grad-CAM computation remain available; only isolated presentation-only scripts were removed.

@@ -22,14 +22,9 @@
       "code/classification/exp2_model/fusionModels_exp2.py",
       "code/classification/exp2_training/train_exp2.py"
     ],
-    "classification/fig10_11_case_source": [],
     "classification/fig10_11_gradcam": [
       "code/classification/exp2_model/fusionModels_exp2.py"
     ],
-    "classification/fig2_3_exp1_roc": [],
-    "classification/fig2_confusion_matrix": [],
-    "classification/fig4_5_exp2_roc": [],
-    "classification/fig4_confusion_matrix": [],
     "classification/shared_transformer": [],
     "classification/subtraction_check": [],
     "classification/table4_exp1_summary": [],
@@ -76,7 +71,6 @@
     ],
     "segmentation_2d/unet_model": [],
     "segmentation_3d/data_loader": [],
-    "segmentation_3d/fig13_layout": [],
     "segmentation_3d/fig13_predictions": [
       "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/src/unet3d.py",
       "code/segmentation_3d/unet_model/unet3d.py"
@@ -85,7 +79,6 @@
       "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/src/unet3d.py",
       "code/segmentation_3d/unet_model/unet3d.py"
     ],
-    "segmentation_3d/fig13_volume_selection": [],
     "segmentation_3d/protocol_checks": [
       "code/segmentation_2d/shared_2d_3d_dice_loss/dice_coefficient_loss.py",
       "code/segmentation_2d/shared_2d_3d_metrics/distributed_utils.py",
@@ -182,6 +175,11 @@
       "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/dice_coefficient_loss.py",
       "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/distributed_utils.py",
       "result/seg3d_unet_locked_volume_ppv_seed42_20260911/code_snapshot/train_utils/train_and_eval.py"
-    ]
+    ],
+    "classification/exp1_mean_roc": [],
+    "classification/exp2_mean_outputs": [],
+    "classification/exp2_mean_confusion_matrix": [],
+    "classification/exp2_seed59317_case_source": [],
+    "segmentation_3d/oversegmentation_volume_selection": []
   }
 }

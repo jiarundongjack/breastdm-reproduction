@@ -49,7 +49,7 @@ python .local/reproduction/code/setup_third_party.py --check --workflow classifi
 python .local/reproduction/code/setup_third_party.py --private-source "D:/private/breastdm-reproduction-source" --workflow classification-exp1
 ```
 
-Choose `classification-exp2`, `seg2d`, `seg3d`, or a task name from `code/run.py --list` as appropriate. Manifest generation uses the existing evidence collector, which also hashes classification model/training code and pretrained weights; it retains those prerequisites. Pure plotting/statistics requires local CSVs and packages, not private model source. Figure 13 and threshold tasks use specific historical snapshots; the workflow check names those exact files. Full completion audits additionally require the original recorded hashes, data outputs and checkpoints; they are not CSV-only statistics.
+Choose `classification-exp2`, `seg2d`, `seg3d`, or a task name from `code/run.py --list` as appropriate. Manifest generation uses the existing evidence collector, which also hashes classification model/training code and pretrained weights; it retains those prerequisites. Pure plotting/statistics requires local CSVs and packages, not private model source. Over-segmentation case analysis and threshold tasks use specific historical snapshots; the workflow check names those exact files. Full completion audits additionally require the original recorded hashes, data outputs and checkpoints; they are not CSV-only statistics.
 
 先初始化，再按具体任务在私有副本恢复所需源码；不需要一次补齐全部 41 项。分类 manifest 沿用证据收集器，会核对源码和预训练权重，因此仍有这些前提。病例图与完整审计另需本地数据、权重和历史记录，不能用虚构记录替代。
 
@@ -91,10 +91,9 @@ After generating the required private prediction CSVs, run these from the public
 python .local/reproduction/code/run.py classification/exp2_false_positive_cases
 python .local/reproduction/code/run.py classification/channel_mapping
 python .local/reproduction/code/run.py classification/fig10_11_gradcam
-python .local/reproduction/code/run.py segmentation_3d/fig13_volume_selection
+python .local/reproduction/code/run.py segmentation_3d/oversegmentation_volume_selection
 python .local/reproduction/code/run.py segmentation_3d/fig13_predictions
 python .local/reproduction/code/run.py segmentation_3d/fig13_slice_selection
-python .local/reproduction/code/run.py segmentation_3d/fig13_layout
 python .local/reproduction/code/local_generation.py legacy-selection
 python .local/reproduction/code/run.py segmentation_3d/table7_result_audit
 ```
@@ -107,13 +106,13 @@ python .local/reproduction/code/run.py segmentation_3d/table7_result_audit
 | False-positive case tables / 假阳性病例表 | `classification/exp2_false_positive_cases` |
 | Sample-to-path channel mapping / 通道对应路径表 | `classification/channel_mapping` |
 | Input, Grad-CAM, channel figures and metadata / 输入、热图、通道图及元数据 | `classification/fig10_11_gradcam` |
-| Slice stats, selected slices, volume rankings and example figures / 切片统计、筛选、体积排名及示例图 | `segmentation_3d/fig13_predictions`, then `fig13_slice_selection`, `fig13_layout`; `fig13_volume_selection` |
+| Slice stats, selected slices, volume rankings and example figures / 切片统计、筛选、体积排名及示例图 | `segmentation_3d/fig13_predictions`, then `fig13_slice_selection`; `oversegmentation_volume_selection` |
 | Legacy top-20 candidates and selected top-3 table / 旧筛选表 | `local_generation.py legacy-selection` calls retained `find_overseg_case.py` with only its run path replaced, then `make_top3_overseg_figures.py` |
 | Reconstructed per-volume counts and before/after hashes / 逐体积重建计数与路径哈希 | `segmentation_3d/table7_result_audit` |
 
-Old duplicate figures and layout variants are represented by the current canonical figure tasks; the same output types are generated, not every superseded filename. Some figure scripts intentionally select the original study cases and assert their prediction characteristics. Keep those checks: mismatching inputs or predictions must fail rather than silently selecting different cases.
+Pure manuscript-layout scripts are no longer provided. Scientific analysis and case visualizations remain; final panel composition is outside this workflow. Some figure scripts intentionally select the original study cases and assert their prediction characteristics. Keep those checks: mismatching inputs or predictions must fail rather than silently selecting different cases.
 
-旧的重复图和排版变体由现有规范绘图入口生成同类型输出，不承诺恢复每个旧文件名。部分脚本固定选取研究中的案例并验证预测特征；保留验证，输入不匹配时应报错，不自动换病例。
+不再提供纯论文排版脚本；保留科学分析和病例可视化，最终面板拼接不属于本工作流。部分脚本固定选取研究中的案例并验证预测特征；保留验证，输入不匹配时应报错，不自动换病例。
 
 The 3D audit also needs the retained history/configuration and both checkpoints. Classification full-audit tasks require the original completed-run hashes; locally regenerated records are not automatically valid historical records. Use the standalone CSV summarizer for local statistics instead of changing hashes or fabricating completion evidence:
 
@@ -133,3 +132,5 @@ Local generation does not replace the [manuscript-final result map](../result/RE
 本地新生成结果不自动成为论文正式结果，也不得覆盖或重新标记正式记录。分类与分割的种子命名空间独立。
 
 Use source tag `v1.0.0` for these instructions. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明对应源码 v1.0.0，模型附件仍使用独立的历史 rc1 版本。
+
+For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../README.md#scientific-function-organization--按科学功能组织代码) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged. / 纯排版命令已移除，科学脚本及其输出含义不变；混合脚本保留待复核。
