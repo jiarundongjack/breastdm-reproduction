@@ -134,3 +134,9 @@ Local generation does not replace the [manuscript-final result map](../result/RE
 Use source tag `v1.0.0` for these instructions. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明对应源码 v1.0.0，模型附件仍使用独立的历史 rc1 版本。
 
 For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../README.md#scientific-function-organization--按科学功能组织代码) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged. / 纯排版命令已移除，科学脚本及其输出含义不变；混合脚本保留待复核。
+
+## Verify existing formal records / 验证已有正式记录
+
+After obtaining the saved statistics and official metrics, use the [formal saved-prediction verification guide](analysis/SAVED_PREDICTION_VERIFICATION.md). Classification reports both AUC definitions; segmentation retains separate 2D/3D aggregation conventions. These tools do not generate predictions or masks and do not replace the preparation/inference prerequisites described above.
+
+取得保存统计和正式指标后，按[正式记录复核指南](analysis/SAVED_PREDICTION_VERIFICATION.md)运行。分类同时报告两种 AUC；分割保留2D/3D各自规则。这些工具不生成预测或 mask，也不替代前述数据准备和推理依赖。

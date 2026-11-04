@@ -414,3 +414,9 @@ The [file-level cleanup inventory](provenance/figure_code_cleanup.json) maps old
 混合计算与排版的脚本原样保留待人工复核，因此部分入口仍保留历史图号名称；没有拆分或改写。历史来源/结果清单保留原始路径与哈希，当前路径和纯展示脚本移除情况以本轮清单补充说明。论文表格计算及训练任务未改名。
 
 The standalone Exp-1 confusion-matrix renderer only styled an existing aggregate CSV and was removed; the computation of that CSV remains in `classification/exp1_mean_roc`, and its canonical saved PNG is unchanged. Scientific case/slice selection and Grad-CAM computation remain available; only isolated presentation-only scripts were removed.
+
+### Formal saved-statistics verification / 正式保存统计复核
+
+For the six formal classification runs, both flattened two-column AUC and conventional malignant-class AUROC are available through `classification_metrics_from_predictions.py`. For the formal 2D and 3D runs, `segmentation_metrics_from_predictions.py` reconstructs aggregate segmentation metrics from saved per-sample statistics. See [commands, input schemas and limitations](code/analysis/SAVED_PREDICTION_VERIFICATION.md). These new entry points require saved predictions/statistics and official metrics CSVs; they perform no training or inference and are not included in the historical v1.0.0 source tag.
+
+六次正式分类运行可通过新入口复核展平 AUC 并补充常规恶性类 AUROC；2D/3D 新入口从保存的逐样本统计重建汇总指标。详见[命令、输入格式及适用限制](code/analysis/SAVED_PREDICTION_VERIFICATION.md)。需要本地预测/统计及正式指标 CSV，不运行训练或推理；这些新增入口不属于历史 v1.0.0 源码标签。

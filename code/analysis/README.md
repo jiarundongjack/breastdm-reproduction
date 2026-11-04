@@ -57,3 +57,13 @@ AUC 沿用本项目现有分类指标实现，将两列概率与独热标签分�
 This checks the saved prediction values and recomputes statistics; it does not verify training, checkpoint selection, data splitting, or the original authors' evaluation procedure. Use the full-audit tasks listed in [full-record audits / 完整记录审计](../../README.md#full-audits) when the required experimental records are available.
 
 本脚本检查已有预测数值并重算统计，不验证训练过程、检查点选择、数据划分或原作者的评估流程。具备完整实验记录时，可使用 [full-record audits / 完整记录审计](../../README.md#full-audits) 中列出的完整审计任务。
+
+## Formal-run verification and both AUC definitions / 正式运行复核与双口径 AUC
+
+The new [saved-prediction verification guide](SAVED_PREDICTION_VERIFICATION.md) covers Tables 4–5: `classification_metrics_from_predictions.py` verifies the six formal classification runs and additionally reports malignant-class AUROC; `segmentation_metrics_from_predictions.py` verifies the formal 2D/3D aggregate metrics with distinct aggregation rules. Both use the Python standard library and require private saved statistics plus the corresponding official metrics CSV. Existing `summarize_predictions.py` commands remain available with their original flattened-AUC definition.
+
+新增[保存预测复核指南](SAVED_PREDICTION_VERIFICATION.md)对应 Tables 4–5：分类入口复核六次正式运行并补充恶性类 AUROC；分割入口通过 `--mode 2d/3d` 保持各自汇总规则。两者仅依赖 Python 标准库，输入为本地保存的统计及对应正式指标 CSV。旧汇总入口及其展平 AUC 定义保留。
+
+These are saved-statistics consistency checks, not retraining or inference. They do not establish the original published evaluator or complete reconstruction from raw data. Outputs include local input paths and must be reviewed before public sharing. All commands require a new output directory.
+
+这些入口验证保存统计的一致性，不证明原论文采用相同评估流程，也不证明原始数据准备过程完整可重建。输出记录本地输入路径，公开前需检查；每次必须指定新输出目录。
