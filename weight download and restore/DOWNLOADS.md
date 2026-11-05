@@ -36,9 +36,9 @@ The experiments use task-specific prepared inputs. Files downloaded from the ori
 
 ## Source and model versions / 源码与模型版本
 
-The model-weight release and the source-code release are versioned separately. Use [v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0) for source code and instructions, and [v1.0.0-rc1](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1) only for the model assets listed in ASSETS.json. Do not use the rc1 automatic “Source code” archives as the current source. See [release_manifest.json](../provenance/release_manifest.json).
+The model-weight release and the source-code release are versioned separately. Use [v1.0.1-review](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.1-review) at commit `7e7ce75a9770c7f59a93da8745da42e410e717ce` for current review source and instructions. Use [v1.0.0-rc1](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1) only for the model assets listed in ASSETS.json. Do not use the rc1 automatic “Source code” archives as the current source. Historical [v1.0.0 source](https://github.com/jiarundongjack/breastdm-reproduction/tree/v1.0.0) remains available for traceability. See [release_manifest.json](../provenance/release_manifest.json).
 
-模型权重与源码独立版本管理：源码及说明使用 v1.0.0；v1.0.0-rc1 仅用于 ASSETS.json 所列历史模型附件。rc1 自动生成的源码压缩包不是当前源码。模型清单中的 `version` 表示清单所随的源码版本，`asset_version` 仍是 rc1；资产文件名、大小和校验值未改变。
+模型权重与源码独立版本管理：当前审阅源码及说明使用 v1.0.1-review，固定提交见上；v1.0.0-rc1 仅承载 ASSETS.json 所列历史模型附件。旧 v1.0.0 标签保留用于追溯。ASSETS.json 中的 `version` 为历史清单版本，不表示当前审阅源码版本；`asset_version` 仍为 rc1，资产文件名、大小和校验值不变。病例级预测、标签及私人审阅材料不作为公开附件上传。
 
 ## Archive restoration / 归档恢复
 

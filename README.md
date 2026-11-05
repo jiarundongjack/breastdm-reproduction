@@ -373,17 +373,19 @@ python code/run.py classification/table5_exp2_summary --runs-root result/new_run
 <a id="versions"></a>
 ## Versions and model archives / 版本与模型附件
 
-**Source version: [v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0)** — the final cleaned, manuscript-aligned reproduction source. Use this fixed tag for the code and instructions corresponding to the manuscript; `main` may subsequently advance. See [release_manifest.json](provenance/release_manifest.json) for resource mapping.
+**Current review source: [v1.0.1-review](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.1-review)** — complete public source snapshot at commit `7e7ce75a9770c7f59a93da8745da42e410e717ce`, including the saved-statistics verification entry points. Use this fixed version for the current review; later `main` documentation updates do not move the tag. See [release_manifest.json](provenance/release_manifest.json).
 
-**源码版本：[v1.0.0](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0)**，对应完成整理并与论文正式实验集合对齐的复现源码。论文引用与复现应使用该固定标签；`main` 后续可能继续更新。资源对应关系见版本清单。
+**当前审阅源码：[v1.0.1-review](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.1-review)**，固定提交为 `7e7ce75a9770c7f59a93da8745da42e410e717ce`，包含完整公开源码及保存统计复核入口；后续 main 文档更新不改变该标签。私人审阅材料不包含在公开发布附件中。
+
+Historical [v1.0.0 source](https://github.com/jiarundongjack/breastdm-reproduction/tree/v1.0.0) remains available for traceability; it does not contain the new verification entry points. 历史 v1.0.0 标签保留用于追溯，不作为当前审阅入口。
 
 **Model assets: [v1.0.0-rc1](https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1)** — retained solely as the historical model-weight prerelease. Its three model ZIPs and checksum file are unchanged. **Do not use the rc1 “Source code” archive as the current reproduction source.** Those automatic archives reflect the historical tagged tree.
 
 **模型附件：v1.0.0-rc1**，保留为历史模型权重预发布版本，三份模型 ZIP 和校验文件不变。**不要用 rc1 的 “Source code” 压缩包作为当前复现源码**；它对应历史标签树。
 
-To identify the exact fixed source commit in a Git clone, run `git rev-parse 'v1.0.0^{commit}'` after fetching the tag. The release manifest uses Git `export-subst`: source archives exported from the commit contain its literal SHA, while a Git checkout retains the format token and the tag-resolution instruction. This avoids a self-referential commit hash inside its own committed file. The release body also records the exact commit.
+To identify the fixed review commit in a Git clone, run `git rev-parse 'v1.0.1-review^{commit}'` after fetching the tag. It must resolve to `7e7ce75a9770c7f59a93da8745da42e410e717ce`. The release manifest records this literal fixed SHA; later documentation commits on main are not the tagged review source.
 
-Git 克隆可用上述命令取得固定代码提交。清单的 commit 占位符在 Git 导出的源码包中自动展开；克隆中的占位符不是实际哈希，应通过标签解析。最终完整哈希另见发布说明。
+Git 克隆可用上述命令核对固定审阅提交。版本清单记录固定 SHA，main 后续文档提交不等于审阅标签对应的源码版本；下载标签源码时其中的历史措辞以新版发布说明为准。
 
 ### Download model weights / 下载模型权重
 

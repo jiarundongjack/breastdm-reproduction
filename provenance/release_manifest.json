@@ -1,9 +1,9 @@
 {
-  "source_release": "v1.0.0",
-  "source_commit": "$Format:%H$",
-  "source_commit_ref": "refs/tags/v1.0.0^{commit}",
-  "source_commit_resolution": "In a Git checkout run git rev-parse v1.0.0^{commit}; git archive export-subst replaces the format token with the exporting commit SHA. Resolve the tag for the fixed publication version, not later main commits.",
-  "source_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0",
+  "source_release": "v1.0.1-review",
+  "source_commit": "7e7ce75a9770c7f59a93da8745da42e410e717ce",
+  "source_commit_ref": "refs/tags/v1.0.1-review^{commit}",
+  "source_commit_resolution": "Run git rev-parse v1.0.1-review^{commit}. source_commit is the literal fixed review SHA, not a later main documentation commit.",
+  "source_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.1-review",
   "model_assets_release": "v1.0.0-rc1",
   "model_assets_commit": "03db653bc7939591d1acffcd37fc6d09aa14b555",
   "model_assets_release_url": "https://github.com/jiarundongjack/breastdm-reproduction/releases/tag/v1.0.0-rc1",
@@ -15,5 +15,8 @@
   "environment": "environment/",
   "instructions": "README.md",
   "downloads": "weight download and restore/DOWNLOADS.md",
-  "local_workflow": "code/LOCAL_GENERATION.md"
+  "local_workflow": "code/LOCAL_GENERATION.md",
+  "historical_source_tag": "v1.0.0",
+  "historical_source_commit": "b26a3def1542dbaa0a1ec8997f6c5c96d34ce856",
+  "historical_source_url": "https://github.com/jiarundongjack/breastdm-reproduction/tree/v1.0.0"
 }
