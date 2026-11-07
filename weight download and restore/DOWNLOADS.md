@@ -26,9 +26,9 @@ Please obtain the data through the Google Drive links in the original repository
 
 ## Reproduction environment and instructions / 复现环境与说明
 
-Environment specifications are provided in [environment/](../environment/). Reproduction commands and task descriptions are provided in [README.md](../README.md).
+Environment specifications are provided in [environment guide](../environment/README.md). Reproduction commands and task descriptions are provided in [workflow reference](../docs/WORKFLOW_GUIDE.md).
 
-环境配置见 [environment/](../environment/)，复现命令与任务说明见 [README.md](../README.md)。
+环境配置见 [environment guide](../environment/README.md)，复现命令与任务说明见 [workflow reference](../docs/WORKFLOW_GUIDE.md)。
 
 The experiments use task-specific prepared inputs. Files downloaded from the original source should not be assumed to match the prepared directory structure automatically.
 
@@ -59,12 +59,17 @@ python "weight download and restore/restore_assets.py" --asset-dir "D:/downloade
 python "weight download and restore/restore_assets.py" --asset-dir "D:/downloaded_model_assets"
 ```
 
-Replace the example path with your download directory. The first command verifies the archives and member checksums; the second restores the model files. Saved-prediction statistics do not require these model archives; see [README.md](../README.md#analysis).
+Replace the example path with your download directory. The first command verifies the archives and member checksums; the second restores the model files. Saved-prediction statistics do not require these model archives; see [saved-statistics verification](../code/analysis/SAVED_PREDICTION_VERIFICATION.md).
 
-将示例路径替换为实际下载目录。第一条命令校验压缩包及内部文件，第二条恢复模型文件。仅凭预测记录重算统计不需要这些模型压缩包，见 [README.md](../README.md#analysis)。
+将示例路径替换为实际下载目录。第一条命令校验压缩包及内部文件，第二条恢复模型文件。仅凭预测记录重算统计不需要这些模型压缩包，见 [saved-statistics verification](../code/analysis/SAVED_PREDICTION_VERIFICATION.md)。
 
 ## Sources and redistribution / 来源与再分发
 
 For original resource access, see the links above. For model-branch licenses, see the [license guide](Classification%20model%20branch%20licenses/README.md).
 
 原始资源获取见上文链接；模型分支许可见[许可说明](Classification%20model%20branch%20licenses/README.md)。
+
+
+## Reproducibility & Verification
+
+See [verification guide](../REVIEW_NAVIGATION.md) for the eight formal runs, fixed source commit, private-input requirements and historical weight release. Historical v1.0.0 descriptions retain their original meaning; the current fixed review is v1.0.1-review.

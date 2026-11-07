@@ -82,4 +82,4 @@ release in path handling and auxiliary fields, including the historical 3D globa
 
 ## Archival asset log / 历史附件日志
 
-`logs/asset_restore_validation.log` records an earlier local validation, including archive names that are no longer current public assets. It is archival provenance, not a current download list. Only the three model ZIPs and SHA256SUMS.txt currently listed in the historical rc1 release are model downloads; use source tag v1.0.0 for code. / 历史日志中的数据包名称不表示当前提供这些下载；当前模型附件以 rc1 实际清单为准，源码使用 v1.0.0。
+`logs/asset_restore_validation.log` records an earlier local validation, including archive names that are no longer current public assets. It is archival provenance, not a current download list. Only the three model ZIPs and SHA256SUMS.txt listed in the historical rc1 release are model downloads. The earlier source was v1.0.0; the current fixed review source is v1.0.1-review. See [Reproducibility & Verification](../REVIEW_NAVIGATION.md) for the current scope and prerequisites; this does not update or repeat the historical checks recorded here. / 历史日志中的数据包名称不表示当前提供这些下载；模型附件以 rc1 实际清单为准。早期源码为 v1.0.0，当前固定审阅源码为 v1.0.1-review；该导航更新不改写或重新执行本页的历史检查。

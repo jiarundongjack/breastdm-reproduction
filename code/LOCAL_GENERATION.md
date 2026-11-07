@@ -131,9 +131,9 @@ Local generation does not replace the [manuscript-final result map](../result/RE
 
 本地新生成结果不自动成为论文正式结果，也不得覆盖或重新标记正式记录。分类与分割的种子命名空间独立。
 
-Use source tag `v1.0.0` for these instructions. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明对应源码 v1.0.0，模型附件仍使用独立的历史 rc1 版本。
+These instructions originated with historical source tag `v1.0.0`. For the current fixed review, use `v1.0.1-review`; later `main` documentation updates do not enter that snapshot. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明源于历史源码 v1.0.0；当前固定审阅使用 v1.0.1-review，main 后续文档更新不改变该快照。模型附件仍使用独立的历史 rc1 版本。
 
-For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../README.md#scientific-function-organization--按科学功能组织代码) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged. / 纯排版命令已移除，科学脚本及其输出含义不变；混合脚本保留待复核。
+For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../docs/WORKFLOW_GUIDE.md#scientific-function-organization--按科学功能组织代码) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged. / 纯排版命令已移除，科学脚本及其输出含义不变；混合脚本保留待复核。
 
 ## Verify existing formal records / 验证已有正式记录
 
