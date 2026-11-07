@@ -1,24 +1,18 @@
-# Local generation of case outputs / 本地生成病例输出
+# Local generation of case outputs
 
-Initialization, preparation and CSV-only analysis use public scripts. Only workflows importing excluded model/training/evaluation implementations require the [selected source setup](../THIRD_PARTY_CODE.md); initialization does not require restoring all sources. / 初始化、整理及纯 CSV 分析使用公开脚本；只有依赖被排除实现的工作流才需要针对性源码准备。
+Initialization, preparation and CSV-only analysis use public scripts. Only workflows importing excluded model/training/evaluation implementations require the [selected source setup](../THIRD_PARTY_CODE.md); initialization does not require restoring all sources.
 
 Case-level CSVs, images, masks, predictions and case-linked metadata are not distributed in the current `main` tree when redistribution permission is unclear. Obtain inputs via the [original authors' repository](https://github.com/smallboy-code/Breast-cancer-dataset); cite the [original paper](https://doi.org/10.1016/j.compbiomed.2023.107255). Neither original nor preprocessed BreastDM data are provided here.
 
-当前 `main` 不公开再分发许可不明确的病例级 CSV、影像、mask、预测与病例关联元数据，也不提供原始或预处理 BreastDM 数据。请从原作者入口自行获取数据并引用原论文。
+## 1. Create a private workspace
 
-## 1. Create a private workspace / 建立私有本地目录
-
-Use a Git clone of the current `main`, with the classification/segmentation environments described in the root README. From the public checkout root:
-
-使用最新 `main` 的 Git 克隆及根 README 指定的分类/分割环境。在仓库根目录执行：
+Use a Git clone of the current `main`, with the classification/segmentation environments described in the [environment guide](../environment/README.md). From the public checkout root:
 
 ```powershell
 python code/local_generation.py init
 ```
 
 This copies tracked working files into `.local/reproduction/`, without Git history, data or weights. It refuses an existing destination. All generation commands below run against that ignored private copy, so retained public aggregate results are not overwritten. Do not upload the private copy. `init` requires Git; users who downloaded a source ZIP should first clone the repository. It reads the working tree: use a clean checkout of the cleanup commit or later.
-
-该命令把已跟踪文件复制到被忽略的 `.local/reproduction/`，不复制 Git 历史、数据或权重，并拒绝覆盖已有目录。下列命令只使用这个私有副本，不覆盖公开汇总结果。不要上传私有副本；下载 ZIP 的用户需先 Git 克隆仓库。
 
 Prepare these directories **inside `.local/reproduction/data/`**, following the existing [classification](preparation/classification/README.md) and [segmentation](preparation/segmentation/README.md) instructions:
 
@@ -30,8 +24,6 @@ segmentation_3d/seg3D_clean/{train,val,test}/...
 ```
 
 Those preparation scripts organize already split inputs; they do not implement every conversion from upstream raw downloads. Obtaining the required channel arrays and matching split layout remains a prerequisite. Do not invent replacement arrays, splits or case labels.
-
-准备脚本整理已有划分的数据，不覆盖上游原始下载物到实验输入的全部转换。须先取得符合要求的通道数组及划分，不能用虚构数组、划分或标签替代。
 
 For inference, use the existing model download/restoration instructions, running the unchanged restorer **from the private copy** after downloading the three listed archives yourself:
 
@@ -51,13 +43,11 @@ python .local/reproduction/code/setup_third_party.py --private-source "D:/privat
 
 Choose `classification-exp2`, `seg2d`, `seg3d`, or a task name from `code/run.py --list` as appropriate. Manifest generation uses the existing evidence collector, which also hashes classification model/training code and pretrained weights; it retains those prerequisites. Pure plotting/statistics requires local CSVs and packages, not private model source. Over-segmentation case analysis and threshold tasks use specific historical snapshots; the workflow check names those exact files. Full completion audits additionally require the original recorded hashes, data outputs and checkpoints; they are not CSV-only statistics.
 
-先初始化，再按具体任务在私有副本恢复所需源码；不需要一次补齐全部 41 项。分类 manifest 沿用证据收集器，会核对源码和预训练权重，因此仍有这些前提。病例图与完整审计另需本地数据、权重和历史记录，不能用虚构记录替代。
+Initialize first, then restore only the source prerequisites of the selected workflow in the private copy; restoring all 41 excluded files at once is unnecessary. Case figures and full audits also require local data, weights and historical records; fabricated records must not be substituted.
 
-## 2. Manifests and checkpoint inference / 清单和检查点推理
+## 2. Manifests and checkpoint inference
 
 Run the classification commands with the classification environment. The wrapper calls the existing `collect_evidence` and `evaluate_test_set` functions, without executing training setup or training. Manifest checks retain the original counts, shapes and split-separation requirements and also require the original pretrained files. Classification inference uses the full trained checkpoint and the existing 32-sample test loader configuration.
-
-分类命令调用原有清单函数和测试评估函数，不调用训练。清单仍验证原有样本数、形状、划分隔离及预训练文件。以下循环保留原有六个种子：
 
 ```powershell
 foreach ($seed in 31415,27182,16180) {
@@ -81,9 +71,7 @@ python .local/reproduction/code/local_generation.py predict --experiment seg3d -
 
 The private segmentation run receives `test_predictions.csv`, `test_metrics.csv`, `representative_success.png` and `representative_failure.png`. This is user-invoked checkpoint inference, not retraining or a replacement for the published experimental record. Numerical identity is not guaranteed across environments. The first-round cleanup itself did not run these commands on real data.
 
-生成结果只保存在私有副本。本地推理不替换论文实验记录；跨环境不保证逐位一致。本轮仓库清理未在真实数据上运行上述推理。
-
-## 3. Existing case analyses / 原有病例分析入口
+## 3. Existing case analyses
 
 After generating the required private prediction CSVs, run these from the public checkout root. All outputs remain inside `.local/`:
 
@@ -98,21 +86,19 @@ python .local/reproduction/code/local_generation.py legacy-selection
 python .local/reproduction/code/run.py segmentation_3d/table7_result_audit
 ```
 
-| Removed output type / 移除类型 | Existing generation function/task / 本地入口 |
+| Removed output type | Existing generation function/task |
 |---|---|
-| Dataset manifests / 数据清单 | `local_generation.py manifest` → `exp1_provenance.collect_evidence` / `exp2_provenance.collect_evidence` |
-| Classification predictions / 分类预测 | `local_generation.py predict --experiment exp1/exp2` → existing `evaluate_test_set` |
-| 2D/3D predictions and representative examples / 分割预测与代表病例图 | `local_generation.py predict --experiment seg2d/seg3d` → existing evaluation/export functions |
-| False-positive case tables / 假阳性病例表 | `classification/exp2_false_positive_cases` |
-| Sample-to-path channel mapping / 通道对应路径表 | `classification/channel_mapping` |
-| Input, Grad-CAM, channel figures and metadata / 输入、热图、通道图及元数据 | `classification/fig10_11_gradcam` |
-| Slice stats, selected slices, volume rankings and example figures / 切片统计、筛选、体积排名及示例图 | `segmentation_3d/fig13_predictions`, then `fig13_slice_selection`; `oversegmentation_volume_selection` |
-| Legacy top-20 candidates and selected top-3 table / 旧筛选表 | `local_generation.py legacy-selection` calls retained `find_overseg_case.py` with only its run path replaced, then `make_top3_overseg_figures.py` |
-| Reconstructed per-volume counts and before/after hashes / 逐体积重建计数与路径哈希 | `segmentation_3d/table7_result_audit` |
+| Dataset manifests | `local_generation.py manifest` → `exp1_provenance.collect_evidence` / `exp2_provenance.collect_evidence` |
+| Classification predictions | `local_generation.py predict --experiment exp1/exp2` → existing `evaluate_test_set` |
+| 2D/3D predictions and representative examples | `local_generation.py predict --experiment seg2d/seg3d` → existing evaluation/export functions |
+| False-positive case tables | `classification/exp2_false_positive_cases` |
+| Sample-to-path channel mapping | `classification/channel_mapping` |
+| Input, Grad-CAM, channel figures and metadata | `classification/fig10_11_gradcam` |
+| Slice stats, selected slices, volume rankings and example figures | `segmentation_3d/fig13_predictions`, then `fig13_slice_selection`; `oversegmentation_volume_selection` |
+| Legacy top-20 candidates and selected top-3 table | `local_generation.py legacy-selection` calls retained `find_overseg_case.py` with only its run path replaced, then `make_top3_overseg_figures.py` |
+| Reconstructed per-volume counts and before/after hashes | `segmentation_3d/table7_result_audit` |
 
 Pure manuscript-layout scripts are no longer provided. Scientific analysis and case visualizations remain; final panel composition is outside this workflow. Some figure scripts intentionally select the original study cases and assert their prediction characteristics. Keep those checks: mismatching inputs or predictions must fail rather than silently selecting different cases.
-
-不再提供纯论文排版脚本；保留科学分析和病例可视化，最终面板拼接不属于本工作流。部分脚本固定选取研究中的案例并验证预测特征；保留验证，输入不匹配时应报错，不自动换病例。
 
 The 3D audit also needs the retained history/configuration and both checkpoints. Classification full-audit tasks require the original completed-run hashes; locally regenerated records are not automatically valid historical records. Use the standalone CSV summarizer for local statistics instead of changing hashes or fabricating completion evidence:
 
@@ -123,20 +109,16 @@ python code/analysis/summarize_predictions.py --experiment exp2 --runs-root .loc
 
 The `.gitignore` protects known output names and the whole `.local/` workspace. It is not a content classifier; renamed patient files outside those locations still require review before any commit.
 
-`.gitignore` 保护已知文件名及整个 `.local/`。它不能判断内容；把病例文件改名或放到其他目录后，仍需提交前检查。
-
-## Result identity / 结果身份
+## Result identity
 
 Local generation does not replace the [manuscript-final result map](../result/README.md#manuscript-final-results). Classification Exp-1 uses 31415/27182/16180 and Exp-2 uses 48271/59317/84629; 2D seed123 and 3D seed42 are separate single-run experiments. Locally regenerated outputs remain local analysis until explicitly validated; never overwrite or relabel the recorded formal results.
 
-本地新生成结果不自动成为论文正式结果，也不得覆盖或重新标记正式记录。分类与分割的种子命名空间独立。
+Classification and segmentation seeds belong to separate experiment namespaces.
 
-These instructions originated with historical source tag `v1.0.0`. For the current fixed review, use `v1.0.1-review`; later `main` documentation updates do not enter that snapshot. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json). / 本说明源于历史源码 v1.0.0；当前固定审阅使用 v1.0.1-review，main 后续文档更新不改变该快照。模型附件仍使用独立的历史 rc1 版本。
+These instructions originated with historical source tag `v1.0.0`. For the current fixed review, use `v1.0.1-review`; later `main` documentation updates do not enter that snapshot. Model archives remain separately versioned at `v1.0.0-rc1`; see [release mapping](../provenance/release_manifest.json).
 
-For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../docs/WORKFLOW_GUIDE.md#scientific-function-organization--按科学功能组织代码) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged. / 纯排版命令已移除，科学脚本及其输出含义不变；混合脚本保留待复核。
+For scientific-function task naming and the preserved mixed-script exceptions, see the [organization policy](../docs/WORKFLOW_GUIDE.md#scientific-function-organization) and [cleanup inventory](../provenance/figure_code_cleanup.json). Pure panel-composition commands have been removed; scientific scripts and their output semantics are unchanged.
 
-## Verify existing formal records / 验证已有正式记录
+## Verify existing formal records
 
 After obtaining the saved statistics and official metrics, use the [formal saved-prediction verification guide](analysis/SAVED_PREDICTION_VERIFICATION.md). Classification reports both AUC definitions; segmentation retains separate 2D/3D aggregation conventions. These tools do not generate predictions or masks and do not replace the preparation/inference prerequisites described above.
-
-取得保存统计和正式指标后，按[正式记录复核指南](analysis/SAVED_PREDICTION_VERIFICATION.md)运行。分类同时报告两种 AUC；分割保留2D/3D各自规则。这些工具不生成预测或 mask，也不替代前述数据准备和推理依赖。

@@ -33,4 +33,4 @@ The restored classification metric module is a small project-specific NumPy/scik
 
 No training body is republished as a patch, and no replacement model or evaluator is introduced. A user with only the public repository and the original-author download cannot recover every exact adapted trainer: a matching privately held adaptation remains necessary. All setup hashes and exclusions are in [source_inventory.json](source_inventory.json). Model files keep their existing third-party or unresolved classification; licensed ViT, 2D U-Net and EarlyStopping notices remain unchanged.
 
-本记录只保存本项目的协议配置和修改说明，不重新公开原作者混合训练实现。配置不参与执行，不改变模型、训练、评价或随机种子；完整复现仍需规定的本地输入及对应私有改编源码。
+This record documents project protocol settings and modifications without republishing mixed-origin training implementations. The configuration record is not executable and does not change models, training, evaluation or random seeds. Reproduction still requires the specified local inputs and matching private adaptations.

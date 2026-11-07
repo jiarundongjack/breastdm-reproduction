@@ -2,7 +2,7 @@
 
 This is the file-level source policy for current public `main`. Its machine-readable appendix is [source_inventory.json](provenance/source_inventory.json). All **132 baseline source files** at `e5d4b2b446971440b08422539ee532096c89e1b2` remain inventoried. Baseline hashes identify original Git blobs. Round 2B re-reviewed all 116 removed files: **74 restored, 41 still excluded, one empty placeholder omitted**. Historical commits and releases are outside this cleanup.
 
-## Policy / 发布原则
+## Policy
 
 Project-specific source is distinguished from licensed third-party source and unresolved external/mixed implementations. Applicable third-party notices and license texts remain. No repository-wide license is assigned. Public accessibility of author code does not establish a redistribution grant.
 
@@ -12,7 +12,7 @@ Files first introduced in this reproduction repository for study-specific prepar
 
 **This classification records repository provenance and does not make a broader legal authorship claim beyond the available evidence.** Bulk-upload history alone is not authorship proof. The combined review uses recorded first commits/dates, study-specific interfaces and purpose, whole-source comparisons, exact function comparisons and contiguous-text comparisons. In 83 inspected upstream Python files, the 74 recovered files had no identified complete implementation match, no exact external function of at least eight lines, and at most three consecutive nonblank/nonimport matching lines. This is a bounded comparison, not an exhaustive originality search.
 
-恢复文件标为 `PROJECT_CREATED` / `project-specific implementation` / `No repository-wide license assigned` / `PROJECT_SOURCE_RETAINED` / `retain`。这些标签说明目前证据支持的项目来源，不是绝对原创版权声明。未找到外部来源本身不再被视为删除理由；实际识别到上游或混合来源、而完整文件再分发许可未确认的实现仍不公开。
+Recovered files are labelled `PROJECT_CREATED` / `project-specific implementation` / `No repository-wide license assigned` / `PROJECT_SOURCE_RETAINED` / `retain`. These labels record the project provenance supported by the available evidence, not an absolute claim of original copyright ownership. Failure to identify an external source is not itself grounds for exclusion; identified upstream or mixed implementations remain excluded where redistribution permission for the complete file is unresolved.
 
 Per-file review evidence: [round2b_review.json](provenance/round2b_review.json). Previous decisions are preserved under `round2_decision` for traceability; only the top-level action/status is current.
 
@@ -26,11 +26,11 @@ Per-file review evidence: [round2b_review.json](provenance/round2b_review.json).
 
 The retained GPL source files carry adjacent `.license` sidecars with attribution and existing modifications. Keep the sidecars and complete applicable license texts with any redistributed copy. Those files' source bytes are unchanged, preserving historical hash evidence. ViT retains its existing seven-layer factory configuration; U-Net and EarlyStopping behavior is unchanged. Added source setup utilities contain no copied model/training/metric implementation.
 
-## Required local source setup / 按工作流准备本地源码
+## Required local source setup
 
 The public repository includes project-specific preparation, analysis, verification, aggregation, plotting and audit scripts. Workflows depending on original-author or third-party source with unresolved redistribution permission require local source setup. Pure CSV statistics, ROC/confusion-matrix plotting, and preparation wrappers do not require private model implementations. They still need their documented inputs and Python packages.
 
-公开的数据整理、统计和绘图代码可直接调用；涉及未公开模型、训练或评价实现时，才按具体任务准备源码。数据、权重、Python 依赖、历史完整记录是另外的前提，并不由源码检查工具提供。
+Public preparation, statistics and plotting scripts can be invoked directly. Data, weights, Python dependencies and complete historical records remain separate prerequisites; the source-checking utility does not provide them.
 
 ```powershell
 python code/run.py --list
@@ -214,4 +214,4 @@ Every baseline source is listed below. `remove` refers to current public files o
 | `result/seg3d_unet_locked_volume_ppv_seed42_20260911/volume55_slice_overseg_selection/make_overseg_slice_2x2.py` | `2128d4c56d1d5fdd6ea526ccdcbb22e2e7542d57319ba2fba60e403e9cf36acc` | PROJECT_CREATED | project-specific implementation | No repository-wide license assigned | `PROJECT_SOURCE_RETAINED` / **retain** |
 | `weight download and restore/restore_assets.py` | `ec64decd40c91d01dd44b294bd8a1d3cde8135285582fa00e1ae1140f94fd748` | PROJECT_CREATED | project-specific implementation | No repository-wide license assigned | `PROJECT_SOURCE_RETAINED` / **retain** |
 
-Post-release navigation note: the [figure-code cleanup inventory](provenance/figure_code_cleanup.json) records current paths and presentation-only removals after v1.0.0. Historical source inventory paths/hashes and provenance decisions are preserved; all excluded private-source restoration paths and license notices are unchanged. / 发布后仅调整代码导航；当前路径及纯展示脚本移除情况见补充清单，历史来源证据、被排除源码的恢复路径和许可证不变。
+Post-release navigation note: the [figure-code cleanup inventory](provenance/figure_code_cleanup.json) records current paths and presentation-only removals after v1.0.0. Historical source inventory paths/hashes and provenance decisions are preserved; all excluded private-source restoration paths and license notices are unchanged.
